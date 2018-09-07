@@ -1,2 +1,2 @@
-# wangzhihao.com.cn
-http://wangzhihao.com.cn
+# wangzhihao.me
+http://wangzhihao.me
