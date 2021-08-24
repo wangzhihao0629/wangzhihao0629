@@ -1,2 +1,2 @@
-# wangzhihao.me
-http://wangzhihao.me
+# zhihaowang.me
+http://zhihaowang.me
