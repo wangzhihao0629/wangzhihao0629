@@ -115,7 +115,7 @@ header {
 	color: white;
 	background: rgba(28, 36, 65, 0.93);
 	background: url('../img/header.jpg') no-repeat;
-	background-position: center;
+	background-position: 40%;
 	background-size: cover;
 }
 
