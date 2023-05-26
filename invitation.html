@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chen, you got an invitation!</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <!-- Owl -->
+    <link rel="stylesheet" type="text/css" href="css/owl.css" />
+    <!-- Animate.css -->
+    <link rel="stylesheet" type="text/css" href="css/animate.css" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="fonts/font-awesome-4.1.0/css/font-awesome.min.css"
+    />
+    <!-- Elegant Icons -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="fonts/eleganticons/et-icons.css"
+    />
+    <!-- Main style -->
+    <link rel="stylesheet" type="text/css" href="css/cardio.css" />
+  </head>
+
+  <body>
+    <header class="invitation">
+      <div class="container">
+        <div class="table">
+          <div class="header-text">
+            <div class="row">
+              <div class="col-md-12 text-center">
+                <h4 class="white">
+                  <a
+                    class="white"
+                    href="resource/下半年的快乐还可以更多一些.ics"
+                    target="_blank"
+                    ><br />
+                    <div id="text"></div
+                  ></a>
+                </h4>
+                <br />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Holder for mobile navigation -->
+    <div class="mobile-nav">
+      <ul></ul>
+      <a href="#" class="close-link"><i class="arrow_up"></i></a>
+    </div>
+    <!-- Scripts -->
+    <script>
+      let divTyping = document.getElementById("text");
+      let i = 0,
+        timer = 0,
+        str = "下 半 年 的 快 乐 还 可 以 更 多 一 些 ";
+
+      function typing() {
+        if (i <= str.length) {
+          let char = str.slice(0, i++);
+          divTyping.innerHTML =
+            '<span class="word">' +
+            str.slice(0, i++) +
+            "</span>" +
+            '<span class="cursor">|</span>';
+          timer = setTimeout("typing()", 200);
+        }
+      }
+      function appear() {
+        let cursor = document.querySelector(".cursor");
+        cursor.innerHTML = "|";
+      }
+
+      typing();
+      disappear();
+    </script>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/typewriter.js"></script>
+    <script src="js/jquery.onepagenav.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

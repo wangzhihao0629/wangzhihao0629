@@ -119,6 +119,16 @@ header {
 	background-size: cover;
 }
 
+.invitation {
+	position: relative;
+	width: 100%;
+	color: white;
+	background: rgba(28, 36, 65, 0.93);
+	background: url('../img/invitation_bg.png') no-repeat;
+	background-position: 10%;
+	background-size: cover;
+}
+
 header .table {
 	display: table;
 	height: 100%;
