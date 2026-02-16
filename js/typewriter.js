@@ -6,13 +6,15 @@
 
   function typewriter() {
 
-    // Globals 
-    var self = this, speed;
+    // Globals
+    var self = this;
 
     function init(element, options) {
             // Set Globals
-      var str;
       var indice = 0;
+      var $currentElement;
+      var elementStr;
+      var dataSpeed;
 
       self.options = $.extend( {}, $.fn.typewriter.options, options );
       $currentElement = $(element);

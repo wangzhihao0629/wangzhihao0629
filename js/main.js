@@ -6,7 +6,7 @@ jQuery(function($) {
 	var ratio = 2;
 
 	// Window Load
-	$(window).load(function() {
+	$(window).on('load', function() {
 		// Header Init
 		if ($(window).height() > $(window).width()) {
 			var ratio = $('.parallax').width() / $('.parallax').height();
