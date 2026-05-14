@@ -1,8 +1,9 @@
-Hello, I am Zhihao Wang. I joined [Duolingo](https://careers.duolingo.com) as a Senior Software Engineer after completing my Master's Degree in Software Engineering at [Carnegie Mellon University](https://www.cmu.edu).
+Staff Software Engineer at [Duolingo](https://careers.duolingo.com), building infrastructure automation and platform engineering at scale. I championed Temporal adoption from 0->1 and currently lead the Temporal infrastructure project team.
 
-Before CMU, I had gained a track record of delivering end-to-end products and services over four years as a Software Engineer, supplemented with two years of project management expertise as a Scrum Master. My previous experience primarily concerned designing and developing customer-facing products and services. I have now pivoted to managing cloud infrastructures that empower engineers.
+Previously Senior Backend Engineer & Scrum Master at [data.ai](https://www.data.ai) (formerly App Annie), and Software Engineer at [VIPKID](https://www.vipkid.com).
 
-My areas of interest include microservices, distributed systems, database systems, cloud infrastructures, developer productivity, among others. 
+M.S. Software Engineering, Carnegie Mellon University.
 
-- [Résumé](http://zhihaowang.me/resource/ZHIHAO_WANG_RESUME.pdf)
-- [LinkedIn](http://linkedin.com/in/zhihao-wang/)
+- [Website](https://zhihaowang.me)
+- [LinkedIn](https://linkedin.com/in/zhihao-wang)
+- [Résumé](https://zhihaowang.me/resource/zhihao-wang-resume.pdf)
