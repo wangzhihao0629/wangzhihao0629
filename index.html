@@ -1,71 +1,784 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>I'm Zhihao Wang</title>
-    <!-- Bootstrap -->
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-    <!-- Elegant Icons -->
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="fonts/eleganticons/et-icons.css"
-    />
-    <!-- Main style -->
-    <link rel="stylesheet" type="text/css" href="css/cardio.css" />
-  </head>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Zhihao Wang — Staff Software Engineer. Distributed systems, cloud infrastructure, developer productivity." />
+  <title>Zhihao Wang</title>
 
-  <body>
-    <header id="intro">
-      <div class="container">
-        <div class="table">
-          <div class="header-text">
-            <div class="row">
-              <div class="col-md-12 text-center">
-                <h1 class="white">👨🏻‍💻<br /></h1>
-                <h5 class="white">
-                  <a
-                    class="white"
-                    href="https://www.linkedin.com/in/zhihao-wang/"
-                    target="_blank"
-                    ><br />LinkedIn</a
-                  >&nbsp;&nbsp;·&nbsp;&nbsp;
-                  <a
-                    class="white"
-                    href="resource/ZHIHAO_WANG_RESUME.pdf"
-                    target="_blank"
-                    >Résumé</a
-                  >&nbsp;&nbsp;·&nbsp;&nbsp;
-                  <a
-                    class="white"
-                    href="mailto:zhihaowa@alumni.cmu.edu?Subject=Hello%20Zhihao"
-                    target="_top"
-                    >Email</a
-                  >&nbsp;&nbsp;·&nbsp;&nbsp;
-                  <a
-                    class="white"
-                    href="https://www.duolingo.com/profile/zhihaowang0629"
-                    target="_blank"
-                    >Duolingo</a
-                  >
-                </h5>
-                <br />
-              </div>
-            </div>
-          </div>
+  <script>
+    (function () {
+      var t = localStorage.getItem('theme') ||
+        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── THEME ─────────────────────────────────────────── */
+    :root, [data-theme="dark"] {
+      --bg:       #1a1b26;
+      --bg2:      #24283b;
+      --border:   #292e42;
+      --text:     #c0caf5;
+      --dim:      #565f89;
+      --faint:    #3b4261;
+      --green:    #9ece6a;
+      --cyan:     #7dcfff;
+      --yellow:   #e0af68;
+      --purple:   #bb9af7;
+      --link:     #7aa2f7;
+    }
+    [data-theme="light"] {
+      --bg:       #ffffff;
+      --bg2:      #f6f8fa;
+      --border:   #b4b5c0;
+      --text:     #343b58;
+      --dim:      #6172b0;
+      --faint:    #a8aecb;
+      --green:    #587539;
+      --cyan:     #007197;
+      --yellow:   #8f5e15;
+      --purple:   #7847bd;
+      --link:     #2e7de9;
+    }
+
+    /* ── RESET & BASE ──────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      scroll-behavior: smooth;
+      font-family: 'JetBrains Mono', 'Courier New', monospace;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      transition: background-color 0.15s, color 0.15s;
+      min-height: 100vh;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+    a:hover { text-decoration: underline; }
+
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+    /* ── LAYOUT ────────────────────────────────────────── */
+    .wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ── NAV ───────────────────────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: var(--bg);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.65rem 0;
+    }
+
+    .nav-brand {
+      color: var(--green);
+      font-weight: 500;
+      font-size: 0.875rem;
+      white-space: nowrap;
+      text-decoration: none;
+    }
+    .nav-brand .dim { color: var(--dim); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .nav-links a {
+      color: var(--dim);
+      font-size: 0.8rem;
+      text-decoration: none;
+      transition: color 0.1s;
+    }
+    .nav-links a:hover { color: var(--text); text-decoration: none; }
+
+    .theme-btn {
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--dim);
+      padding: 0.15rem 0.55rem;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 0.75rem;
+      border-radius: 3px;
+      transition: color 0.1s, border-color 0.1s;
+    }
+    .theme-btn:hover { color: var(--text); border-color: var(--dim); }
+
+    .mobile-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--dim);
+      font-family: inherit;
+      font-size: 0.85rem;
+      cursor: pointer;
+    }
+
+    @media (max-width: 640px) {
+      .mobile-btn { display: block; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0; right: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0.75rem 1.5rem 1rem;
+        gap: 0.85rem;
+        background: var(--bg);
+        border-bottom: 1px solid var(--border);
+      }
+      .nav-links.open { display: flex; }
+      nav { position: sticky; }
+    }
+
+    /* ── SECTIONS ──────────────────────────────────────── */
+    section {
+      padding: 1.75rem 0;
+    }
+
+    .sec-heading {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 2rem;
+      font-size: 0.8rem;
+      color: var(--dim);
+      white-space: nowrap;
+    }
+    .sec-heading .hash { color: var(--green); font-weight: 700; }
+    .sec-heading .label { color: var(--text); font-weight: 500; font-size: 0.875rem; }
+    .sec-heading::after {
+      content: '';
+      display: block;
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+      min-width: 1rem;
+    }
+
+    /* ── HERO ──────────────────────────────────────────── */
+    #home {
+      padding: 4rem 0 1.5rem;
+      border-top: none;
+    }
+
+    .prompt {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--dim);
+      margin-bottom: 0.3rem;
+      user-select: none;
+    }
+    .prompt .ps1 { color: var(--green); }
+    .prompt .cmd { color: var(--cyan); }
+    .prompt .arg { color: var(--yellow); }
+
+    .hero-out {
+      padding: 1.25rem 0 1.25rem 1.25rem;
+      border-left: 1px solid var(--faint);
+      margin: 0.4rem 0 1.5rem;
+    }
+
+    .hero-name {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+    }
+
+    .hero-role {
+      color: var(--green);
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-top: 0.35rem;
+    }
+
+    .hero-about {
+      color: var(--dim);
+      font-size: 0.82rem;
+      margin-top: 0.85rem;
+      max-width: 540px;
+      line-height: 1.75;
+    }
+
+    .hero-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.25rem;
+    }
+
+    .hl {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.3rem 0.8rem;
+      border: 1px solid var(--border);
+      color: var(--dim);
+      font-size: 0.78rem;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: color 0.15s, border-color 0.15s, background-color 0.15s;
+    }
+    .hl:hover {
+      color: var(--text);
+      border-color: var(--dim);
+      background: var(--bg2);
+      text-decoration: none;
+    }
+    .hl.primary {
+      color: var(--green);
+      border-color: var(--green);
+    }
+    .hl.primary:hover {
+      background: var(--green);
+      color: var(--bg);
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 0.55em;
+      height: 0.9em;
+      background: var(--green);
+      vertical-align: text-bottom;
+      animation: blink 1.1s step-end infinite;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    /* ── ABOUT ─────────────────────────────────────────── */
+    .about-text {
+      font-size: 0.85rem;
+      color: var(--text);
+      line-height: 1.85;
+      max-width: 620px;
+    }
+    .about-text p + p { margin-top: 0.85rem; }
+    .hl-green  { color: var(--green); }
+    .hl-cyan   { color: var(--cyan); }
+    .hl-yellow { color: var(--yellow); }
+
+    /* ── EXPERIENCE ────────────────────────────────────── */
+    .exp-block { margin-bottom: 2.75rem; }
+    .exp-block:last-child { margin-bottom: 0; }
+
+    .exp-company {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--cyan);
+    }
+    .exp-company-note {
+      color: var(--dim);
+      font-weight: 400;
+      font-size: 0.78rem;
+    }
+
+    .exp-loc {
+      font-size: 0.75rem;
+      color: var(--faint);
+      margin-top: 0.15rem;
+      margin-bottom: 0.75rem;
+    }
+    .exp-loc::before { content: '// '; }
+
+    .exp-role {
+      padding-left: 1rem;
+      border-left: 1px solid var(--faint);
+      margin-bottom: 1.25rem;
+    }
+    .exp-role:last-child { margin-bottom: 0; }
+
+    .exp-role-hd {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.5rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .exp-title {
+      color: var(--text);
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+
+    .exp-date {
+      color: var(--dim);
+      font-size: 0.73rem;
+    }
+
+    .exp-list { list-style: none; }
+    .exp-list li {
+      display: flex;
+      gap: 0.55rem;
+      font-size: 0.81rem;
+      color: var(--text);
+      line-height: 1.7;
+      margin-bottom: 0.45rem;
+    }
+    .exp-list li::before {
+      content: '▸';
+      color: var(--green);
+      flex-shrink: 0;
+      margin-top: 0.05rem;
+    }
+
+    /* ── TALKS ─────────────────────────────────────────── */
+    .talk {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1.5rem;
+      padding: 0.7rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .talk:first-child { border-top: 1px solid var(--border); }
+
+    .talk-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .badge {
+      font-size: 0.68rem;
+      padding: 0.1rem 0.4rem;
+      border-radius: 2px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .badge-talk    { background: rgba(63,185,80,.12); color: var(--green); }
+    .badge-webinar { background: rgba(121,192,255,.12); color: var(--cyan); }
+    .badge-case    { background: rgba(210,168,255,.12); color: var(--purple); }
+
+    .talk-venue {
+      color: var(--dim);
+      font-size: 0.72rem;
+    }
+
+    .talk-title {
+      font-size: 0.84rem;
+      font-weight: 500;
+    }
+    .talk-title a {
+      color: var(--text);
+      text-decoration: none;
+      transition: color 0.1s;
+    }
+    .talk-title a:hover { color: var(--green); text-decoration: none; }
+    .talk-title a::after { content: ' ↗'; color: var(--faint); font-size: 0.7rem; }
+
+    .talk-year {
+      color: var(--dim);
+      font-size: 0.73rem;
+      white-space: nowrap;
+      flex-shrink: 0;
+      font-style: italic;
+    }
+
+    /* ── SKILLS ────────────────────────────────────────── */
+    .skill-comment {
+      color: var(--faint);
+      font-size: 0.75rem;
+      margin: 1rem 0 0.5rem;
+    }
+    .skill-comment::before { content: '# '; }
+    .skill-comment:first-child { margin-top: 0; }
+
+    .skill-row {
+      display: flex;
+      gap: 0.75rem;
+      margin-bottom: 0.35rem;
+      font-size: 0.81rem;
+    }
+    .skill-key {
+      color: var(--purple);
+      min-width: 160px;
+      flex-shrink: 0;
+    }
+    .skill-key::after { content: ':'; }
+    .skill-val { color: var(--yellow); }
+
+    /* ── EDUCATION ─────────────────────────────────────── */
+    .edu-item {
+      padding-bottom: 1.4rem;
+      margin-bottom: 1.4rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .edu-item:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
+
+    .edu-school { color: var(--cyan); font-weight: 600; font-size: 0.875rem; }
+    .edu-sub    { color: var(--dim); font-size: 0.76rem; margin-top: 0.15rem; }
+    .edu-deg    { color: var(--text); font-size: 0.81rem; margin-top: 0.3rem; }
+    .edu-date   { color: var(--faint); font-size: 0.73rem; margin-top: 0.15rem; }
+
+    /* ── FOOTER ────────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 1.25rem 0 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--faint);
+      font-size: 0.73rem;
+    }
+    .footer-links { display: flex; gap: 1.25rem; }
+    footer a { color: var(--dim); text-decoration: none; transition: color 0.1s; }
+    footer a:hover { color: var(--text); }
+  </style>
+</head>
+
+<body>
+
+  <!-- ── NAV ───────────────────────────────────────────── -->
+  <nav>
+    <div class="wrap">
+      <div class="nav-inner">
+        <a href="#home" class="nav-brand"><span class="dim">~/</span>zhihao</a>
+
+        <button class="mobile-btn" id="mobile-btn">[menu]</button>
+
+        <div class="nav-links" id="nav-links">
+          <a href="#about">about</a>
+          <a href="#experience">work</a>
+          <a href="#talks">talks</a>
+          <a href="#education">edu</a>
+          <button class="theme-btn" id="theme-btn">[theme]</button>
         </div>
       </div>
-    </header>
-    <!-- Holder for mobile navigation -->
-    <div class="mobile-nav">
-      <ul></ul>
-      <a href="#" class="close-link"><i class="arrow_up"></i></a>
     </div>
-    <!-- Scripts -->
-    <script src="js/jquery-1.11.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/main.js"></script>
-  </body>
+  </nav>
+
+  <!-- ── MAIN ──────────────────────────────────────────── -->
+  <main class="wrap">
+
+    <!-- HERO -->
+    <section id="home">
+      <div class="prompt" style="margin-bottom:0.3rem;">
+        <span class="ps1">zhihao@local:~$</span>
+        <span class="cmd">ssh</span>
+        <span class="arg">zhihao@portfolio</span>
+      </div>
+      <div style="font-size:0.8rem; color:var(--dim); margin-bottom:0.75rem;">Connected to zhihao@portfolio. Welcome.</div>
+
+      <div class="hero-out">
+        <div class="hero-name">Zhihao Wang</div>
+        <div style="font-size:0.75rem; color:var(--dim); margin-top:0.3rem; letter-spacing:0.02em;">zhihao pronounced "jr-how" >> "jee-how" · he/him</div>
+        <div class="hero-role">// Staff Software Engineer @ <a href="https://careers.duolingo.com/#careers" target="_blank" rel="noopener" style="color:inherit;">Duolingo</a> · <span style="color:var(--dim); font-weight:400;">zhihaowa [at] alumni [dot] cmu [dot] edu</span></div>
+
+        <div class="hero-links">
+          <a href="resource/zhihao-wang-resume.pdf" target="_blank" rel="noopener" class="hl">resume</a>
+          <a href="https://linkedin.com/in/zhihao-wang" target="_blank" rel="noopener" class="hl">linkedin</a>
+          <a href="https://github.com/wangzhihao0629" target="_blank" rel="noopener" class="hl">github</a>
+          <a href="https://invite.duolingo.com/profile-share-shortlink/jnmPjOa6QRVNkOBG" target="_blank" rel="noopener" class="hl">duolingo</a>
+        </div>
+      </div>
+
+      <div class="prompt">
+        <span class="ps1">zhihao@portfolio:~$</span>
+        <span id="typed-cmd"></span><span class="cursor"></span>
+      </div>
+      <div id="typed-out" style="padding-left:1.5rem; font-size:0.82rem; color:var(--dim); min-height:1.4em; margin-top:0.2rem;"></div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="sec-heading"><span class="hash">#</span><span class="label">about</span></div>
+      <div class="about-text">
+        <p>
+          I am a Staff Software Engineer at <a href="https://careers.duolingo.com/#careers" target="_blank" rel="noopener" class="hl-cyan">Duolingo</a>'s
+          Cloud Operations team, building infrastructure automation and platform engineering at scale.
+          I championed <span class="hl-cyan">Temporal</span> adoption from 0->1 — growing it into an org-wide
+          workflow platform powering <span class="hl-green">140+ production workflows</span> across 10+ teams
+          and establishing Duolingo as a recognized reference implementation in the Temporal ecosystem.
+          I currently lead the Temporal infrastructure project team.
+        </p>
+        <p>
+          Previously, I was a Senior Backend Engineer and Scrum Master at
+          <a href="https://www.data.ai" target="_blank" rel="noopener" class="hl-cyan">data.ai</a> (formerly App Annie), where I led microservice migrations
+          and built platform integrations at scale. Before that, I was a Software Engineer at
+          <a href="https://www.vipkid.com" target="_blank" rel="noopener" class="hl-cyan">VIPKID</a>.
+        </p>
+        <p>
+          I hold a Master of Software Engineering from
+          <a href="https://www.cs.cmu.edu" target="_blank" rel="noopener" class="hl-cyan">Carnegie Mellon University</a>, a B.S. in Information and Computing Science from
+          <a href="https://english.cumtb.edu.cn" target="_blank" rel="noopener" class="hl-cyan">China University of Mining and Technology, Beijing</a>, and a B.S. in Economics (double major) from
+          <a href="https://en.nsd.pku.edu.cn" target="_blank" rel="noopener" class="hl-cyan">Peking University</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <div class="sec-heading"><span class="hash">#</span><span class="label">work experience</span></div>
+
+      <!-- Duolingo -->
+      <div class="exp-block">
+        <div class="exp-company"><a href="https://careers.duolingo.com/#careers" target="_blank" rel="noopener" style="color:inherit;">Duolingo</a></div>
+        <div class="exp-loc">Pittsburgh, PA</div>
+
+        <div class="exp-role">
+          <div class="exp-role-hd">
+            <span class="exp-title">Staff Software Engineer</span>
+            <span class="exp-date">Apr 2026 – present</span>
+          </div>
+          <ul class="exp-list">
+            <li>Serving as technical lead for a Temporal infrastructure project team of 5 engineers: defining project direction, mentoring engineers on Temporal internals and infrastructure patterns, and partnering with teams across the org to design and onboard new use cases.</li>
+            <li>Leading zero-downtime, transparent-to-service-teams namespace-by-namespace ECS->EKS migration of the Temporal worker fleet (multiple namespaces fully on EKS); implementing KEDA-based autoscaling to handle unpredictable bursty workflow loads across hundreds of workers.</li>
+            <li>Leading zero-downtime migration of datastores (RDS, DynamoDB, S3) and services from a monolithic AWS account to dedicated accounts for improved security isolation and scalable multi-account management; leveraging Terragrunt to abstract account-level infrastructure (VPC, subnets, peering, etc.); automating CIDR planning based on resource topology, programmatically generating migration playbooks for service teams, and continuously improving migration guides.</li>
+          </ul>
+        </div>
+
+        <div class="exp-role">
+          <div class="exp-role-hd">
+            <span class="exp-title">Senior Software Engineer</span>
+            <span class="exp-date">Feb 2023 – Mar 2026</span>
+          </div>
+          <ul class="exp-list">
+            <li>Championed Temporal adoption at Duolingo from 0->1: introduced the technology, built foundational infrastructure from scratch, fostered a cross-org community, and scaled it into an org-wide durable workflow platform powering 140+ production workflows across 10+ teams with hundreds of workers — establishing Duolingo as a recognized reference implementation in the Temporal ecosystem.</li>
+            <li>Designed and built the Temporal Self-Service Platform — UI, gateway microservice, router workers, shared libraries, and onboarding tooling — enabling 15+ CloudOps self-service workflows (RDS resize, upgrade, deletion, PG replication, Redis->Valkey migration) and saving thousands of engineering hours annually.</li>
+            <li>Improved developer experience in the Temporal monorepo: refactored Dockerfiles, folder structure, and deployment scripts to scale with growing team adoption; shipped Agent Skills for workflow authoring; reduced CI, build, and pre-commit times by 50%; and introduced higher-level abstractions via Temporal Nexus for cross-namespace workflow communication.</li>
+            <li>Implemented full data store disaster recovery via Temporal workflows; designed workflow orchestration patterns for multi-step RDS, DynamoDB, S3, and Redis restoration across AWS regions.</li>
+            <li>Stepped into de facto DBRE ownership; built production-grade monitoring for all Aurora PostgreSQL clusters from scratch — custom exporters, Grafana dashboards (table size trends, slow queries, blocked queries); automated DB upgrades with zero downtime and AI-driven Terraform PR generation; upgraded 30+ Aurora PostgreSQL clusters v11->v14 in under one month with zero learner impact.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- data.ai -->
+      <div class="exp-block">
+        <div class="exp-company"><a href="https://www.data.ai" target="_blank" rel="noopener" style="color:inherit;">data.ai</a> <span class="exp-company-note">(formerly App Annie)</span></div>
+        <div class="exp-loc">Beijing, China</div>
+        <div class="exp-role">
+          <div class="exp-role-hd">
+            <span class="exp-title">Senior Backend Software Engineer &amp; Scrum Master</span>
+            <span class="exp-date">Feb 2018 – Jul 2021</span>
+          </div>
+          <ul class="exp-list">
+            <li>Devised and built a new unified connection workflow to migrate 30+ platforms to microservices with a scalable solution to complete Apple and Google's Multi-Factor Authentication, reducing time cost by 50+% and improving success rate by 30+%.</li>
+            <li>Migrated legacy services from a monolithic Django app to Flask and Go microservices, improving performance by 50%.</li>
+            <li>Enhanced the Node.js scraping framework with Puppeteer for browser-based scraping and integrated Firebase, making data.ai the first in the industry to support it.</li>
+            <li>Developed internal troubleshooting tools and monitoring dashboards, reducing MTTR from over 3 days to 1–2 days.</li>
+            <li>Served as Scrum Master for a team of 6+, facilitating sprints, daily meetings, and retrospectives.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- VIPKID -->
+      <div class="exp-block">
+        <div class="exp-company"><a href="https://www.vipkid.com" target="_blank" rel="noopener" style="color:inherit;">VIPKID</a></div>
+        <div class="exp-loc">Beijing, China</div>
+        <div class="exp-role">
+          <div class="exp-role-hd">
+            <span class="exp-title">Software Engineer &amp; Software Engineer Intern</span>
+            <span class="exp-date">Aug 2016 – Feb 2018</span>
+          </div>
+          <ul class="exp-list">
+            <li>Developed microservices with Flask, gRPC, Java, SpringBoot to support VIPKID App, VIPKID School, internal systems, etc.</li>
+            <li>Constructed asynchronous task system with Celery for Dino English App and its WeChat platform.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- TALKS -->
+    <section id="talks">
+      <div class="sec-heading"><span class="hash">#</span><span class="label">talks &amp; publications</span></div>
+
+      <div class="talk">
+        <div style="flex:1; min-width:0;">
+          <div class="talk-meta">
+            <span class="badge badge-talk">talk</span>
+            <a href="https://replay.temporal.io/" target="_blank" rel="noopener" class="talk-venue" style="color:inherit;">Temporal Replay</a>
+          </div>
+          <div class="talk-title">
+            <a href="https://replay.temporal.io/schedule/bottlenecks-self-service-duolingo-workflow-as-a-service-temporal-nexus" target="_blank" rel="noopener">
+              From Bottlenecks to Self-Service: How Duolingo Built Workflow-as-a-Service with Temporal Nexus
+            </a>
+          </div>
+        </div>
+        <div class="talk-year">2026</div>
+      </div>
+
+      <div class="talk">
+        <div style="flex:1; min-width:0;">
+          <div class="talk-meta">
+            <span class="badge badge-webinar">webinar</span>
+          </div>
+          <div class="talk-title">
+            <a href="https://www.youtube.com/watch?v=tJ1OwSFokOg" target="_blank" rel="noopener">
+              Scaling Developer Productivity with Temporal Nexus &amp; Duolingo
+            </a>
+          </div>
+        </div>
+        <div class="talk-year">2025</div>
+      </div>
+
+      <div class="talk">
+        <div style="flex:1; min-width:0;">
+          <div class="talk-meta">
+            <span class="badge badge-case">case study</span>
+            <a href="https://temporal.io/resources/case-studies" target="_blank" rel="noopener" class="talk-venue" style="color:inherit;">Temporal</a>
+          </div>
+          <div class="talk-title">
+            <a href="https://temporal.io/resources/case-studies/duolingo-temporal-nexus" target="_blank" rel="noopener">
+              Duolingo simplifies self-service infrastructure with Temporal Nexus
+            </a>
+          </div>
+        </div>
+        <div class="talk-year">2025</div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+      <div class="sec-heading"><span class="hash">#</span><span class="label">education</span></div>
+
+      <div class="edu-item">
+        <div class="edu-school"><a href="https://www.cmu.edu" target="_blank" rel="noopener" style="color:inherit;">Carnegie Mellon University</a></div>
+        <div class="edu-sub"><a href="https://www.cs.cmu.edu" target="_blank" rel="noopener" style="color:inherit;">School of Computer Science</a> · Pittsburgh, PA</div>
+        <div class="edu-deg">Master of Software Engineering</div>
+        <div class="edu-date">Aug 2021 – Dec 2022</div>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-school"><a href="https://www.pku.edu.cn" target="_blank" rel="noopener" style="color:inherit;">Peking University</a></div>
+        <div class="edu-sub"><a href="https://en.nsd.pku.edu.cn" target="_blank" rel="noopener" style="color:inherit;">National School of Development</a> · Beijing, China</div>
+        <div class="edu-deg">B.S. in Economics (<a href="https://en.nsd.pku.edu.cn/programs/doublemajor/index.htm" target="_blank" rel="noopener" style="color:var(--dim);">double major</a>)</div>
+        <div class="edu-date">Sep 2014 – Jul 2017</div>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-school"><a href="https://english.cumtb.edu.cn" target="_blank" rel="noopener" style="color:inherit;">China University of Mining and Technology, Beijing</a></div>
+        <div class="edu-sub"><a href="https://lxyen.cumtb.edu.cn/About_Us/Introduction.htm" target="_blank" rel="noopener" style="color:inherit;">School of Science</a> · Beijing, China</div>
+        <div class="edu-deg">B.S. in Information and Computing Science</div>
+        <div class="edu-date">Sep 2013 – Jun 2017</div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ─────────────────────────────────────────── -->
+  <footer class="wrap">
+    <span>&copy; <span id="yr"></span> zhihao wang</span>
+    <div class="footer-links">
+      <a href="https://linkedin.com/in/zhihao-wang" target="_blank" rel="noopener">linkedin</a>
+      <a href="https://github.com/wangzhihao0629" target="_blank" rel="noopener">github</a>
+      <span style="color:var(--dim);">zhihaowa [at] alumni [dot] cmu [dot] edu</span>
+      <a href="resource/zhihao-wang-resume.pdf" target="_blank" rel="noopener">resume</a>
+    </div>
+  </footer>
+
+  <script>
+    // Theme toggle
+    document.getElementById('theme-btn').addEventListener('click', function () {
+      var next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    });
+
+    // Mobile menu
+    var mobileBtn  = document.getElementById('mobile-btn');
+    var navLinks   = document.getElementById('nav-links');
+    mobileBtn.addEventListener('click', function () {
+      navLinks.classList.toggle('open');
+    });
+    navLinks.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () { navLinks.classList.remove('open'); });
+    });
+
+    // Year
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+
+    // ── Typewriter cycling animation ──────────────────────
+    // Edit this list to change what gets typed
+    var cycles = [
+      { cmd: 'whoami',                          out: 'permission denied: human interaction required' },
+      { cmd: 'echo $MBTI',                      out: 'INFJ' },
+      { cmd: 'cat interests/work.txt',              out: 'Distributed systems, cloud infrastructure, developer productivity.' },
+      { cmd: 'jq .hobbies profile.json',          out: '["photography", "travel"]' },
+      { cmd: 'echo $CURRENT_ROLE',              out: 'Staff Software Engineer @ Duolingo' },
+      { cmd: 'ls -1 education/',                out: ['CMU — M.S. Software Engineering', 'Peking University — B.S. Economics', 'CUMTB — B.S. Information & Computing Science'] },
+    ];
+
+    var cmdEl   = document.getElementById('typed-cmd');
+    var outEl   = document.getElementById('typed-out');
+    var ci      = 0;
+
+    function sleep(ms) { return new Promise(function(r) { setTimeout(r, ms); }); }
+
+    async function type(el, text, speed) {
+      for (var i = 0; i < text.length; i++) {
+        el.textContent += text[i];
+        await sleep(speed);
+      }
+    }
+
+    async function erase(el, speed) {
+      while (el.textContent.length > 0) {
+        el.textContent = el.textContent.slice(0, -1);
+        await sleep(speed);
+      }
+    }
+
+    async function loop() {
+      var c = cycles[ci % cycles.length];
+      ci++;
+      await type(cmdEl, c.cmd, 55);
+      await sleep(500);
+      outEl.innerHTML = Array.isArray(c.out)
+        ? c.out.map(function(l) { return '> ' + l; }).join('<br>')
+        : '> ' + c.out;
+      await sleep(2200);
+      outEl.innerHTML = '';
+      await erase(cmdEl, 30);
+      await sleep(350);
+      loop();
+    }
+
+    loop();
+  </script>
+
+</body>
 </html>
