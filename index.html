@@ -568,6 +568,7 @@
           <a href="#experience">work</a>
           <a href="#talks">talks</a>
           <a href="#education">edu</a>
+          <button class="theme-btn" onclick="openCmd()" style="margin-right:0.25rem;">[/]</button>
           <button class="theme-btn" id="theme-btn">[theme]</button>
         </div>
       </div>
@@ -823,6 +824,18 @@
 
   </main>
 
+  <!-- ── COMMAND PALETTE ───────────────────────────────────── -->
+  <div id="cmd-overlay">
+    <div id="cmd-box">
+      <div id="cmd-input-wrap">
+        <span class="ps1">:~$</span>
+        <input id="cmd-input" type="text" placeholder="jump to..." autocomplete="off" spellcheck="false" />
+      </div>
+      <div id="cmd-results"></div>
+      <div id="cmd-hint">↑↓ navigate &nbsp;·&nbsp; enter select &nbsp;·&nbsp; esc close &nbsp;·&nbsp; press / to open</div>
+    </div>
+  </div>
+
   <!-- ── FOOTER ─────────────────────────────────────────── -->
   <footer class="wrap">
     <span>&copy; <span id="yr"></span> zhihao wang &nbsp;·&nbsp; <span class="tooltip-wrap" id="uptime-wrap" style="cursor:default;">
@@ -856,6 +869,96 @@
 
     // Year
     document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // ── Command Palette ───────────────────────────────────
+    var cmdItems = [
+      { label: 'about',             key: '#', href: '#about' },
+      { label: 'work experience',   key: '#', href: '#experience' },
+      { label: 'talks & publications', key: '#', href: '#talks' },
+      { label: 'education',         key: '#', href: '#education' },
+      { label: 'resume (pdf)',      key: '↗', href: 'resource/zhihao-wang-resume.pdf' },
+      { label: 'linkedin',          key: '↗', href: 'https://linkedin.com/in/zhihao-wang' },
+      { label: 'github',            key: '↗', href: 'https://github.com/wangzhihao0629' },
+    ];
+
+    var overlay   = document.getElementById('cmd-overlay');
+    var cmdInput  = document.getElementById('cmd-input');
+    var cmdRes    = document.getElementById('cmd-results');
+    var activeIdx = 0;
+
+    function renderCmdItems(filter) {
+      var filtered = cmdItems.filter(function(i) {
+        return i.label.toLowerCase().includes((filter||'').toLowerCase());
+      });
+      activeIdx = 0;
+      cmdRes.innerHTML = '';
+      filtered.forEach(function(item, idx) {
+        var el = document.createElement('div');
+        el.className = 'cmd-item' + (idx === 0 ? ' active' : '');
+        el.innerHTML = '<span class="cmd-key">' + item.key + '</span>' + item.label;
+        el.addEventListener('mouseenter', function() {
+          cmdRes.querySelectorAll('.cmd-item').forEach(function(e) { e.classList.remove('active'); });
+          el.classList.add('active');
+          activeIdx = idx;
+        });
+        el.addEventListener('click', function() { goTo(item); });
+        cmdRes.appendChild(el);
+      });
+      return filtered;
+    }
+
+    function goTo(item) {
+      closeCmd();
+      if (item.href.startsWith('#')) {
+        var target = document.querySelector(item.href);
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        window.open(item.href, '_blank');
+      }
+    }
+
+    function openCmd() {
+      overlay.classList.add('open');
+      cmdInput.value = '';
+      renderCmdItems('');
+      cmdInput.focus();
+    }
+
+    function closeCmd() {
+      overlay.classList.remove('open');
+      cmdInput.blur();
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (overlay.classList.contains('open')) {
+        var items = cmdRes.querySelectorAll('.cmd-item');
+        if (e.key === 'Escape') { closeCmd(); }
+        else if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          items[activeIdx] && items[activeIdx].classList.remove('active');
+          activeIdx = Math.min(activeIdx + 1, items.length - 1);
+          items[activeIdx] && items[activeIdx].classList.add('active');
+        } else if (e.key === 'ArrowUp') {
+          e.preventDefault();
+          items[activeIdx] && items[activeIdx].classList.remove('active');
+          activeIdx = Math.max(activeIdx - 1, 0);
+          items[activeIdx] && items[activeIdx].classList.add('active');
+        } else if (e.key === 'Enter') {
+          var filtered = cmdItems.filter(function(i) {
+            return i.label.toLowerCase().includes(cmdInput.value.toLowerCase());
+          });
+          if (filtered[activeIdx]) goTo(filtered[activeIdx]);
+        }
+      } else {
+        if (e.key === '/' && document.activeElement.tagName !== 'INPUT') {
+          e.preventDefault();
+          openCmd();
+        }
+      }
+    });
+
+    cmdInput.addEventListener('input', function() { renderCmdItems(cmdInput.value); activeIdx = 0; });
+    overlay.addEventListener('click', function(e) { if (e.target === overlay) closeCmd(); });
 
     // Uptime tooltip (touch support)
     document.getElementById('uptime-wrap').addEventListener('click', function (e) {
