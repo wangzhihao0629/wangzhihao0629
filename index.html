@@ -735,6 +735,7 @@
           <div class="talk-meta">
             <span class="badge badge-talk">talk</span>
             <a href="https://replay.temporal.io/" target="_blank" rel="noopener" class="talk-venue" style="color:inherit;">Temporal Replay</a>
+            <span class="talk-venue">· San Francisco, CA</span>
           </div>
           <div class="talk-title">
             <a href="https://replay.temporal.io/schedule/bottlenecks-self-service-duolingo-workflow-as-a-service-temporal-nexus" target="_blank" rel="noopener">
@@ -759,15 +760,20 @@
                 Scaling Developer Productivity with Temporal Nexus &amp; Duolingo
               </a>
             </div>
-            <div style="margin-top:0.35rem;">
+            <div style="margin-top:0.35rem; display:flex; gap:1rem;">
               <button onclick="var p=document.getElementById('yt-embed');var open=p.style.display==='block';p.style.display=open?'none':'block';this.textContent=open?'[+ watch here]':'[- watch here]';"
                 style="background:none;border:none;font-family:inherit;font-size:0.75rem;color:var(--dim);cursor:pointer;padding:0;">[+ watch here]</button>
+              <button onclick="var p=document.getElementById('webinar-li-embed');var open=p.style.display==='block';p.style.display=open?'none':'block';this.textContent=open?'[+ linkedin post]':'[- linkedin post]';"
+                style="background:none;border:none;font-family:inherit;font-size:0.75rem;color:var(--dim);cursor:pointer;padding:0;">[+ linkedin post]</button>
             </div>
           </div>
           <div class="talk-year">Feb 2025</div>
         </div>
         <div id="yt-embed" style="display:none; margin-top:0.75rem;">
           <iframe width="560" height="315" src="https://www.youtube.com/embed/tJ1OwSFokOg?si=R_EaMaGz_wRYt-TC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="max-width:100%; border-radius:4px;"></iframe>
+        </div>
+        <div id="webinar-li-embed" style="display:none; margin-top:0.75rem;">
+          <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7430813613768052736" height="680" width="560" frameborder="0" allowfullscreen title="Embedded post" style="max-width:100%; border-radius:4px;"></iframe>
         </div>
       </div>
 
@@ -992,7 +998,6 @@
       { cmd: 'cat /etc/languages',                  out: ['Mandarin (native)', 'English (fluent)'] },
       { cmd: 'echo $LOCATION',                      out: 'Pittsburgh, PA' },
       { cmd: 'jq .hobbies profile.json',          out: '["photography", "travel"]' },
-      { cmd: 'echo $CURRENT_ROLE',              out: 'Staff Software Engineer @ Duolingo' },
       { cmd: 'ls -1 education/',                out: ['M.S. Software Engineering @ CMU', 'B.S. Economics @ PKU', 'B.S. Information & Computing Science @ CUMTB'] },
     ];
 
