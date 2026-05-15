@@ -466,6 +466,27 @@
     .footer-links { display: flex; gap: 1.25rem; }
     footer a { color: var(--dim); text-decoration: none; transition: color 0.1s; }
     footer a:hover { color: var(--text); }
+
+    /* ── TOOLTIP ───────────────────────────────────────────── */
+    .tooltip-wrap { position: relative; display: inline-block; }
+    .tooltip-box {
+      display: none;
+      position: absolute;
+      bottom: calc(100% + 6px);
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      color: var(--dim);
+      font-size: 0.72rem;
+      padding: 0.3rem 0.6rem;
+      border-radius: 3px;
+      white-space: nowrap;
+      pointer-events: none;
+      z-index: 10;
+    }
+    .tooltip-wrap:hover .tooltip-box,
+    .tooltip-wrap.tip-open .tooltip-box { display: block; }
   </style>
 </head>
 
@@ -637,37 +658,58 @@
               From Bottlenecks to Self-Service: How Duolingo Built Workflow-as-a-Service with Temporal Nexus
             </a>
           </div>
+          <div style="margin-top:0.35rem;">
+            <a href="resource/slides/From-Bottlenecks-to-Self-Service-How-Duolingo-Built-Workflow-as-a-Service-with-Temporal-Nexus.pdf" target="_blank" rel="noopener" style="font-size:0.75rem; color:var(--dim);">slides ↗</a>
+          </div>
         </div>
-        <div class="talk-year">2026</div>
+        <div class="talk-year">Apr 2026</div>
       </div>
 
-      <div class="talk">
-        <div style="flex:1; min-width:0;">
-          <div class="talk-meta">
-            <span class="badge badge-webinar">webinar</span>
+      <div class="talk" style="flex-direction:column; align-items:stretch;">
+        <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:1.5rem;">
+          <div style="flex:1; min-width:0;">
+            <div class="talk-meta">
+              <span class="badge badge-webinar">webinar</span>
+            </div>
+            <div class="talk-title">
+              <a href="https://www.youtube.com/watch?v=tJ1OwSFokOg" target="_blank" rel="noopener">
+                Scaling Developer Productivity with Temporal Nexus &amp; Duolingo
+              </a>
+            </div>
+            <div style="margin-top:0.35rem;">
+              <button onclick="var p=document.getElementById('yt-embed');var open=p.style.display==='block';p.style.display=open?'none':'block';this.textContent=open?'[+ watch here]':'[- watch here]';"
+                style="background:none;border:none;font-family:inherit;font-size:0.75rem;color:var(--dim);cursor:pointer;padding:0;">[+ watch here]</button>
+            </div>
           </div>
-          <div class="talk-title">
-            <a href="https://www.youtube.com/watch?v=tJ1OwSFokOg" target="_blank" rel="noopener">
-              Scaling Developer Productivity with Temporal Nexus &amp; Duolingo
-            </a>
-          </div>
+          <div class="talk-year">Feb 2025</div>
         </div>
-        <div class="talk-year">2025</div>
+        <div id="yt-embed" style="display:none; margin-top:0.75rem;">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/tJ1OwSFokOg?si=R_EaMaGz_wRYt-TC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="max-width:100%; border-radius:4px;"></iframe>
+        </div>
       </div>
 
-      <div class="talk">
-        <div style="flex:1; min-width:0;">
-          <div class="talk-meta">
-            <span class="badge badge-case">case study</span>
-            <a href="https://temporal.io/resources/case-studies" target="_blank" rel="noopener" class="talk-venue" style="color:inherit;">Temporal</a>
+      <div class="talk" style="flex-direction:column; align-items:stretch;">
+        <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:1.5rem;">
+          <div style="flex:1; min-width:0;">
+            <div class="talk-meta">
+              <span class="badge badge-case">case study</span>
+              <a href="https://temporal.io/resources/case-studies" target="_blank" rel="noopener" class="talk-venue" style="color:inherit;">Temporal</a>
+            </div>
+            <div class="talk-title">
+              <a href="https://temporal.io/resources/case-studies/duolingo-temporal-nexus" target="_blank" rel="noopener">
+                Duolingo simplifies self-service infrastructure with Temporal Nexus
+              </a>
+            </div>
+            <div style="margin-top:0.35rem;">
+              <button onclick="var p=document.getElementById('li-embed');var open=p.style.display==='block';p.style.display=open?'none':'block';this.textContent=open?'[+ linkedin post]':'[- linkedin post]';"
+                style="background:none;border:none;font-family:inherit;font-size:0.75rem;color:var(--dim);cursor:pointer;padding:0;">[+ linkedin post]</button>
+            </div>
           </div>
-          <div class="talk-title">
-            <a href="https://temporal.io/resources/case-studies/duolingo-temporal-nexus" target="_blank" rel="noopener">
-              Duolingo simplifies self-service infrastructure with Temporal Nexus
-            </a>
-          </div>
+          <div class="talk-year">Oct 2025</div>
         </div>
-        <div class="talk-year">2025</div>
+        <div id="li-embed" style="display:none; margin-top:0.75rem;">
+          <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7380951854135857152" height="680" width="560" frameborder="0" allowfullscreen title="Embedded post" style="max-width:100%; border-radius:4px;"></iframe>
+        </div>
       </div>
     </section>
 
@@ -701,7 +743,10 @@
 
   <!-- ── FOOTER ─────────────────────────────────────────── -->
   <footer class="wrap">
-    <span>&copy; <span id="yr"></span> zhihao wang</span>
+    <span>&copy; <span id="yr"></span> zhihao wang &nbsp;·&nbsp; <span class="tooltip-wrap" id="uptime-wrap" style="cursor:default;">
+      <span id="uptime" style="border-bottom:1px dotted var(--faint);"></span>
+      <span class="tooltip-box">time since starting 1st job (Aug 1, 2016)</span>
+    </span></span>
     <div class="footer-links">
       <a href="https://linkedin.com/in/zhihao-wang" target="_blank" rel="noopener">linkedin</a>
       <a href="https://github.com/wangzhihao0629" target="_blank" rel="noopener">github</a>
@@ -729,6 +774,28 @@
 
     // Year
     document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // Uptime tooltip (touch support)
+    document.getElementById('uptime-wrap').addEventListener('click', function (e) {
+      this.classList.toggle('tip-open');
+      e.stopPropagation();
+    });
+    document.addEventListener('click', function () {
+      document.getElementById('uptime-wrap').classList.remove('tip-open');
+    });
+
+    // Uptime
+    (function () {
+      var start = new Date(2016, 7, 1); // Aug 1, 2016
+      var now = new Date();
+      var diff = now - start;
+      var days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      var years = Math.floor(days / 365);
+      var rem = Math.floor((days % 365) / 30);
+      var remDays = days % 30;
+      var s = 'uptime: ' + years + 'y ' + rem + 'm ' + remDays + 'd';
+      document.getElementById('uptime').textContent = s;
+    })();
 
 
     // ── Typewriter cycling animation ──────────────────────
