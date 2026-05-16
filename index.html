@@ -367,9 +367,10 @@
       justify-content: space-between;
       gap: 1.5rem;
       padding: 0.7rem 0;
-      border-bottom: 1px solid var(--border);
+      border-bottom: 1px dotted var(--faint);
     }
-    .talk:first-child { border-top: 1px solid var(--border); }
+    .talk:last-child { border-bottom: none; }
+
 
     .talk-meta {
       display: flex;
@@ -440,9 +441,9 @@
 
     /* ── EDUCATION ─────────────────────────────────────── */
     .edu-item {
-      padding-bottom: 1.4rem;
-      margin-bottom: 1.4rem;
-      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.7rem;
+      margin-bottom: 0.7rem;
+      border-bottom: 1px dotted var(--faint);
     }
     .edu-item:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
 
@@ -730,23 +731,30 @@
     <section id="talks">
       <div class="sec-heading"><span class="hash">#</span><span class="label">talks &amp; publications</span></div>
 
-      <div class="talk">
-        <div style="flex:1; min-width:0;">
-          <div class="talk-meta">
-            <span class="badge badge-talk">talk</span>
-            <a href="https://replay.temporal.io/" target="_blank" rel="noopener" class="talk-venue" style="color:inherit;">Temporal Replay</a>
-            <span class="talk-venue">· San Francisco, CA</span>
+      <div class="talk" style="flex-direction:column; align-items:stretch;">
+        <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:1.5rem;">
+          <div style="flex:1; min-width:0;">
+            <div class="talk-meta">
+              <span class="badge badge-talk">talk</span>
+              <a href="https://replay.temporal.io/" target="_blank" rel="noopener" class="talk-venue" style="color:inherit;">Temporal Replay</a>
+              <span class="talk-venue">· San Francisco, CA</span>
+            </div>
+            <div class="talk-title">
+              <a href="https://replay.temporal.io/schedule/bottlenecks-self-service-duolingo-workflow-as-a-service-temporal-nexus" target="_blank" rel="noopener">
+                From Bottlenecks to Self-Service: How Duolingo Built Workflow-as-a-Service with Temporal Nexus
+              </a>
+            </div>
+            <div style="margin-top:0.35rem; display:flex; gap:0.75rem; align-items:center; flex-wrap:wrap;">
+              <a href="resource/slides/From-Bottlenecks-to-Self-Service-How-Duolingo-Built-Workflow-as-a-Service-with-Temporal-Nexus.pdf" target="_blank" rel="noopener" style="font-size:0.75rem; color:var(--dim);">slides ↗</a>
+              <button onclick="var p=document.getElementById('replay-li-embed');var open=p.style.display==='block';p.style.display=open?'none':'block';this.textContent=open?'[+ linkedin post]':'[- linkedin post]';"
+                style="background:none;border:none;font-family:inherit;font-size:0.75rem;color:var(--dim);cursor:pointer;padding:0;">[+ linkedin post]</button>
+            </div>
           </div>
-          <div class="talk-title">
-            <a href="https://replay.temporal.io/schedule/bottlenecks-self-service-duolingo-workflow-as-a-service-temporal-nexus" target="_blank" rel="noopener">
-              From Bottlenecks to Self-Service: How Duolingo Built Workflow-as-a-Service with Temporal Nexus
-            </a>
-          </div>
-          <div style="margin-top:0.35rem;">
-            <a href="resource/slides/From-Bottlenecks-to-Self-Service-How-Duolingo-Built-Workflow-as-a-Service-with-Temporal-Nexus.pdf" target="_blank" rel="noopener" style="font-size:0.75rem; color:var(--dim);">slides ↗</a>
-          </div>
+          <div class="talk-year">Apr 2026</div>
         </div>
-        <div class="talk-year">Apr 2026</div>
+        <div id="replay-li-embed" style="display:none; margin-top:0.75rem;">
+          <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7461118578805612544" height="680" width="560" frameborder="0" allowfullscreen title="Embedded post" style="max-width:100%; border-radius:4px;"></iframe>
+        </div>
       </div>
 
       <div class="talk" style="flex-direction:column; align-items:stretch;">
