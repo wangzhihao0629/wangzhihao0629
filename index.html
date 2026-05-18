@@ -160,6 +160,8 @@
       }
       .nav-links.open { display: flex; }
       nav { position: sticky; }
+      .edu-row { display: block; }
+      .edu-row > [style*="text-align:right"] { text-align: left !important; }
     }
 
     /* ── SECTIONS ──────────────────────────────────────── */
@@ -171,7 +173,7 @@
       display: flex;
       align-items: center;
       gap: 0.6rem;
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
       font-size: 0.8rem;
       color: var(--dim);
       white-space: nowrap;
@@ -446,11 +448,18 @@
       border-bottom: 1px dotted var(--faint);
     }
     .edu-item:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
+    .edu-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1.5rem;
+    }
+    .edu-body  { flex: 1; min-width: 0; }
 
     .edu-school { color: var(--cyan); font-weight: 600; font-size: 0.875rem; }
     .edu-sub    { color: var(--dim); font-size: 0.76rem; margin-top: 0.15rem; }
     .edu-deg    { color: var(--text); font-size: 0.81rem; margin-top: 0.3rem; }
-    .edu-date   { color: var(--faint); font-size: 0.73rem; margin-top: 0.15rem; }
+    .edu-date   { color: var(--dim); font-size: 0.73rem; white-space: nowrap; flex-shrink: 0; font-style: italic; }
 
     /* ── FOOTER ────────────────────────────────────────── */
     footer {
@@ -815,24 +824,80 @@
       <div class="sec-heading"><span class="hash">#</span><span class="label">education</span></div>
 
       <div class="edu-item">
-        <div class="edu-school"><a href="https://www.cmu.edu" target="_blank" rel="noopener" style="color:inherit;">Carnegie Mellon University</a></div>
-        <div class="edu-sub"><a href="https://www.cs.cmu.edu" target="_blank" rel="noopener" style="color:inherit;">School of Computer Science</a> · Pittsburgh, PA</div>
-        <div class="edu-deg">Master of Software Engineering</div>
-        <div class="edu-date">Aug 2021 – Dec 2022</div>
+        <div class="edu-row">
+          <div class="edu-body">
+            <div class="edu-school"><a href="https://www.cmu.edu" target="_blank" rel="noopener" style="color:inherit;">Carnegie Mellon University</a></div>
+            <div class="edu-sub"><a href="https://www.cs.cmu.edu" target="_blank" rel="noopener" style="color:inherit;">School of Computer Science</a></div>
+            <div class="edu-deg">Master of Software Engineering</div>
+          </div>
+          <div style="text-align:right; flex-shrink:0;">
+            <div class="edu-sub">Pittsburgh, PA</div>
+            <div class="edu-date">Aug 2021 – Dec 2022</div>
+          </div>
+        </div>
+        <div style="margin-top:0.4rem;">
+          <button onclick="var p=document.getElementById('cmu-courses');var open=p.style.display==='block';p.style.display=open?'none':'block';this.textContent=open?'[+ projects &amp; courses]':'[- projects &amp; courses]';"
+            style="background:none;border:none;font-family:inherit;font-size:0.72rem;color:var(--dim);cursor:pointer;padding:0;">[+ projects &amp; courses]</button>
+          <div id="cmu-courses" style="display:none; margin-top:0.4rem; font-size:0.72rem; color:var(--faint); line-height:1.7;">
+            <div style="color:var(--dim); margin-bottom:0.2rem;">Projects</div>
+            <div>· <span style="color:var(--dim);"><a href="https://www.troutwood.com/" target="_blank" rel="noopener" style="color:inherit;">Troutwood</a> Enterprise Portal</span></div>
+            <div style="padding-left:0.75rem; margin-top:0.1rem;">Worked as the development lead of a team of five, focusing on designing architectures and building cloud infrastructures on AWS.</div>
+            <div style="color:var(--dim); margin-top:0.5rem; margin-bottom:0.2rem;">Courses</div>
+            <div>· <span style="color:var(--dim);">Systems:</span> Introduction to Computer Systems, Distributed Systems, Database Systems, Advanced Cloud Computing</div>
+            <div style="margin-top:0.2rem;">· <span style="color:var(--dim);">Software Engineering:</span> Software Architectures, Formal Methods, Quality Assurance, Agile Methods, Business &amp; Marketing Strategy, Requirements for Information Systems, Software Project Management</div>
+          </div>
+        </div>
       </div>
 
       <div class="edu-item">
-        <div class="edu-school"><a href="https://www.pku.edu.cn" target="_blank" rel="noopener" style="color:inherit;">Peking University</a></div>
-        <div class="edu-sub"><a href="https://en.nsd.pku.edu.cn" target="_blank" rel="noopener" style="color:inherit;">National School of Development</a> · Beijing, China</div>
-        <div class="edu-deg">B.S. in Economics (<a href="https://en.nsd.pku.edu.cn/programs/doublemajor/index.htm" target="_blank" rel="noopener" style="color:var(--dim);">double major</a>)</div>
-        <div class="edu-date">Sep 2014 – Jul 2017</div>
+        <div class="edu-row">
+          <div class="edu-body">
+            <div class="edu-school"><a href="https://www.pku.edu.cn" target="_blank" rel="noopener" style="color:inherit;">Peking University</a></div>
+            <div class="edu-sub"><a href="https://en.nsd.pku.edu.cn" target="_blank" rel="noopener" style="color:inherit;">National School of Development</a></div>
+            <div class="edu-deg">B.S. in Economics (<a href="https://en.nsd.pku.edu.cn/programs/doublemajor/index.htm" target="_blank" rel="noopener" style="color:var(--dim);">double major</a>)</div>
+          </div>
+          <div style="text-align:right; flex-shrink:0;">
+            <div class="edu-sub">Beijing, China</div>
+            <div class="edu-date">Sep 2014 – Jul 2017</div>
+          </div>
+        </div>
+        <div style="margin-top:0.4rem;">
+          <button onclick="var p=document.getElementById('pku-courses');var open=p.style.display==='block';p.style.display=open?'none':'block';this.textContent=open?'[+ projects, courses &amp; activities]':'[- projects, courses &amp; activities]';"
+            style="background:none;border:none;font-family:inherit;font-size:0.72rem;color:var(--dim);cursor:pointer;padding:0;">[+ projects, courses &amp; activities]</button>
+          <div id="pku-courses" style="display:none; margin-top:0.4rem; font-size:0.72rem; color:var(--faint); line-height:1.7;">
+            <div style="color:var(--dim); margin-bottom:0.2rem;">Projects</div>
+            <div>· <span style="color:var(--dim);">PKU Course Trading Platform &#x2018;Black Market&#x2019;</span></div>
+            <div style="margin-top:0.1rem; padding-left:0.75rem;">· <a href="https://www.sixthtone.com/news/1977" target="_blank" rel="noopener" style="color:var(--faint);">Peking University Student Opens Course Trading &#x2018;Black Market&#x2019; <span style="color:var(--dim);">(Sixth Tone)</span> <span style="font-size:0.65rem;">↗</span></a></div>
+            <div style="padding-left:0.75rem;">· <a href="https://mp.weixin.qq.com/s/ZJuET-YoGszrfq3HnbKTGA" target="_blank" rel="noopener" style="color:var(--faint); font-style:normal;">Where the Heart Leads, Where Dreams Follow &#x2014; An Exclusive Interview with Zhihao, Founder of PKU&#x2019;s &#x201C;Black Market&#x201D; <span style="color:var(--dim);">(PKU)</span> <span style="font-size:0.65rem;">↗</span></a></div>
+            <div style="color:var(--dim); margin-top:0.5rem; margin-bottom:0.2rem;">Coursework &amp; Research</div>
+            <div>· <span style="color:var(--dim);">Selected Courses:</span> Econometrics, Intermediate Microeconomics, Intermediate Macroeconomics, Financial Theory &amp; Financial Markets, Game Theory, Internet Finance, Industrial Organization, Currency Banking, Educational Economics</div>
+            <div style="margin-top:0.2rem;">· <span style="color:var(--dim);">Socio-economic Survey Data Analysis (2015):</span> Analyzed collected data using Stata and completed a working paper &#x2018;Factors affecting people over the age of 45 participating in the new rural pension&#x2019; with Xinheng Wu.</div>
+            <div style="color:var(--dim); margin-top:0.5rem; margin-bottom:0.2rem;">Activities &amp; Societies</div>
+            <div>· <span style="color:var(--dim);">China Health and Retirement Longitudinal Study (2015):</span> Collected microdata in the field via interviews for CHARLS to serve the needs of scientific research on the elderly.</div>
+            <div style="margin-top:0.2rem;">· <span style="color:var(--dim);">CCERCLUB (2014&#x2013;2015):</span> Organized company visits to <a href="https://www.didiglobal.com" target="_blank" rel="noopener" style="color:var(--faint);">DiDi</a>, Ericsson, Li Ning, etc.</div>
+          </div>
+        </div>
       </div>
 
       <div class="edu-item">
-        <div class="edu-school"><a href="https://english.cumtb.edu.cn" target="_blank" rel="noopener" style="color:inherit;">China University of Mining and Technology, Beijing</a></div>
-        <div class="edu-sub"><a href="https://lxyen.cumtb.edu.cn/About_Us/Introduction.htm" target="_blank" rel="noopener" style="color:inherit;">School of Science</a> · Beijing, China</div>
-        <div class="edu-deg">B.S. in Information and Computing Science</div>
-        <div class="edu-date">Sep 2013 – Jun 2017</div>
+        <div class="edu-row">
+          <div class="edu-body">
+            <div class="edu-school"><a href="https://english.cumtb.edu.cn" target="_blank" rel="noopener" style="color:inherit;">China University of Mining and Technology, Beijing</a></div>
+            <div class="edu-sub"><a href="https://lxyen.cumtb.edu.cn/About_Us/Introduction.htm" target="_blank" rel="noopener" style="color:inherit;">School of Science</a></div>
+            <div class="edu-deg">B.S. in Information and Computing Science</div>
+          </div>
+          <div style="text-align:right; flex-shrink:0;">
+            <div class="edu-sub">Beijing, China</div>
+            <div class="edu-date">Sep 2013 – Jun 2017</div>
+          </div>
+        </div>
+        <div style="margin-top:0.4rem;">
+          <button onclick="var p=document.getElementById('cumtb-courses');var open=p.style.display==='block';p.style.display=open?'none':'block';this.textContent=open?'[+ courses]':'[- courses]';"
+            style="background:none;border:none;font-family:inherit;font-size:0.72rem;color:var(--dim);cursor:pointer;padding:0;">[+ courses]</button>
+          <div id="cumtb-courses" style="display:none; margin-top:0.4rem; font-size:0.72rem; color:var(--faint); line-height:1.7;">
+            Algorithms and Data Structures, Database Theory, Discrete Mathematics, Program Design and C-language, Object-oriented Programming and Applications (C++), JAVA and Network Programming, Software Engineering, Mathematical Analysis, Probability Theory, Advanced Algebra, Mathematical Statistics, Time Series Analysis, Numerical Algebra, Numerical Analysis, Operations Research, Mathematical Modeling
+          </div>
+        </div>
       </div>
     </section>
 
