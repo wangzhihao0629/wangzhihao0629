@@ -6,6 +6,18 @@
   <meta name="description" content="Zhihao Wang — Staff Software Engineer. Distributed systems, cloud infrastructure, developer productivity." />
   <title>Zhihao Wang</title>
 
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Zhihao Wang" />
+  <meta property="og:description" content="Staff Software Engineer at Duolingo. Distributed systems, cloud infrastructure, developer productivity." />
+  <meta property="og:url" content="https://wangzhihao0629.github.io" />
+  <meta property="og:image" content="https://wangzhihao0629.github.io/resource/zhihao.JPG" />
+  <meta property="og:image:width" content="2937" />
+  <meta property="og:image:height" content="2938" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Zhihao Wang" />
+  <meta name="twitter:description" content="Staff Software Engineer at Duolingo. Distributed systems, cloud infrastructure, developer productivity." />
+  <meta name="twitter:image" content="https://wangzhihao0629.github.io/resource/zhihao.JPG" />
+
   <script>
     (function () {
       var t = localStorage.getItem('theme') ||
@@ -86,7 +98,9 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background-color: var(--bg);
+      background-color: color-mix(in srgb, var(--bg) 85%, transparent);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
       border-bottom: 1px solid var(--border);
     }
 
@@ -236,6 +250,7 @@
       max-width: 540px;
       line-height: 1.75;
     }
+
 
     .hero-links {
       display: flex;
@@ -418,29 +433,6 @@
       font-style: italic;
     }
 
-    /* ── SKILLS ────────────────────────────────────────── */
-    .skill-comment {
-      color: var(--faint);
-      font-size: 0.75rem;
-      margin: 1rem 0 0.5rem;
-    }
-    .skill-comment::before { content: '# '; }
-    .skill-comment:first-child { margin-top: 0; }
-
-    .skill-row {
-      display: flex;
-      gap: 0.75rem;
-      margin-bottom: 0.35rem;
-      font-size: 0.81rem;
-    }
-    .skill-key {
-      color: var(--purple);
-      min-width: 160px;
-      flex-shrink: 0;
-    }
-    .skill-key::after { content: ':'; }
-    .skill-val { color: var(--yellow); }
-
     /* ── EDUCATION ─────────────────────────────────────── */
     .edu-item {
       padding-bottom: 0.7rem;
@@ -503,7 +495,9 @@
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.55);
+      background: rgba(0,0,0,0.45);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
       z-index: 200;
       align-items: flex-start;
       justify-content: center;
@@ -560,10 +554,27 @@
       color: var(--faint);
       border-top: 1px solid var(--border);
     }
+
+    /* ── PROGRESS BAR ───────────────────────────────────── */
+    #progress-bar {
+      position: fixed;
+      top: 0; left: 0;
+      height: 2px;
+      background: var(--green);
+      width: 0%;
+      z-index: 300;
+      transition: width 0.08s linear;
+      pointer-events: none;
+    }
+
+    /* ── NAV ACTIVE ─────────────────────────────────────── */
+    .nav-links a.nav-active { color: var(--text); }
+
   </style>
 </head>
 
 <body>
+  <div id="progress-bar"></div>
 
   <!-- ── NAV ───────────────────────────────────────────── -->
   <nav>
@@ -1110,6 +1121,31 @@
     }
 
     loop();
+
+    // ── Progress bar ──────────────────────────────────────
+    var progressBar = document.getElementById('progress-bar');
+    window.addEventListener('scroll', function () {
+      var scrolled = document.documentElement.scrollTop;
+      var total = document.documentElement.scrollHeight - window.innerHeight;
+      progressBar.style.width = (total > 0 ? (scrolled / total * 100) : 0) + '%';
+    }, { passive: true });
+
+    // ── Section entrance animations + active nav ──────────
+    var allSections = document.querySelectorAll('section[id]');
+    var allNavLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+
+    var sectionObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          var id = entry.target.getAttribute('id');
+          allNavLinks.forEach(function (a) {
+            a.classList.toggle('nav-active', a.getAttribute('href') === '#' + id);
+          });
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '-10% 0px -55% 0px' });
+
+    allSections.forEach(function (s) { sectionObserver.observe(s); });
 
   </script>
 
