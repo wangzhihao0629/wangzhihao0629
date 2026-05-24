@@ -1077,12 +1077,12 @@
     // Edit this list to change what gets typed
     var cycles = [
       { cmd: 'whoami',                          out: 'error: too complex to serialize' },
-      { cmd: 'echo $MBTI',                      out: 'INFJ' },
       { cmd: 'head -5 interests/work.txt',          out: ['distributed systems', 'cloud infrastructure', 'developer productivity', 'workflow orchestration', 'database systems'] },
       { cmd: 'cat /etc/languages',                  out: ['Mandarin (native)', 'English (fluent)'] },
       { cmd: 'echo $LOCATION',                      out: 'Pittsburgh, PA' },
-      { cmd: 'jq .hobbies profile.json',          out: '["photography", "travel"]' },
       { cmd: 'ls -1 education/',                out: ['M.S. Software Engineering @ CMU', 'B.S. Economics @ PKU', 'B.S. Information & Computing Science @ CUMTB'] },
+      { cmd: 'jq .hobbies profile.json',          out: '["photography", "travel"]' },
+      { cmd: 'echo $MBTI',                      out: 'INFJ' },
     ];
 
     var cmdEl   = document.getElementById('typed-cmd');
