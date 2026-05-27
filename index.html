@@ -586,8 +586,8 @@
 
         <div class="nav-links" id="nav-links">
           <a href="#about">about</a>
-          <a href="#experience">work</a>
           <a href="#talks">talks</a>
+          <a href="#experience">work</a>
           <a href="#education">edu</a>
           <button class="theme-btn" onclick="openCmd()" style="margin-right:0.25rem;">[/]</button>
           <button class="theme-btn" id="theme-btn">[theme]</button>
@@ -675,78 +675,6 @@
       </div>
     </section>
 
-    <!-- EXPERIENCE -->
-    <section id="experience">
-      <div class="sec-heading"><span class="hash">#</span><span class="label">work experience</span></div>
-
-      <!-- Duolingo -->
-      <div class="exp-block">
-        <div class="exp-company"><a href="https://careers.duolingo.com/#careers" target="_blank" rel="noopener" style="color:inherit;">Duolingo</a></div>
-        <div class="exp-loc">Pittsburgh, PA</div>
-
-        <div class="exp-role">
-          <div class="exp-role-hd">
-            <span class="exp-title">Staff Software Engineer</span>
-            <span class="exp-date">Apr 2026 – present</span>
-          </div>
-          <ul class="exp-list">
-            <li>Serving as technical lead for a Temporal infrastructure project team of 5 engineers: defining project direction, mentoring engineers on Temporal internals and infrastructure patterns, and partnering with teams across the org to design and onboard new use cases.</li>
-            <li>Leading zero-downtime, transparent-to-service-teams namespace-by-namespace ECS->EKS migration of the Temporal worker fleet (multiple namespaces fully on EKS); implementing KEDA-based autoscaling to handle unpredictable bursty workflow loads across hundreds of workers.</li>
-            <li>Leading zero-downtime migration of datastores (RDS, DynamoDB, S3) and services from a monolithic AWS account to dedicated accounts for improved security isolation and scalable multi-account management; leveraging Terragrunt to abstract account-level infrastructure (VPC, subnets, peering, etc.); automating CIDR planning based on resource topology, programmatically generating migration playbooks for service teams, and continuously improving migration guides.</li>
-          </ul>
-        </div>
-
-        <div class="exp-role">
-          <div class="exp-role-hd">
-            <span class="exp-title">Senior Software Engineer</span>
-            <span class="exp-date">Feb 2023 – Mar 2026</span>
-          </div>
-          <ul class="exp-list">
-            <li>Championed Temporal adoption at Duolingo from 0->1: introduced the technology, built foundational infrastructure from scratch, fostered a cross-org community, and scaled it into an org-wide durable workflow platform powering 140+ production workflows across 10+ teams with hundreds of workers — establishing Duolingo as a recognized reference implementation in the Temporal ecosystem.</li>
-            <li>Designed and built the Temporal Self-Service Platform — UI, gateway microservice, router workers, shared libraries, and onboarding tooling — enabling 15+ CloudOps self-service workflows (RDS resize, upgrade, deletion, PG replication, Redis->Valkey migration) and saving thousands of engineering hours annually.</li>
-            <li>Improved developer experience in the Temporal monorepo: refactored Dockerfiles, folder structure, and deployment scripts to scale with growing team adoption; shipped Agent Skills for workflow authoring; reduced CI, build, and pre-commit times by 50%; and introduced higher-level abstractions via Temporal Nexus for cross-namespace workflow communication.</li>
-            <li>Implemented full data store disaster recovery via Temporal workflows; designed workflow orchestration patterns for multi-step RDS, DynamoDB, S3, and Redis restoration across AWS regions.</li>
-            <li>Stepped into de facto DBRE ownership; built production-grade monitoring for all Aurora PostgreSQL clusters from scratch — custom exporters, Grafana dashboards (table size trends, slow queries, blocked queries); automated DB upgrades with zero downtime and AI-driven Terraform PR generation; upgraded 30+ Aurora PostgreSQL clusters v11->v14 in under one month with zero learner impact.</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- data.ai -->
-      <div class="exp-block">
-        <div class="exp-company"><a href="https://www.data.ai" target="_blank" rel="noopener" style="color:inherit;">data.ai</a> <span class="exp-company-note">(formerly App Annie)</span></div>
-        <div class="exp-loc">Beijing, China</div>
-        <div class="exp-role">
-          <div class="exp-role-hd">
-            <span class="exp-title">Senior Backend Software Engineer &amp; Scrum Master</span>
-            <span class="exp-date">Feb 2018 – Jul 2021</span>
-          </div>
-          <ul class="exp-list">
-            <li>Devised and built a new unified connection workflow to migrate 30+ platforms to microservices with a scalable solution to complete Apple and Google's Multi-Factor Authentication, reducing time cost by 50+% and improving success rate by 30+%.</li>
-            <li>Migrated legacy services from a monolithic Django app to Flask and Go microservices, improving performance by 50%.</li>
-            <li>Enhanced the Node.js scraping framework with Puppeteer for browser-based scraping and integrated Firebase, making data.ai the first in the industry to support it.</li>
-            <li>Developed internal troubleshooting tools and monitoring dashboards, reducing MTTR from over 3 days to 1–2 days.</li>
-            <li>Served as Scrum Master for a team of 6+, facilitating sprints, daily meetings, and retrospectives.</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- VIPKID -->
-      <div class="exp-block">
-        <div class="exp-company"><a href="https://www.vipkid.com" target="_blank" rel="noopener" style="color:inherit;">VIPKID</a></div>
-        <div class="exp-loc">Beijing, China</div>
-        <div class="exp-role">
-          <div class="exp-role-hd">
-            <span class="exp-title">Software Engineer &amp; Software Engineer Intern</span>
-            <span class="exp-date">Aug 2016 – Feb 2018</span>
-          </div>
-          <ul class="exp-list">
-            <li>Developed microservices with Flask, gRPC, Java, SpringBoot to support VIPKID App, VIPKID School, internal systems, etc.</li>
-            <li>Constructed asynchronous task system with Celery for Dino English App and its WeChat platform.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
     <!-- TALKS -->
     <section id="talks">
       <div class="sec-heading"><span class="hash">#</span><span class="label">talks &amp; publications</span></div>
@@ -826,6 +754,78 @@
         </div>
         <div id="li-embed" style="display:none; margin-top:0.75rem;">
           <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7380951854135857152" height="680" width="560" frameborder="0" allowfullscreen title="Embedded post" style="max-width:100%; border-radius:4px;"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <div class="sec-heading"><span class="hash">#</span><span class="label">work experience</span></div>
+
+      <!-- Duolingo -->
+      <div class="exp-block">
+        <div class="exp-company"><a href="https://careers.duolingo.com/#careers" target="_blank" rel="noopener" style="color:inherit;">Duolingo</a></div>
+        <div class="exp-loc">Pittsburgh, PA</div>
+
+        <div class="exp-role">
+          <div class="exp-role-hd">
+            <span class="exp-title">Staff Software Engineer</span>
+            <span class="exp-date">Apr 2026 – present</span>
+          </div>
+          <ul class="exp-list">
+            <li>Serving as technical lead for a Temporal infrastructure project team of 5 engineers: defining project direction, mentoring engineers on Temporal internals and infrastructure patterns, and partnering with teams across the org to design and onboard new use cases.</li>
+            <li>Leading zero-downtime, transparent-to-service-teams namespace-by-namespace ECS->EKS migration of the Temporal worker fleet (multiple namespaces fully on EKS); implementing KEDA-based autoscaling to handle unpredictable bursty workflow loads across hundreds of workers.</li>
+            <li>Leading zero-downtime migration of datastores (RDS, DynamoDB, S3) and services from a monolithic AWS account to dedicated accounts for improved security isolation and scalable multi-account management; leveraging Terragrunt to abstract account-level infrastructure (VPC, subnets, peering, etc.); automating CIDR planning based on resource topology, programmatically generating migration playbooks for service teams, and continuously improving migration guides.</li>
+          </ul>
+        </div>
+
+        <div class="exp-role">
+          <div class="exp-role-hd">
+            <span class="exp-title">Senior Software Engineer</span>
+            <span class="exp-date">Feb 2023 – Mar 2026</span>
+          </div>
+          <ul class="exp-list">
+            <li>Championed Temporal adoption at Duolingo from 0->1: introduced the technology, built foundational infrastructure from scratch, fostered a cross-org community, and scaled it into an org-wide durable workflow platform powering 140+ production workflows across 10+ teams with hundreds of workers — establishing Duolingo as a recognized reference implementation in the Temporal ecosystem.</li>
+            <li>Designed and built the Temporal Self-Service Platform — UI, gateway microservice, router workers, shared libraries, and onboarding tooling — enabling 15+ CloudOps self-service workflows (RDS resize, upgrade, deletion, PG replication, Redis->Valkey migration) and saving thousands of engineering hours annually.</li>
+            <li>Improved developer experience in the Temporal monorepo: refactored Dockerfiles, folder structure, and deployment scripts to scale with growing team adoption; shipped Agent Skills for workflow authoring; reduced CI, build, and pre-commit times by 50%; and introduced higher-level abstractions via Temporal Nexus for cross-namespace workflow communication.</li>
+            <li>Implemented full data store disaster recovery via Temporal workflows; designed workflow orchestration patterns for multi-step RDS, DynamoDB, S3, and Redis restoration across AWS regions.</li>
+            <li>Stepped into de facto DBRE ownership; built production-grade monitoring for all Aurora PostgreSQL clusters from scratch — custom exporters, Grafana dashboards (table size trends, slow queries, blocked queries); automated DB upgrades with zero downtime and AI-driven Terraform PR generation; upgraded 30+ Aurora PostgreSQL clusters v11->v14 in under one month with zero learner impact.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- data.ai -->
+      <div class="exp-block">
+        <div class="exp-company"><a href="https://www.data.ai" target="_blank" rel="noopener" style="color:inherit;">data.ai</a> <span class="exp-company-note">(formerly App Annie)</span></div>
+        <div class="exp-loc">Beijing, China</div>
+        <div class="exp-role">
+          <div class="exp-role-hd">
+            <span class="exp-title">Senior Backend Software Engineer &amp; Scrum Master</span>
+            <span class="exp-date">Feb 2018 – Jul 2021</span>
+          </div>
+          <ul class="exp-list">
+            <li>Devised and built a new unified connection workflow to migrate 30+ platforms to microservices with a scalable solution to complete Apple and Google's Multi-Factor Authentication, reducing time cost by 50+% and improving success rate by 30+%.</li>
+            <li>Migrated legacy services from a monolithic Django app to Flask and Go microservices, improving performance by 50%.</li>
+            <li>Enhanced the Node.js scraping framework with Puppeteer for browser-based scraping and integrated Firebase, making data.ai the first in the industry to support it.</li>
+            <li>Developed internal troubleshooting tools and monitoring dashboards, reducing MTTR from over 3 days to 1–2 days.</li>
+            <li>Served as Scrum Master for a team of 6+, facilitating sprints, daily meetings, and retrospectives.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- VIPKID -->
+      <div class="exp-block">
+        <div class="exp-company"><a href="https://www.vipkid.com" target="_blank" rel="noopener" style="color:inherit;">VIPKID</a></div>
+        <div class="exp-loc">Beijing, China</div>
+        <div class="exp-role">
+          <div class="exp-role-hd">
+            <span class="exp-title">Software Engineer &amp; Software Engineer Intern</span>
+            <span class="exp-date">Aug 2016 – Feb 2018</span>
+          </div>
+          <ul class="exp-list">
+            <li>Developed microservices with Flask, gRPC, Java, SpringBoot to support VIPKID App, VIPKID School, internal systems, etc.</li>
+            <li>Constructed asynchronous task system with Celery for Dino English App and its WeChat platform.</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -963,8 +963,8 @@
     // ── Command Palette ───────────────────────────────────
     var cmdItems = [
       { label: 'about',             key: '#', href: '#about' },
-      { label: 'work experience',   key: '#', href: '#experience' },
       { label: 'talks & publications', key: '#', href: '#talks' },
+      { label: 'work experience',   key: '#', href: '#experience' },
       { label: 'education',         key: '#', href: '#education' },
       { label: 'resume (pdf)',      key: '↗', href: 'resource/zhihao-wang-resume.pdf' },
       { label: 'linkedin',          key: '↗', href: 'https://linkedin.com/in/zhihao-wang' },
