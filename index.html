@@ -931,7 +931,7 @@
     <span>&copy; <span id="yr"></span> zhihao wang &nbsp;·&nbsp; <span class="tooltip-wrap" id="uptime-wrap" style="cursor:default;">
       <span id="uptime" style="border-bottom:1px dotted var(--faint);"></span>
       <span class="tooltip-box">time since starting 1st job (Aug 1, 2016)</span>
-    </span></span>
+    </span>&nbsp;·&nbsp;<span id="visitor-count" style="border-bottom:1px dotted var(--faint);">visits: ...</span></span>
     <div class="footer-links">
       <a href="https://linkedin.com/in/zhihao-wang" target="_blank" rel="noopener">linkedin</a>
       <a href="https://github.com/wangzhihao0629" target="_blank" rel="noopener">github</a>
@@ -1070,6 +1070,21 @@
       var remDays = days % 30;
       var s = 'uptime: ' + years + 'y ' + rem + 'm ' + remDays + 'd';
       document.getElementById('uptime').textContent = s;
+    })();
+
+
+    // Visitor Count
+    (function() {
+      fetch('https://api.counterapi.dev/v2/zhihaowang-me/zhihaowang-me/up')
+        .then(res => res.json())
+        .then(data => {
+          if (data && data.data && data.data.up_count !== undefined) {
+            document.getElementById('visitor-count').textContent = 'visits: ' + data.data.up_count.toLocaleString();
+          }
+        })
+        .catch(err => {
+          document.getElementById('visitor-count').style.display = 'none';
+        });
     })();
 
 
