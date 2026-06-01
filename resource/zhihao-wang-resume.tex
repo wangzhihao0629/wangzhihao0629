@@ -1,0 +1,179 @@
+ %-------------------------
+% Resume in LaTeX
+% Author: Zhihao Wang
+%
+% HOW TO EDIT THIS RESUME:
+%   - Each section is clearly marked with %----- banners
+%   - To add a job:        copy a \resumeSubheading block + \resumeItemListStart...\resumeItemListEnd
+%   - To add a bullet:     copy a \resumeItem{...} line inside \resumeItemListStart...\resumeItemListEnd
+%   - To add a project:    copy a \resumeProjectHeading block + \resumeItemListStart...\resumeItemListEnd
+%   - To adjust spacing:   see "SPACING TWEAKS" section below
+%-------------------------
+\documentclass[letterpaper,10pt]{extarticle}
+\usepackage[T1]{fontenc}
+\usepackage{latexsym}
+% geometry handles all margins; fullpage removed to avoid conflicts
+\usepackage[top=0.3in, bottom=0.3in, left=0.3in, right=0.3in]{geometry}
+\setlength{\footskip}{4pt} % prevents fancyhdr footskip warning
+\usepackage{lmodern}        % provides bold + small-caps font shapes,
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\renewcommand{\baselinestretch}{1.05}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+% ---- SECTION TITLE STYLE: vspace controls gap above section, titlerule is the horizontal line ----
+\titleformat{\section}{
+  \vspace{-8pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-4pt}]
+%-------------------------
+% SPACING TWEAKS
+%   \resumeSubHeadingListStart: itemsep = gap between jobs/schools/projects
+%   \resumeItemListStart:        itemsep = gap between bullet points (negative = tighter)
+%                                topsep  = gap between job title row and first bullet
+%   \resumeSubheading:           \vspace{-Xpt} at end = gap after the title/subtitle row
+%-------------------------
+\newcommand{\resumeItem}[1]{
+  \item\small{#1}
+}
+% ---- JOB / EDUCATION ENTRY: {Company}{Location}{Title}{Date} ----
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \small #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+% ---- CONTINUED ROLE (same company, no repeated name/location) ----
+\newcommand{\resumeSubheadingContinued}[2]{
+  \vspace{-8pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-5pt}
+}
+\newcommand{\resumeProjectHeading}[2]{
+  \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \small #2 \\
+    \end{tabular*}\vspace{-5pt}
+}
+% ---- Outer list (wraps jobs, schools, projects) ----
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.1in, label={}, topsep=0pt, itemsep=4pt, parsep=0pt]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{-2pt}}
+% ---- Inner list (bullet points under each job/project) ----
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.18in, label=\textbullet, topsep=6pt, itemsep=2pt, parsep=0pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-2pt}}
+%-------------------------------------------
+\begin{document}
+%===========================================
+% SECTION: HEADER
+% Edit your name, phone, email, and LinkedIn URL below
+%===========================================
+\begin{center}
+  \textbf{\LARGE \scshape Zhihao Wang} \\ \vspace{2pt}
+  \small +1 (412) 214-2196 $|$
+  \href{mailto:wangzhihao0629@gmail.com}{wangzhihao0629@gmail.com} $|$
+  \href{https://linkedin.com/in/zhihao-wang}{linkedin.com/in/zhihao-wang}
+\end{center}
+\vspace{-6pt}
+%===========================================
+% SECTION: EDUCATION
+% Format: \resumeSubheading{School}{Location}{Degree}{Date}
+%===========================================
+\section{Education}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Carnegie Mellon University, School of Computer Science}{Pittsburgh, PA}
+    {Master of Software Engineering}{Aug 2021 -- Dec 2022}
+  \resumeSubheading
+    {China University of Mining and Technology, Beijing, School of Science}{Beijing, China}
+    {Bachelor of Science in Information and Computing Science}{Sep 2013 -- Jun 2017}
+  \resumeSubheading
+    {Peking University, National School of Development}{Beijing, China}
+    {Bachelor of Economics (double major)}{Sep 2014 -- Jul 2017}
+\resumeSubHeadingListEnd
+%===========================================
+% SECTION: WORK EXPERIENCE
+% Format: \resumeSubheading{Company}{Location}{Title}{Date}
+% Then add bullets inside \resumeItemListStart ... \resumeItemListEnd
+% To add a new job: copy one full block (subheading + item list)
+%===========================================
+\section{Experience}
+\resumeSubHeadingListStart
+  % ---- JOB 1 ----
+  \resumeSubheading
+    {Duolingo}{Pittsburgh, PA}
+    {Staff Software Engineer}{Apr 2026 -- Present}
+    \resumeItemListStart
+      \resumeItem{Serving as technical lead for a Temporal infrastructure project team of 5 engineers: defining project direction, mentoring engineers on Temporal internals and infrastructure patterns, and partnering with teams across the org to design and onboard new use cases.}
+      \resumeItem{Leading zero-downtime, transparent-to-service-teams namespace-by-namespace ECS$\to$EKS migration of the Temporal worker fleet (multiple namespaces fully on EKS); implementing KEDA-based autoscaling to handle unpredictable bursty workflow loads across hundreds of workers.}
+      \resumeItem{Leading zero-downtime migration of datastores (RDS, DynamoDB, S3) and services from a monolithic AWS account to dedicated accounts for improved security isolation and scalable multi-account management; leveraging Terragrunt to abstract account-level infrastructure (VPC, subnets, peering, etc.); automating CIDR planning based on resource topology, programmatically generating migration playbooks for service teams, and continuously improving migration guides.}
+    \resumeItemListEnd
+  \resumeSubheadingContinued{Senior Software Engineer}{Feb 2023 -- Mar 2026}
+    \resumeItemListStart
+      \resumeItem{Championed Temporal adoption at Duolingo from 0$\to$1: introduced the technology, built foundational infrastructure from scratch, fostered a cross-org community, and scaled it into an org-wide durable workflow platform powering 140+ production workflows across 10+ teams with hundreds of workers — establishing Duolingo as a recognized reference implementation in the Temporal ecosystem.}
+      \resumeItem{Designed and built the Temporal Self-Service Platform — UI, gateway microservice, router workers, shared libraries, and onboarding tooling — enabling 15+ CloudOps self-service workflows (RDS resize, upgrade, deletion, PG replication, Redis$\to$Valkey migration) and saving thousands of engineering hours annually.}
+      \resumeItem{Improved developer experience in the Temporal monorepo: refactored Dockerfiles, folder structure, and deployment scripts to scale with growing team adoption; shipped Agent Skills for workflow authoring; reduced CI, build, and pre-commit times by 50\%; and introduced higher-level abstractions via Temporal Nexus for cross-namespace workflow communication.}
+      \resumeItem{Implemented full data store disaster recovery via Temporal workflows; designed workflow orchestration patterns for multi-step RDS, DynamoDB, S3, and Redis restoration across AWS regions.}
+      \resumeItem{Stepped into de facto DBRE ownership; built production-grade monitoring for all Aurora PostgreSQL clusters from scratch — custom exporters, Grafana dashboards (table size trends, slow queries, blocked queries); automated DB upgrades with zero downtime and AI-driven Terraform PR generation; upgraded 30+ Aurora PostgreSQL clusters v11$\to$v14 in under one month with zero learner impact.}
+    \resumeItemListEnd
+  % ---- JOB 2 ----
+  \resumeSubheading
+    {data.ai (formerly App Annie)}{Beijing, China}
+    {Senior Backend Software Engineer \& Scrum Master}{Feb 2018 -- Jul 2021}
+    \resumeItemListStart
+      \resumeItem{Migrated monolithic Django service to Flask and Go microservices on ECS; built unified query translation, data aggregation, and permission control — improving API performance by 50+\%.}
+      \resumeItem{Built unified connection workflow migrating 30+ platform integrations to microservices with scalable MFA handling for Apple and Google — cutting connection time by 50+\% and improving success rate by 30+\%.}
+      \resumeItem{Built monitoring dashboards and troubleshooting tooling for data scraping and ETL pipelines, reducing MTTR by 50+\%.}
+    \resumeItemListEnd
+  % ---- JOB 3 ----
+  \resumeSubheading
+    {VIPKID}{Beijing, China}
+    {Software Engineer}{Aug 2016 -- Feb 2018}
+    \resumeItemListStart
+      \resumeItem{Built microservices (Flask, gRPC, Java, SpringBoot) for VIPKID App and internal systems; built async Celery task pipelines.}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+%===========================================
+% SECTION: TALKS & PUBLICATIONS
+%===========================================
+\section{Talks \& Publications}
+\resumeSubHeadingListStart
+  \resumeProjectHeading
+    {\href{https://temporal.io/resources/on-demand/how-duolingo-built-workflow-as-a-service-with-temporal-nexus}{\textbf{How Duolingo Built Workflow-as-a-Service with Temporal Nexus}} $|$ \textit{Talk, Temporal Replay}}{2026}
+  \resumeProjectHeading
+    {\href{https://www.youtube.com/watch?v=tJ1OwSFokOg}{\textbf{Scaling Developer Productivity with Temporal Nexus \& Duolingo}} $|$ \textit{Webinar}}{2025}
+  \resumeProjectHeading
+    {\href{https://temporal.io/resources/case-studies/duolingo-temporal-nexus}{\textbf{Duolingo simplifies self-service infrastructure with Temporal Nexus}} $|$ \textit{Case Study, Temporal.io}}{2025}
+\resumeSubHeadingListEnd
+\vspace{6pt}
+%===========================================
+% SECTION: SKILLS
+% Add or remove skill categories by editing the lines below.
+% Each line ends with \\ to move to the next row.
+% The last line should NOT have \\ at the end.
+%===========================================
+\section{Skills}
+\begin{itemize}[leftmargin=0.1in, label={}, topsep=2pt, itemsep=1pt, parsep=0pt]
+  \small{\item{
+    \textbf{Languages:} Python, Go, JavaScript, Java, C++, C, SQL, R \\
+    \textbf{Cloud:} AWS (Solutions Architect Professional), EC2, ECS, EKS, IAM; Terraform, Terragrunt, Docker, Kubernetes \\
+    \textbf{Data Storage:} PostgreSQL, MySQL, Redis/Valkey, DynamoDB, S3 \\
+    \textbf{Workflow \& Observability:} Temporal, Grafana, Sentry, Honeycomb, Kibana, Datadog, New Relic
+  }}
+\end{itemize}
+
+\end{document}
