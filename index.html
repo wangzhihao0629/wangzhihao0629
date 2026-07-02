@@ -570,18 +570,6 @@
     /* ── NAV ACTIVE ─────────────────────────────────────── */
     .nav-links a.nav-active { color: var(--text); }
 
-    /* ── TOGGLE BUTTONS ───────────────────────────────── */
-    .toggle-btn {
-      background: none;
-      border: none;
-      font-family: inherit;
-      font-size: 0.75rem;
-      color: var(--dim);
-      cursor: pointer;
-      padding: 0;
-    }
-    .toggle-btn-sm { font-size: 0.72rem; }
-
   </style>
 </head>
 
@@ -674,9 +662,8 @@
           <span class="arg">log --oneline career</span>
         </div>
         <div style="margin-top:0.35rem;">
-          <button type="button" class="toggle-btn" data-panel="git-log"
-            data-expand-label="[+ git log]" data-collapse-label="[- git log]"
-            aria-expanded="false" aria-controls="git-log">[+ git log]</button>
+          <button onclick="var l=document.getElementById('git-log');var open=l.style.display==='block';l.style.display=open?'none':'block';this.textContent=open?'[+ git log]':'[- git log]';"
+            style="background:none;border:none;font-family:inherit;font-size:0.75rem;color:var(--dim);cursor:pointer;padding:0;">[+ git log]</button>
         </div>
         <div id="git-log" style="display:none; margin-top:0.5rem; font-family:inherit; font-size:0.8rem; line-height:1.9; padding-left:0.1rem;">
           <div><span style="color:var(--green);">f6g7h8i</span> <span style="color:var(--faint);">2026-04</span> &nbsp;<span style="color:var(--cyan);">promo: Staff Software Engineer</span> <span style="color:var(--purple);">(HEAD)</span></div>
@@ -707,12 +694,10 @@
             </div>
             <div style="margin-top:0.35rem; display:flex; gap:0.75rem; align-items:center; flex-wrap:wrap;">
               <a href="resource/slides/From-Bottlenecks-to-Self-Service-How-Duolingo-Built-Workflow-as-a-Service-with-Temporal-Nexus.pdf" target="_blank" rel="noopener" style="font-size:0.75rem; color:var(--dim);">slides ↗</a>
-              <button type="button" class="toggle-btn" data-panel="replay-yt-embed"
-                data-expand-label="[+ watch here]" data-collapse-label="[- watch here]"
-                aria-expanded="false" aria-controls="replay-yt-embed">[+ watch here]</button>
-              <button type="button" class="toggle-btn" data-panel="replay-li-embed"
-                data-expand-label="[+ linkedin post]" data-collapse-label="[- linkedin post]"
-                aria-expanded="false" aria-controls="replay-li-embed">[+ linkedin post]</button>
+              <button onclick="var p=document.getElementById('replay-yt-embed');var open=p.style.display==='block';p.style.display=open?'none':'block';this.textContent=open?'[+ watch here]':'[- watch here]';"
+                style="background:none;border:none;font-family:inherit;font-size:0.75rem;color:var(--dim);cursor:pointer;padding:0;">[+ watch here]</button>
+              <button onclick="var p=document.getElementById('replay-li-embed');var open=p.style.display==='block';p.style.display=open?'none':'block';this.textContent=open?'[+ linkedin post]':'[- linkedin post]';"
+                style="background:none;border:none;font-family:inherit;font-size:0.75rem;color:var(--dim);cursor:pointer;padding:0;">[+ linkedin post]</button>
             </div>
           </div>
           <div class="talk-year">Apr 2026</div>
@@ -737,12 +722,10 @@
               </a>
             </div>
             <div style="margin-top:0.35rem; display:flex; gap:1rem;">
-              <button type="button" class="toggle-btn" data-panel="yt-embed"
-                data-expand-label="[+ watch here]" data-collapse-label="[- watch here]"
-                aria-expanded="false" aria-controls="yt-embed">[+ watch here]</button>
-              <button type="button" class="toggle-btn" data-panel="webinar-li-embed"
-                data-expand-label="[+ linkedin post]" data-collapse-label="[- linkedin post]"
-                aria-expanded="false" aria-controls="webinar-li-embed">[+ linkedin post]</button>
+              <button onclick="var p=document.getElementById('yt-embed');var open=p.style.display==='block';p.style.display=open?'none':'block';this.textContent=open?'[+ watch here]':'[- watch here]';"
+                style="background:none;border:none;font-family:inherit;font-size:0.75rem;color:var(--dim);cursor:pointer;padding:0;">[+ watch here]</button>
+              <button onclick="var p=document.getElementById('webinar-li-embed');var open=p.style.display==='block';p.style.display=open?'none':'block';this.textContent=open?'[+ linkedin post]':'[- linkedin post]';"
+                style="background:none;border:none;font-family:inherit;font-size:0.75rem;color:var(--dim);cursor:pointer;padding:0;">[+ linkedin post]</button>
             </div>
           </div>
           <div class="talk-year">Feb 2025</div>
@@ -768,9 +751,8 @@
               </a>
             </div>
             <div style="margin-top:0.35rem;">
-              <button type="button" class="toggle-btn" data-panel="li-embed"
-                data-expand-label="[+ linkedin post]" data-collapse-label="[- linkedin post]"
-                aria-expanded="false" aria-controls="li-embed">[+ linkedin post]</button>
+              <button onclick="var p=document.getElementById('li-embed');var open=p.style.display==='block';p.style.display=open?'none':'block';this.textContent=open?'[+ linkedin post]':'[- linkedin post]';"
+                style="background:none;border:none;font-family:inherit;font-size:0.75rem;color:var(--dim);cursor:pointer;padding:0;">[+ linkedin post]</button>
             </div>
           </div>
           <div class="talk-year">Oct 2025</div>
@@ -870,9 +852,8 @@
           </div>
         </div>
         <div style="margin-top:0.4rem;">
-          <button type="button" class="toggle-btn toggle-btn-sm" data-panel="cmu-courses"
-            data-expand-label="[+ projects &amp; courses]" data-collapse-label="[- projects &amp; courses]"
-            aria-expanded="false" aria-controls="cmu-courses">[+ projects &amp; courses]</button>
+          <button onclick="var p=document.getElementById('cmu-courses');var open=p.style.display==='block';p.style.display=open?'none':'block';this.textContent=open?'[+ projects &amp; courses]':'[- projects &amp; courses]';"
+            style="background:none;border:none;font-family:inherit;font-size:0.72rem;color:var(--dim);cursor:pointer;padding:0;">[+ projects &amp; courses]</button>
           <div id="cmu-courses" style="display:none; margin-top:0.4rem; font-size:0.72rem; color:var(--faint); line-height:1.7;">
             <div style="color:var(--dim); margin-bottom:0.2rem;">Courses</div>
             <div>· <span style="color:var(--dim);">Systems:</span> Introduction to Computer Systems, Distributed Systems, Database Systems, Advanced Cloud Computing</div>
@@ -897,9 +878,8 @@
           </div>
         </div>
         <div style="margin-top:0.4rem;">
-          <button type="button" class="toggle-btn toggle-btn-sm" data-panel="pku-courses"
-            data-expand-label="[+ projects, courses &amp; activities]" data-collapse-label="[- projects, courses &amp; activities]"
-            aria-expanded="false" aria-controls="pku-courses">[+ projects, courses &amp; activities]</button>
+          <button onclick="var p=document.getElementById('pku-courses');var open=p.style.display==='block';p.style.display=open?'none':'block';this.textContent=open?'[+ projects, courses &amp; activities]':'[- projects, courses &amp; activities]';"
+            style="background:none;border:none;font-family:inherit;font-size:0.72rem;color:var(--dim);cursor:pointer;padding:0;">[+ projects, courses &amp; activities]</button>
           <div id="pku-courses" style="display:none; margin-top:0.4rem; font-size:0.72rem; color:var(--faint); line-height:1.7;">
             <div style="color:var(--dim); margin-bottom:0.2rem;">Coursework &amp; Research</div>
             <div>· <span style="color:var(--dim);">Selected Courses:</span> Econometrics, Intermediate Microeconomics, Intermediate Macroeconomics, Financial Theory &amp; Financial Markets, Game Theory, Internet Finance, Industrial Organization, Currency Banking, Educational Economics</div>
@@ -928,9 +908,8 @@
           </div>
         </div>
         <div style="margin-top:0.4rem;">
-          <button type="button" class="toggle-btn toggle-btn-sm" data-panel="cumtb-courses"
-            data-expand-label="[+ courses]" data-collapse-label="[- courses]"
-            aria-expanded="false" aria-controls="cumtb-courses">[+ courses]</button>
+          <button onclick="var p=document.getElementById('cumtb-courses');var open=p.style.display==='block';p.style.display=open?'none':'block';this.textContent=open?'[+ courses]':'[- courses]';"
+            style="background:none;border:none;font-family:inherit;font-size:0.72rem;color:var(--dim);cursor:pointer;padding:0;">[+ courses]</button>
           <div id="cumtb-courses" style="display:none; margin-top:0.4rem; font-size:0.72rem; color:var(--faint); line-height:1.7;">
             Algorithms and Data Structures, Database Theory, Discrete Mathematics, Program Design and C-language, Object-oriented Programming and Applications (C++), JAVA and Network Programming, Software Engineering, Mathematical Analysis, Probability Theory, Advanced Algebra, Mathematical Statistics, Time Series Analysis, Numerical Algebra, Numerical Analysis, Operations Research, Mathematical Modeling
           </div>
@@ -966,19 +945,6 @@
   </footer>
 
   <script>
-    // Expand/collapse panels
-    function togglePanel(btn) {
-      var panel = document.getElementById(btn.dataset.panel);
-      if (!panel) return;
-      var isOpen = panel.style.display === 'block';
-      panel.style.display = isOpen ? 'none' : 'block';
-      btn.textContent = isOpen ? btn.dataset.expandLabel : btn.dataset.collapseLabel;
-      btn.setAttribute('aria-expanded', String(!isOpen));
-    }
-    document.querySelectorAll('[data-panel]').forEach(function (btn) {
-      btn.addEventListener('click', function () { togglePanel(btn); });
-    });
-
     // Theme toggle
     document.getElementById('theme-btn').addEventListener('click', function () {
       var next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
