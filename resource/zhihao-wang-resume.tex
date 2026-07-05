@@ -86,9 +86,10 @@
   \textbf{\LARGE \scshape Zhihao Wang} \\ \vspace{2pt}
   \small +1 (412) 214-2196 $|$
   \href{mailto:wangzhihao0629@gmail.com}{wangzhihao0629@gmail.com} $|$
+  \href{https://zhihaowang.me}{zhihaowang.me} $|$
   \href{https://linkedin.com/in/zhihao-wang}{linkedin.com/in/zhihao-wang}
 \end{center}
-\vspace{-6pt}
+\vspace{-14pt}
 %===========================================
 % SECTION: EDUCATION
 % Format: \resumeSubheading{School}{Location}{Degree}{Date}
@@ -119,14 +120,15 @@
     {Staff Software Engineer}{Apr 2026 -- Present}
     \resumeItemListStart
       \resumeItem{Serving as technical lead for a Temporal infrastructure project team of 5 engineers: defining project direction, mentoring engineers on Temporal internals and infrastructure patterns, and partnering with teams across the org to design and onboard new use cases.}
-      \resumeItem{Leading zero-downtime, transparent-to-service-teams namespace-by-namespace ECS$\to$EKS migration of the Temporal worker fleet (multiple namespaces fully on EKS); implementing KEDA-based autoscaling to handle unpredictable bursty workflow loads across hundreds of workers.}
-      \resumeItem{Leading zero-downtime migration of datastores (RDS, DynamoDB, S3) and services from a monolithic AWS account to dedicated accounts for improved security isolation and scalable multi-account management; leveraging Terragrunt to abstract account-level infrastructure (VPC, subnets, peering, etc.); automating CIDR planning based on resource topology, programmatically generating migration playbooks for service teams, and continuously improving migration guides.}
+      \resumeItem{Leading a zero-downtime, transparent-to-service-teams migration of the Temporal worker fleet from ECS to EKS, namespace by namespace, with KEDA-based autoscaling absorbing unpredictable bursty workflow load; also designing and rolling out a Temporal Codec Server for payload encryption, deploying it gradually and transparently across all Temporal workers org-wide with zero downtime and no disruption to running workflows.}
+      \resumeItem{Leading zero-downtime migration of datastores (RDS, DynamoDB, S3) and services from a monolithic AWS account to dedicated accounts for improved security isolation and scalable multi-account management; leveraging Terragrunt to abstract account-level infrastructure (VPC, subnets, peering, etc.); automating CIDR planning and programmatically generating migration playbooks.}
     \resumeItemListEnd
   \resumeSubheadingContinued{Senior Software Engineer}{Feb 2023 -- Mar 2026}
     \resumeItemListStart
-      \resumeItem{Championed Temporal adoption at Duolingo from 0$\to$1: introduced the technology, built foundational infrastructure from scratch, fostered a cross-org community, and scaled it into an org-wide durable workflow platform powering 140+ production workflows across 10+ teams with hundreds of workers — establishing Duolingo as a recognized reference implementation in the Temporal ecosystem.}
-      \resumeItem{Designed and built the Temporal Self-Service Platform — UI, gateway microservice, router workers, shared libraries, and onboarding tooling — enabling 15+ CloudOps self-service workflows (RDS resize, upgrade, deletion, PG replication, Redis$\to$Valkey migration) and saving thousands of engineering hours annually.}
-      \resumeItem{Improved developer experience in the Temporal monorepo: refactored Dockerfiles, folder structure, and deployment scripts to scale with growing team adoption; shipped Agent Skills for workflow authoring; reduced CI, build, and pre-commit times by 50\%; and introduced higher-level abstractions via Temporal Nexus for cross-namespace workflow communication.}
+      \resumeItem{Championed Temporal adoption at Duolingo from 0$\to$1: introduced the technology, built foundational infrastructure from scratch, fostered a cross-org community, and scaled it into an org-wide durable workflow platform powering 160+ production workflows across 20+ teams — establishing Duolingo as a recognized Temporal reference implementation.}
+      \resumeItem{Architected the foundational infrastructure for Temporal-based agentic workflows — including shared libraries and Temporal Nexus operations for cross-namespace communication — enabling agent workflows to be exposed and consumed as APIs across teams; integrated Claude Agent SDK, OpenAI Agents SDK, and Codex CLI for multi-step AI-driven automation.}
+      \resumeItem{Designed and built the Temporal Self-Service Platform — UI, gateway microservice, router workers, shared libraries, and onboarding tooling — enabling 15+ CloudOps self-service workflows and saving thousands of engineering hours annually.}
+      \resumeItem{Improved developer experience in the Temporal monorepo: refactored Dockerfiles, folder structure, and deployment scripts to scale with growing team adoption; shipped Agent Skills for workflow authoring; reduced CI, build, and pre-commit times by 50\%.}
       \resumeItem{Implemented full data store disaster recovery via Temporal workflows; designed workflow orchestration patterns for multi-step RDS, DynamoDB, S3, and Redis restoration across AWS regions.}
       \resumeItem{Stepped into de facto DBRE ownership; built production-grade monitoring for all Aurora PostgreSQL clusters from scratch — custom exporters, Grafana dashboards (table size trends, slow queries, blocked queries); automated DB upgrades with zero downtime and AI-driven Terraform PR generation; upgraded 30+ Aurora PostgreSQL clusters v11$\to$v14 in under one month with zero learner impact.}
     \resumeItemListEnd
@@ -137,7 +139,6 @@
     \resumeItemListStart
       \resumeItem{Migrated monolithic Django service to Flask and Go microservices on ECS; built unified query translation, data aggregation, and permission control — improving API performance by 50+\%.}
       \resumeItem{Built unified connection workflow migrating 30+ platform integrations to microservices with scalable MFA handling for Apple and Google — cutting connection time by 50+\% and improving success rate by 30+\%.}
-      \resumeItem{Built monitoring dashboards and troubleshooting tooling for data scraping and ETL pipelines, reducing MTTR by 50+\%.}
     \resumeItemListEnd
   % ---- JOB 3 ----
   \resumeSubheading
@@ -169,10 +170,11 @@
 \section{Skills}
 \begin{itemize}[leftmargin=0.1in, label={}, topsep=2pt, itemsep=1pt, parsep=0pt]
   \small{\item{
-    \textbf{Languages:} Python, Go, JavaScript, Java, C++, C, SQL, R \\
+    \textbf{Languages:} Python, Go, JavaScript, Java, SQL, R \\
     \textbf{Cloud:} AWS (Solutions Architect Professional), EC2, ECS, EKS, IAM; Terraform, Terragrunt, Docker, Kubernetes \\
     \textbf{Data Storage:} PostgreSQL, MySQL, Redis/Valkey, DynamoDB, S3 \\
-    \textbf{Workflow \& Observability:} Temporal, Grafana, Sentry, Honeycomb, Kibana, Datadog, New Relic
+    \textbf{Workflow \& Observability:} Temporal, Grafana, Sentry, Honeycomb, Kibana, Datadog, New Relic \\
+    \textbf{AI/LLM:} OpenAI Agents SDK, Claude Agent SDK, Temporal-based agentic workflow infrastructure
   }}
 \end{itemize}
 
