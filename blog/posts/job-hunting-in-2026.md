@@ -1,7 +1,7 @@
 ---
 title: Job hunting in 2026
 date: 2026-08-30
-excerpt: ""
+subtitle: Placeholder subtitle for the blog list layout.
 ---
 
 :::callout
