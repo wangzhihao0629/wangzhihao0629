@@ -171,7 +171,22 @@ nav {
 
   .blog-page { padding-top: 1.75rem; }
   .post { padding-top: 1.75rem; }
+  .post-header { margin-bottom: 1.5rem; }
   .post-title { font-size: 1.45rem; }
+  .post-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  .post-body pre {
+    font-size: 0.75rem;
+    -webkit-overflow-scrolling: touch;
+  }
+  .post-body table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
   .blog-page .blog-title { font-size: 1.05rem; }
 
   .blog-page .blog-item {
@@ -212,7 +227,8 @@ nav {
 
 footer {
   border-top: 1px solid var(--border);
-  padding: 1.25rem 0 2rem;
+  padding-top: 1.25rem;
+  padding-bottom: 2rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -321,7 +337,10 @@ footer a:hover { color: var(--text); }
 }
 
 /* ── BLOG INDEX ─────────────────────────────────────── */
-.blog-page { padding: 2.5rem 0 3.5rem; }
+.blog-page {
+  padding-top: 2.5rem;
+  padding-bottom: 3.5rem;
+}
 
 .blog-item {
   display: flex;
@@ -398,7 +417,10 @@ footer a:hover { color: var(--text); }
 }
 
 /* ── POST / RICH TEXT ───────────────────────────────── */
-.post { padding: 2.25rem 0 3.5rem; }
+.post {
+  padding-top: 2.25rem;
+  padding-bottom: 3.5rem;
+}
 
 .post-header { margin: 1.25rem 0 2rem; }
 
@@ -623,7 +645,8 @@ footer a:hover { color: var(--text); }
 .post-nav a:hover { color: var(--text); text-decoration: none; }
 
 .not-found {
-  padding: 4.5rem 0 5rem;
+  padding-top: 4.5rem;
+  padding-bottom: 5rem;
 }
 .not-found h1 {
   font-size: 1.4rem;
