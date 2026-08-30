@@ -2,7 +2,7 @@
 <html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="description" content="Zhihao Wang — Staff Software Engineer. Distributed systems, cloud infrastructure, developer productivity." />
   <title>Zhihao Wang</title>
 
@@ -44,6 +44,7 @@
       --yellow:   #e0af68;
       --purple:   #bb9af7;
       --link:     #7aa2f7;
+      --page-gutter: 1.5rem;
     }
     [data-theme="light"] {
       --bg:       #ffffff;
@@ -91,7 +92,8 @@
       width: 100%;
       max-width: 860px;
       margin: 0 auto;
-      padding: 0 1.5rem;
+      padding-left: max(var(--page-gutter), env(safe-area-inset-left, 0px));
+      padding-right: max(var(--page-gutter), env(safe-area-inset-right, 0px));
     }
 
     /* ── NAV ───────────────────────────────────────────── */
@@ -160,6 +162,13 @@
     }
 
     @media (max-width: 640px) {
+      :root, [data-theme="dark"], [data-theme="light"] {
+        --page-gutter: 1.75rem;
+      }
+
+      html { -webkit-text-size-adjust: 100%; }
+      body { overflow-x: hidden; }
+
       .mobile-btn { display: block; }
       .nav-links {
         display: none;
@@ -168,13 +177,24 @@
         left: 0; right: 0;
         flex-direction: column;
         align-items: flex-start;
-        padding: 0.75rem 1.5rem 1rem;
+        padding-top: 0.75rem;
+        padding-bottom: 1rem;
+        padding-left: max(var(--page-gutter), env(safe-area-inset-left, 0px));
+        padding-right: max(var(--page-gutter), env(safe-area-inset-right, 0px));
         gap: 0.85rem;
         background: var(--bg);
         border-bottom: 1px solid var(--border);
       }
       .nav-links.open { display: flex; }
       nav { position: sticky; }
+
+      footer.wrap {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.85rem;
+        padding-bottom: max(2rem, calc(env(safe-area-inset-bottom, 0px) + 1rem));
+      }
+
       .edu-row { display: block; }
       .edu-row > [style*="text-align:right"] { text-align: left !important; }
     }
