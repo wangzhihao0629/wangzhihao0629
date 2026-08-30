@@ -74,7 +74,7 @@
   }
 
   function applyPostMeta(post) {
-    var url = 'https://zhihaowang.me/blog/' + post.slug + '/';
+    var url = 'https://zhihaowang.me/blog/' + post.slug;
     var desc = post.excerpt || (post.title + ' — Zhihao Wang');
     document.title = post.title + ' — Zhihao Wang';
     setMeta('description', desc);
@@ -130,7 +130,7 @@
     if (!root) return;
     var home = root.getAttribute('data-variant') === 'home';
     root.innerHTML = posts.map(function (post) {
-      var href = '/blog/' + post.slug + '/';
+      var href = '/blog/' + post.slug;
       var date = formatDate(post.date, 'short');
       if (home) {
         return (
@@ -165,13 +165,13 @@
     var i;
     for (i = items.length - 1; i >= 0; i--) {
       var href = items[i].href || '';
-      if (href.indexOf('/blog/') === 0 && href !== '/blog/' && href !== '/blog') {
+      if (/^\/blog\/[^/]+\/?$/.test(href)) {
         items.splice(i, 1);
       }
     }
     var insertAt = items.length;
     for (i = 0; i < items.length; i++) {
-      if ((items[i].href || '') === '/blog/') {
+      if ((items[i].href || '').replace(/\/+$/, '') === '/blog') {
         insertAt = i + 1;
         break;
       }
@@ -180,7 +180,7 @@
       items.splice(insertAt + n, 0, {
         label: p.title,
         key: '·',
-        href: '/blog/' + p.slug + '/'
+        href: '/blog/' + p.slug
       });
     });
     if (typeof window.refreshCmdItems === 'function') window.refreshCmdItems();
