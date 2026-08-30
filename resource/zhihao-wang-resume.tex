@@ -84,8 +84,7 @@
 %===========================================
 \begin{center}
   \textbf{\LARGE \scshape Zhihao Wang} \\ \vspace{2pt}
-  \small +1 (412) 214-2196 $|$
-  \href{mailto:wangzhihao0629@gmail.com}{wangzhihao0629@gmail.com} $|$
+  \small \href{mailto:zhihaowa@alumni.cmu.edu}{zhihaowa [at] alumni [dot] cmu [dot] edu} $|$
   \href{https://zhihaowang.me}{zhihaowang.me} $|$
   \href{https://linkedin.com/in/zhihao-wang}{linkedin.com/in/zhihao-wang}
 \end{center}
@@ -116,37 +115,38 @@
 \resumeSubHeadingListStart
   % ---- JOB 1 ----
   \resumeSubheading
-    {Duolingo}{Pittsburgh, PA}
-    {Staff Software Engineer}{Apr 2026 -- Present}
+    {Temporal Technologies}{Pittsburgh, PA}
+    {Staff Software Engineer, Infrastructure Foundations}{Sep 2026 -- Present}
     \resumeItemListStart
-      \resumeItem{Serving as technical lead for a Temporal infrastructure project team of 5 engineers: defining project direction, mentoring engineers on Temporal internals and infrastructure patterns, and partnering with teams across the org to design and onboard new use cases.}
-      \resumeItem{Leading a zero-downtime, transparent-to-service-teams migration of the Temporal worker fleet from ECS to EKS, namespace by namespace, with KEDA-based autoscaling absorbing unpredictable bursty workflow load; also designing and rolling out a Temporal Codec Server for payload encryption, deploying it gradually and transparently across all Temporal workers org-wide with zero downtime and no disruption to running workflows.}
-      \resumeItem{Leading zero-downtime migration of datastores (RDS, DynamoDB, S3) and services from a monolithic AWS account to dedicated accounts for improved security isolation and scalable multi-account management; leveraging Terragrunt to abstract account-level infrastructure (VPC, subnets, peering, etc.); automating CIDR planning and programmatically generating migration playbooks.}
+      \resumeItem{Improving the scalability and reliability of Temporal Cloud core infrastructure.}
     \resumeItemListEnd
-  \resumeSubheadingContinued{Senior Software Engineer}{Feb 2023 -- Mar 2026}
+  % ---- JOB 2 ----
+  \resumeSubheading
+    {Duolingo}{Pittsburgh, PA}
+    {Staff Software Engineer, Cloud Operations}{Apr 2026 -- Sep 2026}
     \resumeItemListStart
-      \resumeItem{Championed Temporal adoption at Duolingo from 0$\to$1: introduced the technology, built foundational infrastructure from scratch, fostered a cross-org community, and scaled it into an org-wide durable workflow platform powering 160+ production workflows across 20+ teams — establishing Duolingo as a recognized Temporal reference implementation.}
-      \resumeItem{Architected the foundational infrastructure for Temporal-based agentic workflows — including shared libraries and Temporal Nexus operations for cross-namespace communication — enabling agent workflows to be exposed and consumed as APIs across teams; integrated Claude Agent SDK, OpenAI Agents SDK, and Codex CLI for multi-step AI-driven automation.}
-      \resumeItem{Designed and built the Temporal Self-Service Platform — UI, gateway microservice, router workers, shared libraries, and onboarding tooling — enabling 15+ CloudOps self-service workflows and saving thousands of engineering hours annually.}
-      \resumeItem{Improved developer experience in the Temporal monorepo: refactored Dockerfiles, folder structure, and deployment scripts to scale with growing team adoption; shipped Agent Skills for workflow authoring; reduced CI, build, and pre-commit times by 50\%.}
-      \resumeItem{Implemented full data store disaster recovery via Temporal workflows; designed workflow orchestration patterns for multi-step RDS, DynamoDB, S3, and Redis restoration across AWS regions.}
-      \resumeItem{Stepped into de facto DBRE ownership; built production-grade monitoring for all Aurora PostgreSQL clusters from scratch — custom exporters, Grafana dashboards (table size trends, slow queries, blocked queries); automated DB upgrades with zero downtime and AI-driven Terraform PR generation; upgraded 30+ Aurora PostgreSQL clusters v11$\to$v14 in under one month with zero learner impact.}
+      \resumeItem{Served as technical lead for a Temporal infrastructure project team of 5 engineers: defining project direction, mentoring engineers on Temporal internals and infrastructure patterns, and partnering with teams across the org to design and onboard new use cases, as the platform grew to 15M+ Temporal Cloud actions/month, reinforcing Temporal as core infrastructure at Duolingo.}
+      \resumeItem{Shipped KEDA-based task-queue autoscaling and Kubernetes-native versioned deployments for Temporal workers, after leading a fully transparent migration of the entire worker fleet from ECS to EKS across 20+ namespaces with no action required from workflow owners; also rolled out a payload codec solution giving teams field-level control over sensitive workflow data org-wide.}
+      \resumeItem{Executed zero-downtime cross-account and cross-region migrations of production Aurora PostgreSQL, DynamoDB, and other datastores (S3, cache, etc.) from a monolithic AWS account to dedicated accounts for PII/UGC isolation and scalable multi-account management; leveraged Terragrunt to abstract account-level infrastructure (VPC, subnets, peering, etc.); automated CIDR planning and programmatically generated migration playbooks to de-risk each account cutover.}
+    \resumeItemListEnd
+  \resumeSubheadingContinued{Senior Software Engineer, Cloud Operations}{Feb 2023 -- Mar 2026}
+    \resumeItemListStart
+      \resumeItem{Championed Temporal adoption at Duolingo from 0$\to$1: introduced the technology, built foundational infrastructure from scratch, and scaled it into an org-wide durable workflow platform powering 160+ production workflows across 20+ teams — establishing Duolingo as a recognized Temporal reference implementation featured in Temporal's own case studies and conference talks.}
+      \resumeItem{Built the Temporal Self-Service Platform with Temporal Nexus, enabling 15+ CloudOps self-service workflows and saving thousands of engineering hours annually; integrated Claude Agent SDK, OpenAI Agents SDK, and Codex CLI to power Temporal-based agentic workflows for multi-step AI-driven automation.}
+      \resumeItem{Improved developer experience in the Temporal monorepo — refactored tooling and deployment scripts, shipped Agent Skills for workflow authoring, and reduced CI, build, and pre-commit times by 50\%, accelerating onboarding for new teams.}
+      \resumeItem{Stepped into de facto DBRE ownership: built production-grade Aurora PostgreSQL monitoring from scratch, implemented full data store disaster recovery via Temporal workflows, and upgraded 30+ Aurora clusters v11$\to$v14 in under one month with zero downtime and zero learner impact, backed by custom Grafana dashboards for table size, slow queries, and blocked queries.}
     \resumeItemListEnd
   % ---- JOB 2 ----
   \resumeSubheading
     {data.ai (formerly App Annie)}{Beijing, China}
     {Senior Backend Software Engineer \& Scrum Master}{Feb 2018 -- Jul 2021}
     \resumeItemListStart
-      \resumeItem{Migrated monolithic Django service to Flask and Go microservices on ECS; built unified query translation, data aggregation, and permission control — improving API performance by 50+\%.}
-      \resumeItem{Built unified connection workflow migrating 30+ platform integrations to microservices with scalable MFA handling for Apple and Google — cutting connection time by 50+\% and improving success rate by 30+\%.}
+      \resumeItem{Migrated a Django monolith to Flask/Go microservices on ECS and built a unified connection workflow for 30+ platform integrations with MFA handling for Apple/Google — boosting API performance 50+\% and connection success 30+\%.}
     \resumeItemListEnd
   % ---- JOB 3 ----
   \resumeSubheading
     {VIPKID}{Beijing, China}
     {Software Engineer}{Aug 2016 -- Feb 2018}
-    \resumeItemListStart
-      \resumeItem{Built microservices (Flask, gRPC, Java, SpringBoot) for VIPKID App and internal systems; built async Celery task pipelines.}
-    \resumeItemListEnd
 \resumeSubHeadingListEnd
 %===========================================
 % SECTION: TALKS & PUBLICATIONS
