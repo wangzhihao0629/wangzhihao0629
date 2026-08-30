@@ -46,7 +46,7 @@
     { label: 'talks & publications', key: '#', href: '/#talks' },
     { label: 'work experience',     key: '#', href: '/#experience' },
     { label: 'education',          key: '#', href: '/#education' },
-    { label: 'blog',              key: '/', href: '/blog/' },
+    { label: '/blog',            key: '/', href: '/blog/' },
     { label: 'Job hunting in 2026', key: '·', href: '/blog/job-hunting-in-2026/' },
     { label: 'resume (pdf)',      key: '↗', href: '/resource/zhihao-wang-resume.pdf', external: true },
     { label: 'linkedin',          key: '↗', href: 'https://linkedin.com/in/zhihao-wang', external: true },
@@ -62,9 +62,18 @@
 
     var activeIdx = 0;
 
+    function cmdMatches(item, filter) {
+      var q = (filter || '').toLowerCase();
+      if (!q) return true;
+      if (item.label.toLowerCase().indexOf(q) !== -1) return true;
+      if ((item.href || '').toLowerCase().indexOf(q) !== -1) return true;
+      if ((item.key || '').toLowerCase().indexOf(q) !== -1) return true;
+      return false;
+    }
+
     function renderCmdItems(filter) {
       var filtered = cmdItems.filter(function (i) {
-        return i.label.toLowerCase().includes((filter || '').toLowerCase());
+        return cmdMatches(i, filter);
       });
       activeIdx = 0;
       cmdRes.innerHTML = '';
@@ -122,7 +131,7 @@
           items[activeIdx] && items[activeIdx].classList.add('active');
         } else if (e.key === 'Enter') {
           var filtered = cmdItems.filter(function (i) {
-            return i.label.toLowerCase().includes(cmdInput.value.toLowerCase());
+            return cmdMatches(i, cmdInput.value);
           });
           if (filtered[activeIdx]) goTo(filtered[activeIdx]);
         }
