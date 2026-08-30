@@ -55,6 +55,7 @@ a:hover { text-decoration: underline; }
 ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
 
 .wrap {
+  width: 100%;
   max-width: 860px;
   margin: 0 auto;
   padding: 0 1.5rem;
