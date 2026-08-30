@@ -1,17 +1,17 @@
 /* Shared chrome + blog styles (homepage keeps its own inline CSS). */
 
 :root, [data-theme="dark"] {
-  --bg:       #1a1b26;
-  --bg2:      #24283b;
-  --border:   #292e42;
-  --text:     #c0caf5;
-  --dim:      #565f89;
-  --faint:    #3b4261;
-  --green:    #9ece6a;
-  --cyan:     #7dcfff;
-  --yellow:   #e0af68;
-  --purple:   #bb9af7;
-  --link:     #7aa2f7;
+  --bg:       #282c34;
+  --bg2:      #2c313c;
+  --border:   #3e4451;
+  --text:     #abb2bf;
+  --dim:      #7f848e;
+  --faint:    #5c6370;
+  --green:    #98c379;
+  --cyan:     #56b6c2;
+  --yellow:   #e5c07b;
+  --purple:   #c678dd;
+  --link:     #61afef;
   --page-gutter: 1.5rem;
 }
 [data-theme="light"] {
@@ -223,7 +223,7 @@ nav {
   text-transform: uppercase;
   letter-spacing: 0.06em;
 }
-.badge-blog { background: rgba(224,175,104,.12); color: var(--yellow); }
+.badge-blog { background: color-mix(in srgb, var(--yellow) 12%, transparent); color: var(--yellow); }
 
 footer {
   border-top: 1px solid var(--border);
