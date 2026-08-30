@@ -39,7 +39,7 @@
         slug: slug,
         title: parsed.meta.title || slug,
         date: parsed.meta.date || '',
-        excerpt: parsed.meta.excerpt || '',
+        excerpt: parsed.meta.excerpt || parsed.meta.subtitle || '',
         body: parsed.body,
         html: window.Markdown.toHtml(parsed.body)
       };
@@ -121,6 +121,11 @@
     }
   }
 
+  function listingSubtitleHtml(text) {
+    if (!text) return '';
+    return '<p class="blog-excerpt">' + window.Markdown.renderInline(text) + '</p>';
+  }
+
   function renderListing(posts, root) {
     if (!root) return;
     var home = root.getAttribute('data-variant') === 'home';
@@ -140,17 +145,14 @@
           '</div>'
         );
       }
-      var excerpt = post.excerpt
-        ? '<p class="blog-excerpt">' + window.Markdown.renderInline(post.excerpt) + '</p>'
-        : '';
       return (
         '<article class="blog-item">' +
-          '<div class="blog-date">' + date + '</div>' +
           '<div class="blog-item-main">' +
+            '<div class="blog-date">' + date + '</div>' +
             '<div class="blog-title"><a href="' + href + '">' +
               window.Markdown.renderInline(post.title) +
             '</a></div>' +
-            excerpt +
+            listingSubtitleHtml(post.excerpt) +
           '</div>' +
         '</article>'
       );

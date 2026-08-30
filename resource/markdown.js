@@ -1,5 +1,5 @@
 /* Tiny Markdown → HTML for blog posts. No dependencies.
-   Front matter: --- title / date / excerpt ---
+   Front matter: --- title / date / excerpt / subtitle ---
    Blocks: headings, paragraphs, lists, quotes, fences, tables, hr,
            raw HTML, :::callout fences.
    Inline: `code`, [links](url), ![images](url), **bold**, *italic*. */
