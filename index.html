@@ -92,8 +92,10 @@
       width: 100%;
       max-width: 860px;
       margin: 0 auto;
-      padding-left: max(var(--page-gutter), env(safe-area-inset-left, 0px));
-      padding-right: max(var(--page-gutter), env(safe-area-inset-right, 0px));
+      padding-left: var(--page-gutter);
+      padding-right: var(--page-gutter);
+      padding-left: calc(var(--page-gutter) + env(safe-area-inset-left, 0px));
+      padding-right: calc(var(--page-gutter) + env(safe-area-inset-right, 0px));
     }
 
     /* ── NAV ───────────────────────────────────────────── */
@@ -163,7 +165,7 @@
 
     @media (max-width: 640px) {
       :root, [data-theme="dark"], [data-theme="light"] {
-        --page-gutter: 1.75rem;
+        --page-gutter: 28px;
       }
 
       html { -webkit-text-size-adjust: 100%; }
@@ -179,8 +181,10 @@
         align-items: flex-start;
         padding-top: 0.75rem;
         padding-bottom: 1rem;
-        padding-left: max(var(--page-gutter), env(safe-area-inset-left, 0px));
-        padding-right: max(var(--page-gutter), env(safe-area-inset-right, 0px));
+        padding-left: var(--page-gutter);
+        padding-right: var(--page-gutter);
+        padding-left: calc(var(--page-gutter) + env(safe-area-inset-left, 0px));
+        padding-right: calc(var(--page-gutter) + env(safe-area-inset-right, 0px));
         gap: 0.85rem;
         background: var(--bg);
         border-bottom: 1px solid var(--border);
