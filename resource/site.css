@@ -527,6 +527,9 @@ footer a:hover { color: var(--text); }
 }
 .post-body .callout strong { color: var(--yellow); }
 
+.post-loading { color: var(--faint); }
+.post-body.is-loading { color: var(--faint); }
+
 .post-body .footnotes {
   margin-top: 2.5rem;
   padding-top: 1rem;

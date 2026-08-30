@@ -7,15 +7,6 @@
   <title>404 — Zhihao Wang</title>
   <script>
     (function () {
-      var posts = ['job-hunting-in-2026'];
-      var m = location.pathname.match(/^\/blog\/([a-z0-9-]+)\/?$/);
-      if (m && posts.indexOf(m[1]) !== -1) {
-        var dest = '/blog/' + m[1] + '/';
-        if (location.pathname !== dest) {
-          location.replace(dest);
-          return;
-        }
-      }
       var t = localStorage.getItem('theme') ||
         (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
       document.documentElement.setAttribute('data-theme', t);
@@ -43,7 +34,7 @@
     </div>
   </nav>
 
-  <main class="wrap not-found">
+  <main class="wrap not-found" id="not-found">
     <div class="prompt">
       <span class="ps1">zhihao@portfolio:~$</span>
       <span class="cmd">cat</span>
@@ -51,6 +42,28 @@
     </div>
     <h1>404 — file not found</h1>
     <p>no such path. try <a href="/">~/</a> or <a href="/blog/">~/blog</a>.</p>
+  </main>
+
+  <main class="wrap post" id="post-main" hidden>
+    <div class="prompt">
+      <span class="ps1">zhihao@portfolio:~/blog$</span>
+      <span class="cmd">cat</span>
+      <span class="arg" id="post-file">post.md</span>
+    </div>
+    <header class="post-header">
+      <h1 class="post-title">…</h1>
+      <div class="post-meta">
+        <span class="badge badge-blog">blog</span>
+        <time datetime=""></time>
+      </div>
+    </header>
+    <article class="post-body is-loading" id="post-body">
+      <p class="post-loading">loading…</p>
+    </article>
+    <div class="post-nav">
+      <a href="/blog/">← ~/blog</a>
+      <a href="/">home</a>
+    </div>
   </main>
 
   <div id="cmd-overlay">
@@ -75,5 +88,7 @@
     document.getElementById('missing-path').textContent = location.pathname;
   </script>
   <script src="/resource/site.js"></script>
+  <script src="/resource/markdown.js"></script>
+  <script src="/resource/blog.js"></script>
 </body>
 </html>

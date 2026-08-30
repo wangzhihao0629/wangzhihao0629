@@ -803,16 +803,18 @@
     <!-- BLOG -->
     <section id="blog">
       <div class="sec-heading"><span class="hash">#</span><span class="label">blog</span></div>
-      <div class="blog-item">
-        <div>
-          <div class="talk-meta">
-            <span class="badge badge-blog">blog</span>
+      <div id="blog-list" data-variant="home">
+        <div class="blog-item">
+          <div>
+            <div class="talk-meta">
+              <span class="badge badge-blog">blog</span>
+            </div>
+            <div class="blog-title">
+              <a href="/blog/job-hunting-in-2026/">Job hunting in 2026</a>
+            </div>
           </div>
-          <div class="blog-title">
-            <a href="/blog/job-hunting-in-2026/">Job hunting in 2026</a>
-          </div>
+          <div class="blog-date">Aug 2026</div>
         </div>
-        <div class="blog-date">Aug 2026</div>
       </div>
       <div style="margin-top:0.85rem;">
         <a href="/blog/" style="font-size:0.75rem; color:var(--dim);">~/blog →</a>
@@ -1097,6 +1099,12 @@
       cmdInput.blur();
     }
 
+    window.openCmd = openCmd;
+    window.cmdItems = cmdItems;
+    window.refreshCmdItems = function () {
+      if (overlay.classList.contains('open')) renderCmdItems(cmdInput.value);
+    };
+
     document.addEventListener('keydown', function(e) {
       if (overlay.classList.contains('open')) {
         var items = cmdRes.querySelectorAll('.cmd-item');
@@ -1178,6 +1186,7 @@
       { cmd: 'ls -1 blog/',                      out: ['job-hunting-in-2026'] },
       { cmd: 'echo $MBTI',                      out: 'INFJ' },
     ];
+    window.cycles = cycles;
 
     var cmdEl   = document.getElementById('typed-cmd');
     var outEl   = document.getElementById('typed-out');
@@ -1242,6 +1251,8 @@
     allSections.forEach(function (s) { sectionObserver.observe(s); });
 
   </script>
+  <script src="/resource/markdown.js"></script>
+  <script src="/resource/blog.js"></script>
 
 </body>
 </html>

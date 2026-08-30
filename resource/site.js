@@ -54,7 +54,8 @@
   ];
 
   function initCmd() {
-    var cmdItems = window.SITE_CMD_ITEMS || defaultCmdItems;
+    if (!window.SITE_CMD_ITEMS) window.SITE_CMD_ITEMS = defaultCmdItems;
+    var cmdItems = window.SITE_CMD_ITEMS;
     var overlay  = document.getElementById('cmd-overlay');
     var cmdInput = document.getElementById('cmd-input');
     var cmdRes   = document.getElementById('cmd-results');
@@ -114,6 +115,9 @@
     }
 
     window.openCmd = openCmd;
+    window.refreshCmdItems = function () {
+      if (overlay.classList.contains('open')) renderCmdItems(cmdInput.value);
+    };
 
     document.addEventListener('keydown', function (e) {
       if (overlay.classList.contains('open')) {
