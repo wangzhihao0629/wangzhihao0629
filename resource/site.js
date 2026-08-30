@@ -47,6 +47,7 @@
     { label: 'work experience',     key: '#', href: '/#experience' },
     { label: 'education',          key: '#', href: '/#education' },
     { label: 'blog',              key: '/', href: '/blog/' },
+    { label: 'Job hunting in 2026', key: '·', href: '/blog/job-hunting-in-2026/' },
     { label: 'resume (pdf)',      key: '↗', href: '/resource/zhihao-wang-resume.pdf', external: true },
     { label: 'linkedin',          key: '↗', href: 'https://linkedin.com/in/zhihao-wang', external: true },
     { label: 'github',            key: '↗', href: 'https://github.com/wangzhihao0629', external: true }

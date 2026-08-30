@@ -803,7 +803,17 @@
     <!-- BLOG -->
     <section id="blog">
       <div class="sec-heading"><span class="hash">#</span><span class="label">blog</span></div>
-      <p style="font-size:0.8rem; color:var(--dim);">no posts yet.</p>
+      <div class="blog-item">
+        <div>
+          <div class="talk-meta">
+            <span class="badge badge-blog">blog</span>
+          </div>
+          <div class="blog-title">
+            <a href="/blog/job-hunting-in-2026/">Job hunting in 2026</a>
+          </div>
+        </div>
+        <div class="blog-date">Aug 2026</div>
+      </div>
       <div style="margin-top:0.85rem;">
         <a href="/blog/" style="font-size:0.75rem; color:var(--dim);">~/blog →</a>
       </div>
@@ -1020,6 +1030,7 @@
       { label: 'education',         key: '#', href: '#education' },
       { label: 'blog',              key: '#', href: '#blog' },
       { label: 'all posts',        key: '/', href: '/blog/' },
+      { label: 'Job hunting in 2026', key: '·', href: '/blog/job-hunting-in-2026/' },
       { label: 'resume (pdf)',      key: '↗', href: 'resource/zhihao-wang-resume.pdf' },
       { label: 'linkedin',          key: '↗', href: 'https://linkedin.com/in/zhihao-wang' },
       { label: 'github',            key: '↗', href: 'https://github.com/wangzhihao0629' },
@@ -1155,7 +1166,7 @@
       { cmd: 'echo $LOCATION',                      out: 'Pittsburgh, PA' },
       { cmd: 'ls -1 education/',                out: ['M.S. Software Engineering @ CMU', 'B.S. Economics @ PKU', 'B.S. Information & Computing Science @ CUMTB'] },
       { cmd: 'jq .hobbies profile.json',          out: '["photography", "travel"]' },
-      { cmd: 'ls -1 blog/',                      out: '(empty)' },
+      { cmd: 'ls -1 blog/',                      out: ['job-hunting-in-2026'] },
       { cmd: 'echo $MBTI',                      out: 'INFJ' },
     ];
 
