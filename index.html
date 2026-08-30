@@ -33,17 +33,17 @@
   <style>
     /* ── THEME ─────────────────────────────────────────── */
     :root, [data-theme="dark"] {
-      --bg:       #1a1b26;
-      --bg2:      #24283b;
-      --border:   #292e42;
-      --text:     #c0caf5;
-      --dim:      #565f89;
-      --faint:    #3b4261;
-      --green:    #9ece6a;
-      --cyan:     #7dcfff;
-      --yellow:   #e0af68;
-      --purple:   #bb9af7;
-      --link:     #7aa2f7;
+      --bg:       #2d353b;
+      --bg2:      #343f44;
+      --border:   #4f585e;
+      --text:     #d3c6aa;
+      --dim:      #859289;
+      --faint:    #5c6a72;
+      --green:    #a7c080;
+      --cyan:     #83c092;
+      --yellow:   #dbbc7f;
+      --purple:   #d699b6;
+      --link:     #7fbbb3;
       --page-gutter: 1.5rem;
     }
     [data-theme="light"] {
@@ -429,10 +429,10 @@
       text-transform: uppercase;
       letter-spacing: 0.06em;
     }
-    .badge-talk    { background: rgba(63,185,80,.12); color: var(--green); }
-    .badge-webinar { background: rgba(121,192,255,.12); color: var(--cyan); }
-    .badge-case    { background: rgba(210,168,255,.12); color: var(--purple); }
-    .badge-blog    { background: rgba(224,175,104,.12); color: var(--yellow); }
+    .badge-talk    { background: color-mix(in srgb, var(--green) 12%, transparent); color: var(--green); }
+    .badge-webinar { background: color-mix(in srgb, var(--cyan) 12%, transparent); color: var(--cyan); }
+    .badge-case    { background: color-mix(in srgb, var(--purple) 12%, transparent); color: var(--purple); }
+    .badge-blog    { background: color-mix(in srgb, var(--yellow) 12%, transparent); color: var(--yellow); }
 
     .blog-item {
       display: flex;
