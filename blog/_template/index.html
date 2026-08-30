@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="POST TITLE — Zhihao Wang" />
+  <title>POST TITLE — Zhihao Wang</title>
+
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="POST TITLE" />
+  <meta property="og:description" content="POST TITLE — Zhihao Wang" />
+  <meta property="og:url" content="https://zhihaowang.me/blog/your-slug/" />
+  <meta property="og:image" content="https://zhihaowang.me/resource/zhihao.JPG" />
+  <meta property="article:published_time" content="YYYY-MM-DD" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="POST TITLE — Zhihao Wang" />
+  <meta name="twitter:description" content="POST TITLE — Zhihao Wang" />
+  <link rel="canonical" href="https://zhihaowang.me/blog/your-slug/" />
+
+  <script>
+    (function () {
+      var t = localStorage.getItem('theme') ||
+        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/resource/site.css" />
+</head>
+<body>
+  <div id="progress-bar"></div>
+
+  <nav>
+    <div class="wrap">
+      <div class="nav-inner">
+        <a href="/" class="nav-brand"><span class="dim">~/</span>zhihao</a>
+        <button class="mobile-btn" id="mobile-btn">[menu]</button>
+        <div class="nav-links" id="nav-links">
+          <a href="/">home</a>
+          <a href="/blog/">blog</a>
+          <button class="theme-btn" onclick="openCmd()" style="margin-right:0.25rem;">[/]</button>
+          <button class="theme-btn" id="theme-btn">[theme]</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="wrap post">
+    <div class="prompt">
+      <span class="ps1">zhihao@portfolio:~/blog$</span>
+      <span class="cmd">cat</span>
+      <span class="arg">your-slug.md</span>
+    </div>
+
+    <header class="post-header">
+      <h1 class="post-title">POST TITLE</h1>
+      <div class="post-meta">
+        <span class="badge badge-blog">blog</span>
+        <time datetime="YYYY-MM-DD">Month DD, YYYY</time>
+      </div>
+    </header>
+
+    <article class="post-body">
+      <!--
+        Copy this folder to blog/<slug>/ and replace POST TITLE / your-slug / YYYY-MM-DD.
+        Then add the post to blog/index.html, blog/posts.json, the homepage #blog
+        section, and the command palette.
+
+        Supported markup (styled in /resource/site.css):
+
+          <h2>Section</h2>
+          <h3>Subsection</h3>
+          <p>Paragraph. <strong>bold</strong>, <em>italic</em>,
+             <code>inline code</code>, <a href="https://example.com">link</a>.</p>
+          <ul><li>Bullet</li></ul>
+          <ol><li>Numbered</li></ol>
+          <blockquote><p>Pull quote</p></blockquote>
+          <pre><code>code block</code></pre>
+          <table>…</table>
+          <div class="callout"><strong>// note</strong> — aside</div>
+      -->
+    </article>
+
+    <div class="post-nav">
+      <a href="/blog/">← ~/blog</a>
+      <a href="/">home</a>
+    </div>
+  </main>
+
+  <div id="cmd-overlay">
+    <div id="cmd-box">
+      <div id="cmd-input-wrap">
+        <span class="ps1">:~$</span>
+        <input id="cmd-input" type="text" placeholder="jump to..." autocomplete="off" spellcheck="false" />
+      </div>
+      <div id="cmd-results"></div>
+      <div id="cmd-hint">↑↓ navigate &nbsp;·&nbsp; enter select &nbsp;·&nbsp; esc close &nbsp;·&nbsp; press / to open</div>
+    </div>
+  </div>
+
+  <footer class="wrap">
+    <span>&copy; <span id="yr"></span> zhihao wang &nbsp;·&nbsp; <span class="tooltip-wrap" id="uptime-wrap" style="cursor:default;">
+      <span id="uptime" style="border-bottom:1px dotted var(--faint);"></span>
+      <span class="tooltip-box">time since starting 1st job (Aug 1, 2016)</span>
+    </span>&nbsp;·&nbsp;<span id="visitor-count" style="border-bottom:1px dotted var(--faint);">visits: ...</span></span>
+    <div class="footer-links">
+      <a href="/blog/">blog</a>
+      <a href="https://linkedin.com/in/zhihao-wang" target="_blank" rel="noopener">linkedin</a>
+      <a href="https://github.com/wangzhihao0629" target="_blank" rel="noopener">github</a>
+      <a href="/resource/zhihao-wang-resume.pdf" target="_blank" rel="noopener">resume</a>
+    </div>
+  </footer>
+
+  <script src="/resource/site.js"></script>
+</body>
+</html>

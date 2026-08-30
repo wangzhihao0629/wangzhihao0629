@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Page not found — Zhihao Wang" />
+  <title>404 — Zhihao Wang</title>
+  <script>
+    (function () {
+      var posts = [];
+      var m = location.pathname.match(/^\/blog\/([a-z0-9-]+)\/?$/);
+      if (m && posts.indexOf(m[1]) !== -1) {
+        var dest = '/blog/' + m[1] + '/';
+        if (location.pathname !== dest) {
+          location.replace(dest);
+          return;
+        }
+      }
+      var t = localStorage.getItem('theme') ||
+        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/resource/site.css" />
+</head>
+<body>
+  <div id="progress-bar"></div>
+  <nav>
+    <div class="wrap">
+      <div class="nav-inner">
+        <a href="/" class="nav-brand"><span class="dim">~/</span>zhihao</a>
+        <button class="mobile-btn" id="mobile-btn">[menu]</button>
+        <div class="nav-links" id="nav-links">
+          <a href="/">home</a>
+          <a href="/blog/">blog</a>
+          <button class="theme-btn" onclick="openCmd()" style="margin-right:0.25rem;">[/]</button>
+          <button class="theme-btn" id="theme-btn">[theme]</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="wrap not-found">
+    <div class="prompt">
+      <span class="ps1">zhihao@portfolio:~$</span>
+      <span class="cmd">cat</span>
+      <span class="arg" id="missing-path"></span>
+    </div>
+    <h1>404 — file not found</h1>
+    <p>no such path. try <a href="/">~/</a> or <a href="/blog/">~/blog</a>.</p>
+  </main>
+
+  <div id="cmd-overlay">
+    <div id="cmd-box">
+      <div id="cmd-input-wrap">
+        <span class="ps1">:~$</span>
+        <input id="cmd-input" type="text" placeholder="jump to..." autocomplete="off" spellcheck="false" />
+      </div>
+      <div id="cmd-results"></div>
+      <div id="cmd-hint">↑↓ navigate &nbsp;·&nbsp; enter select &nbsp;·&nbsp; esc close &nbsp;·&nbsp; press / to open</div>
+    </div>
+  </div>
+
+  <footer class="wrap">
+    <span>&copy; <span id="yr"></span> zhihao wang</span>
+    <div class="footer-links">
+      <a href="/blog/">blog</a>
+      <a href="/">home</a>
+    </div>
+  </footer>
+  <script>
+    document.getElementById('missing-path').textContent = location.pathname;
+  </script>
+  <script src="/resource/site.js"></script>
+</body>
+</html>

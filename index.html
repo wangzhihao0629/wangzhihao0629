@@ -407,6 +407,41 @@
     .badge-talk    { background: rgba(63,185,80,.12); color: var(--green); }
     .badge-webinar { background: rgba(121,192,255,.12); color: var(--cyan); }
     .badge-case    { background: rgba(210,168,255,.12); color: var(--purple); }
+    .badge-blog    { background: rgba(224,175,104,.12); color: var(--yellow); }
+
+    .blog-item {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1.5rem;
+      padding: 0.7rem 0;
+      border-bottom: 1px dotted var(--faint);
+    }
+    .blog-item:last-child { border-bottom: none; }
+    .blog-title {
+      font-size: 0.84rem;
+      font-weight: 500;
+    }
+    .blog-title a {
+      color: var(--text);
+      text-decoration: none;
+      transition: color 0.1s;
+    }
+    .blog-title a:hover { color: var(--green); text-decoration: none; }
+    .blog-excerpt {
+      color: var(--dim);
+      font-size: 0.78rem;
+      margin-top: 0.3rem;
+      line-height: 1.65;
+      max-width: 540px;
+    }
+    .blog-date {
+      color: var(--dim);
+      font-size: 0.73rem;
+      white-space: nowrap;
+      flex-shrink: 0;
+      font-style: italic;
+    }
 
     .talk-venue {
       color: var(--dim);
@@ -589,6 +624,7 @@
           <a href="#talks">talks</a>
           <a href="#experience">work</a>
           <a href="#education">edu</a>
+          <a href="/blog/">blog</a>
           <button class="theme-btn" onclick="openCmd()" style="margin-right:0.25rem;">[/]</button>
           <button class="theme-btn" id="theme-btn">[theme]</button>
         </div>
@@ -616,6 +652,7 @@
 
         <div class="hero-links">
           <a href="resource/zhihao-wang-resume.pdf" target="_blank" rel="noopener" class="hl">resume</a>
+          <a href="/blog/" class="hl">blog</a>
           <a href="https://linkedin.com/in/zhihao-wang" target="_blank" rel="noopener" class="hl">linkedin</a>
           <a href="https://github.com/wangzhihao0629" target="_blank" rel="noopener" class="hl">github</a>
           <a href="https://invite.duolingo.com/profile-share-shortlink/jnmPjOa6QRVNkOBG" target="_blank" rel="noopener" class="hl">duolingo</a>
@@ -760,6 +797,15 @@
         <div id="li-embed" style="display:none; margin-top:0.75rem;">
           <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7380951854135857152" height="680" width="560" frameborder="0" allowfullscreen title="Embedded post" style="max-width:100%; border-radius:4px;"></iframe>
         </div>
+      </div>
+    </section>
+
+    <!-- BLOG -->
+    <section id="blog">
+      <div class="sec-heading"><span class="hash">#</span><span class="label">blog</span></div>
+      <p style="font-size:0.8rem; color:var(--dim);">no posts yet.</p>
+      <div style="margin-top:0.85rem;">
+        <a href="/blog/" style="font-size:0.75rem; color:var(--dim);">~/blog →</a>
       </div>
     </section>
 
@@ -938,6 +984,7 @@
       <span class="tooltip-box">time since starting 1st job (Aug 1, 2016)</span>
     </span>&nbsp;·&nbsp;<span id="visitor-count" style="border-bottom:1px dotted var(--faint);">visits: ...</span></span>
     <div class="footer-links">
+      <a href="/blog/">blog</a>
       <a href="https://linkedin.com/in/zhihao-wang" target="_blank" rel="noopener">linkedin</a>
       <a href="https://github.com/wangzhihao0629" target="_blank" rel="noopener">github</a>
       <a href="resource/zhihao-wang-resume.pdf" target="_blank" rel="noopener">resume</a>
@@ -971,6 +1018,8 @@
       { label: 'talks & publications', key: '#', href: '#talks' },
       { label: 'work experience',   key: '#', href: '#experience' },
       { label: 'education',         key: '#', href: '#education' },
+      { label: 'blog',              key: '#', href: '#blog' },
+      { label: 'all posts',        key: '/', href: '/blog/' },
       { label: 'resume (pdf)',      key: '↗', href: 'resource/zhihao-wang-resume.pdf' },
       { label: 'linkedin',          key: '↗', href: 'https://linkedin.com/in/zhihao-wang' },
       { label: 'github',            key: '↗', href: 'https://github.com/wangzhihao0629' },
@@ -1007,6 +1056,10 @@
       if (item.href.startsWith('#')) {
         var target = document.querySelector(item.href);
         if (target) target.scrollIntoView({ behavior: 'smooth' });
+      } else if (item.href.indexOf('://') !== -1) {
+        window.open(item.href, '_blank');
+      } else if (item.href.charAt(0) === '/') {
+        window.location.href = item.href;
       } else {
         window.open(item.href, '_blank');
       }
@@ -1102,6 +1155,7 @@
       { cmd: 'echo $LOCATION',                      out: 'Pittsburgh, PA' },
       { cmd: 'ls -1 education/',                out: ['M.S. Software Engineering @ CMU', 'B.S. Economics @ PKU', 'B.S. Information & Computing Science @ CUMTB'] },
       { cmd: 'jq .hobbies profile.json',          out: '["photography", "travel"]' },
+      { cmd: 'ls -1 blog/',                      out: '(empty)' },
       { cmd: 'echo $MBTI',                      out: 'INFJ' },
     ];
 
