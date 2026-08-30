@@ -39,7 +39,7 @@
         slug: slug,
         title: parsed.meta.title || slug,
         date: parsed.meta.date || '',
-        excerpt: parsed.meta.excerpt || '',
+        excerpt: parsed.meta.excerpt || parsed.meta.subtitle || '',
         body: parsed.body,
         html: window.Markdown.toHtml(parsed.body)
       };
@@ -140,13 +140,14 @@
           '</div>'
         );
       }
-      var excerpt = post.excerpt
-        ? '<p class="blog-excerpt">' + window.Markdown.renderInline(post.excerpt) + '</p>'
+      var excerptText = post.excerpt || post.subtitle || '';
+      var excerpt = excerptText
+        ? '<p class="blog-excerpt">' + window.Markdown.renderInline(excerptText) + '</p>'
         : '';
       return (
         '<article class="blog-item">' +
-          '<div class="blog-date">' + date + '</div>' +
           '<div class="blog-item-main">' +
+            '<div class="blog-date">' + date + '</div>' +
             '<div class="blog-title"><a href="' + href + '">' +
               window.Markdown.renderInline(post.title) +
             '</a></div>' +
