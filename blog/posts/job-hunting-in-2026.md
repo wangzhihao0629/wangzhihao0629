@@ -43,6 +43,39 @@ Aug 2026  job-hunting-in-2026
 | 2026 | Placeholder table cell — replace with real notes. |
 | — | Another row, so the dotted dividers have something to separate. |
 
+## Embeds
+
+YouTube and LinkedIn embeds use raw HTML in the markdown (same URLs as the homepage talks section).
+Wrap each iframe in a `<div>` inside a `<details>` block so the renderer keeps multi-line HTML together.
+
+<details class="post-embed">
+<summary>watch here — Scaling Developer Productivity with Temporal Nexus &amp; Duolingo (YouTube)</summary>
+<div class="post-embed-frame post-embed-frame--yt">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/tJ1OwSFokOg?si=R_EaMaGz_wRYt-TC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+</details>
+
+<details class="post-embed">
+<summary>linkedin post — same webinar</summary>
+<div class="post-embed-frame post-embed-frame--li">
+<iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7430813613768052736" height="680" width="504" frameborder="0" allowfullscreen title="Embedded post"></iframe>
+</div>
+</details>
+
+<details class="post-embed">
+<summary>watch here — From Bottlenecks to Self-Service replay (YouTube)</summary>
+<div class="post-embed-frame post-embed-frame--yt">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/fVWG-Q01a5M?si=gWQAzyd4nPndv-m6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+</details>
+
+<details class="post-embed">
+<summary>linkedin post — replay</summary>
+<div class="post-embed-frame post-embed-frame--li">
+<iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7461118578805612544" height="680" width="504" frameborder="0" allowfullscreen title="Embedded post"></iframe>
+</div>
+</details>
+
 ---
 
 Closing paragraph so the horizontal rule and the back-link below have some air. Delete this file’s
