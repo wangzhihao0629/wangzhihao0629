@@ -140,15 +140,18 @@
           '</div>'
         );
       }
+      var excerpt = post.excerpt
+        ? '<p class="blog-excerpt">' + window.Markdown.renderInline(post.excerpt) + '</p>'
+        : '';
       return (
         '<article class="blog-item">' +
-          '<div>' +
-            '<div class="blog-meta-row"><span class="badge badge-blog">blog</span></div>' +
+          '<div class="blog-date">' + date + '</div>' +
+          '<div class="blog-item-main">' +
             '<div class="blog-title"><a href="' + href + '">' +
               window.Markdown.renderInline(post.title) +
             '</a></div>' +
+            excerpt +
           '</div>' +
-          '<div class="blog-date">' + date + '</div>' +
         '</article>'
       );
     }).join('');
