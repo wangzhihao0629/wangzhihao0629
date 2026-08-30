@@ -121,6 +121,11 @@
     }
   }
 
+  function listingSubtitleHtml(text) {
+    if (!text) return '';
+    return '<p class="blog-excerpt">' + window.Markdown.renderInline(text) + '</p>';
+  }
+
   function renderListing(posts, root) {
     if (!root) return;
     var home = root.getAttribute('data-variant') === 'home';
@@ -140,10 +145,6 @@
           '</div>'
         );
       }
-      var excerptText = post.excerpt || post.subtitle || '';
-      var excerpt = excerptText
-        ? '<p class="blog-excerpt">' + window.Markdown.renderInline(excerptText) + '</p>'
-        : '';
       return (
         '<article class="blog-item">' +
           '<div class="blog-item-main">' +
@@ -151,7 +152,7 @@
             '<div class="blog-title"><a href="' + href + '">' +
               window.Markdown.renderInline(post.title) +
             '</a></div>' +
-            excerpt +
+            listingSubtitleHtml(post.excerpt) +
           '</div>' +
         '</article>'
       );
