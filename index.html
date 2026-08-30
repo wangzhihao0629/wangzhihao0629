@@ -395,6 +395,20 @@
       line-height: 1.7;
       margin-bottom: 0.45rem;
     }
+    .exp-earlier { margin-top: -0.5rem; }
+    .exp-earlier > summary {
+      cursor: pointer;
+      list-style: none;
+      font-size: 0.75rem;
+      color: var(--dim);
+      margin-bottom: 1.75rem;
+    }
+    .exp-earlier > summary::-webkit-details-marker { display: none; }
+    .exp-earlier > summary::before { content: '[+] '; color: var(--faint); }
+    .exp-earlier[open] > summary::before { content: '[-] '; }
+    .exp-earlier > summary:hover { color: var(--text); }
+    .exp-earlier .exp-block:last-child { margin-bottom: 0; }
+
     .exp-list li::before {
       content: '▸';
       color: var(--green);
@@ -902,40 +916,44 @@
         </div>
       </div>
 
-      <!-- data.ai -->
-      <div class="exp-block">
-        <div class="exp-company"><a href="https://www.data.ai" target="_blank" rel="noopener" style="color:inherit;">data.ai</a> <span class="exp-company-note">(formerly App Annie)</span></div>
-        <div class="exp-loc">Beijing, China</div>
-        <div class="exp-role">
-          <div class="exp-role-hd">
-            <span class="exp-title">Senior Backend Software Engineer &amp; Scrum Master</span>
-            <span class="exp-date">Feb 2018 – Jul 2021</span>
-          </div>
-          <ul class="exp-list">
-            <li>Devised and built a new unified connection workflow to migrate 30+ platforms to microservices with a scalable solution to complete Apple and Google's Multi-Factor Authentication, reducing time cost by 50+% and improving success rate by 30+%.</li>
-            <li>Migrated legacy services from a monolithic Django app to Flask and Go microservices, improving performance by 50%.</li>
-            <li>Enhanced the Node.js scraping framework with Puppeteer for browser-based scraping and integrated Firebase, making data.ai the first in the industry to support it.</li>
-            <li>Developed internal troubleshooting tools and monitoring dashboards, reducing MTTR from over 3 days to 1–2 days.</li>
-            <li>Served as Scrum Master for a team of 6+, facilitating sprints, daily meetings, and retrospectives.</li>
-          </ul>
-        </div>
-      </div>
+      <details class="exp-earlier">
+        <summary>earlier experience — data.ai, VIPKID (2016 – 2021)</summary>
 
-      <!-- VIPKID -->
-      <div class="exp-block">
-        <div class="exp-company"><a href="https://www.vipkid.com" target="_blank" rel="noopener" style="color:inherit;">VIPKID</a></div>
-        <div class="exp-loc">Beijing, China</div>
-        <div class="exp-role">
-          <div class="exp-role-hd">
-            <span class="exp-title">Software Engineer &amp; Software Engineer Intern</span>
-            <span class="exp-date">Aug 2016 – Feb 2018</span>
+        <!-- data.ai -->
+        <div class="exp-block">
+          <div class="exp-company"><a href="https://www.data.ai" target="_blank" rel="noopener" style="color:inherit;">data.ai</a> <span class="exp-company-note">(formerly App Annie)</span></div>
+          <div class="exp-loc">Beijing, China</div>
+          <div class="exp-role">
+            <div class="exp-role-hd">
+              <span class="exp-title">Senior Backend Software Engineer &amp; Scrum Master</span>
+              <span class="exp-date">Feb 2018 – Jul 2021</span>
+            </div>
+            <ul class="exp-list">
+              <li>Devised and built a new unified connection workflow to migrate 30+ platforms to microservices with a scalable solution to complete Apple and Google's Multi-Factor Authentication, reducing time cost by 50+% and improving success rate by 30+%.</li>
+              <li>Migrated legacy services from a monolithic Django app to Flask and Go microservices, improving performance by 50%.</li>
+              <li>Enhanced the Node.js scraping framework with Puppeteer for browser-based scraping and integrated Firebase, making data.ai the first in the industry to support it.</li>
+              <li>Developed internal troubleshooting tools and monitoring dashboards, reducing MTTR from over 3 days to 1–2 days.</li>
+              <li>Served as Scrum Master for a team of 6+, facilitating sprints, daily meetings, and retrospectives.</li>
+            </ul>
           </div>
-          <ul class="exp-list">
-            <li>Developed microservices with Flask, gRPC, Java, SpringBoot to support VIPKID App, VIPKID School, internal systems, etc.</li>
-            <li>Constructed asynchronous task system with Celery for Dino English App and its WeChat platform.</li>
-          </ul>
         </div>
-      </div>
+
+        <!-- VIPKID -->
+        <div class="exp-block">
+          <div class="exp-company"><a href="https://www.vipkid.com" target="_blank" rel="noopener" style="color:inherit;">VIPKID</a></div>
+          <div class="exp-loc">Beijing, China</div>
+          <div class="exp-role">
+            <div class="exp-role-hd">
+              <span class="exp-title">Software Engineer &amp; Software Engineer Intern</span>
+              <span class="exp-date">Aug 2016 – Feb 2018</span>
+            </div>
+            <ul class="exp-list">
+              <li>Developed microservices with Flask, gRPC, Java, SpringBoot to support VIPKID App, VIPKID School, internal systems, etc.</li>
+              <li>Constructed asynchronous task system with Celery for Dino English App and its WeChat platform.</li>
+            </ul>
+          </div>
+        </div>
+      </details>
     </section>
 
     <!-- EDUCATION -->
