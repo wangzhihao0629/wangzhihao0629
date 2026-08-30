@@ -1,0 +1,49 @@
+---
+title: Job hunting in 2026
+date: 2026-08-30
+excerpt: ""
+---
+
+:::callout
+**// draft** — placeholder copy so the layout can be checked. Replace everything in this article.
+:::
+
+This is a test paragraph for the blog layout. It should wrap across the same column as the rest of
+the site — nav, prompt, and footer — so a real post does not sit in a narrower well. Links look like
+[this](/blog/), with **bold**, *italic*, and `inline code`
+in the same sentence.
+
+A second paragraph is here to check spacing between blocks. The monospace body should stay readable
+at this width without feeling like a sidebar. If a line still looks cramped, the wrap itself is the
+thing to change, not a second max-width on the article.
+
+## Headings and lists
+
+Section headings render with a `##` prefix. Subsections use `###`.
+
+- Bullet one — a full line of placeholder text so wrapping is obvious.
+- Bullet two with **emphasis** and a [link](https://zhihaowang.me).
+- Bullet three.
+
+1. Numbered item one.
+2. Numbered item two.
+3. Numbered item three.
+
+### A subsection
+
+> A pull quote, left-bordered, for longer excerpts or something someone else said.
+
+```
+zhihao@portfolio:~/blog$ ls -lt
+Aug 2026  job-hunting-in-2026
+```
+
+| When | What this row is for |
+| --- | --- |
+| 2026 | Placeholder table cell — replace with real notes. |
+| — | Another row, so the dotted dividers have something to separate. |
+
+---
+
+Closing paragraph so the horizontal rule and the back-link below have some air. Delete this file’s
+article contents when the real post is ready.

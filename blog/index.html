@@ -29,7 +29,7 @@
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/resource/site.css" />
 </head>
-<body>
+<body class="blog-index">
   <div id="progress-bar"></div>
 
   <nav>
@@ -55,24 +55,16 @@
     </div>
     <p style="font-size:0.8rem; color:var(--dim); margin:0.4rem 0 1.5rem;">notes, in reverse chronological order.</p>
 
-    <!--
-      To add a post:
-        1. Copy blog/_template/ to blog/<slug>/.
-        2. Replace POST TITLE, your-slug, and YYYY-MM-DD in that copy.
-        3. Add an entry below and in blog/posts.json.
-        4. Link it from the homepage #blog section and the command palette.
-    -->
-    <article class="blog-item">
-      <div>
-        <div class="blog-meta-row">
-          <span class="badge badge-blog">blog</span>
+    <div id="blog-list">
+      <article class="blog-item">
+        <div class="blog-date">Aug 2026</div>
+        <div class="blog-item-main">
+          <div class="blog-title">
+            <a href="/blog/job-hunting-in-2026/">Job hunting in 2026</a>
+          </div>
         </div>
-        <div class="blog-title">
-          <a href="/blog/job-hunting-in-2026/">Job hunting in 2026</a>
-        </div>
-      </div>
-      <div class="blog-date">Aug 2026</div>
-    </article>
+      </article>
+    </div>
   </main>
 
   <div id="cmd-overlay">
@@ -100,5 +92,7 @@
   </footer>
 
   <script src="/resource/site.js"></script>
+  <script src="/resource/markdown.js"></script>
+  <script src="/resource/blog.js"></script>
 </body>
 </html>

@@ -1,10 +1,5 @@
 {
   "posts": [
-    {
-      "slug": "job-hunting-in-2026",
-      "title": "Job hunting in 2026",
-      "date": "2026-08-30",
-      "excerpt": ""
-    }
+    "job-hunting-in-2026"
   ]
 }
