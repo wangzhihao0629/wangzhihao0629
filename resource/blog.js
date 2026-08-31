@@ -91,10 +91,20 @@
 
   function fillPost(post) {
     var titleEl = document.querySelector('.post-title');
+    var subtitleEl = document.querySelector('.post-subtitle');
     var timeEl = document.querySelector('.post-header time');
     var fileEl = document.getElementById('post-file');
     var bodyEl = document.getElementById('post-body') || document.querySelector('.post-body');
     if (titleEl) titleEl.textContent = post.title;
+    if (subtitleEl) {
+      if (post.excerpt) {
+        subtitleEl.innerHTML = window.Markdown.renderInline(post.excerpt);
+        subtitleEl.hidden = false;
+      } else {
+        subtitleEl.innerHTML = '';
+        subtitleEl.hidden = true;
+      }
+    }
     if (timeEl) {
       if (post.date) timeEl.setAttribute('datetime', post.date);
       timeEl.textContent = formatDate(post.date, 'long');

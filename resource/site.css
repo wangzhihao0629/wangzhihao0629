@@ -457,6 +457,13 @@ footer a:hover { color: var(--text); }
   color: var(--text);
 }
 
+.post-subtitle {
+  color: var(--dim);
+  font-size: 0.86rem;
+  line-height: 1.55;
+  margin-top: 0.65rem;
+}
+
 .post-meta {
   display: flex;
   flex-wrap: wrap;
