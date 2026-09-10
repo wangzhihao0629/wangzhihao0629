@@ -457,6 +457,14 @@ footer a:hover { color: var(--text); }
   color: var(--text);
 }
 
+.post-subtitle {
+  color: var(--dim);
+  font-size: 0.82rem;
+  line-height: 1.6;
+  margin-top: 0.5rem;
+  max-width: 640px;
+}
+
 .post-meta {
   display: flex;
   flex-wrap: wrap;
@@ -590,6 +598,16 @@ footer a:hover { color: var(--text); }
   padding: 0;
   color: var(--text);
   font-size: inherit;
+}
+
+.post-body .dotline {
+  border-bottom: 1px dotted var(--faint);
+  padding-bottom: 1px;
+}
+
+.post-body .underline {
+  border-bottom: 1px solid var(--text);
+  padding-bottom: 1px;
 }
 
 .post-body img {

@@ -122,6 +122,24 @@
         }
       }
 
+      if (starts('__', i)) {
+        var dotEnd = s.indexOf('__', i + 2);
+        if (dotEnd !== -1) {
+          html += '<span class="dotline">' + renderInline(s.slice(i + 2, dotEnd)) + '</span>';
+          i = dotEnd + 2;
+          continue;
+        }
+      }
+
+      if (starts('++', i)) {
+        var underEnd = s.indexOf('++', i + 2);
+        if (underEnd !== -1) {
+          html += '<span class="underline">' + renderInline(s.slice(i + 2, underEnd)) + '</span>';
+          i = underEnd + 2;
+          continue;
+        }
+      }
+
       html += escapeHtml(s.charAt(i));
       i++;
     }
@@ -171,7 +189,7 @@
   }
 
   function isHtmlBlock(line) {
-    return /^<\/?(div|aside|section|blockquote|table|pre|hr|p|h[1-6]|ul|ol|details|figure|article)\b/i.test(line) ||
+    return /^<\/?(div|aside|section|blockquote|table|pre|hr|p|h[1-6]|ul|ol|details|figure|article|iframe)\b/i.test(line) ||
       /^<!--/.test(line);
   }
 
@@ -294,7 +312,8 @@
         var tag = open ? open[1].toLowerCase() : '';
         var buf = [line];
         i++;
-        if (tag && tag !== 'hr' && !/\/\s*>$/.test(line) && !/^<!--/.test(line)) {
+        var alreadyClosed = tag && new RegExp('</' + tag + '>', 'i').test(line);
+        if (tag && tag !== 'hr' && !/\/\s*>$/.test(line) && !/^<!--/.test(line) && !alreadyClosed) {
           var closer = new RegExp('^</' + tag + '>\\s*$', 'i');
           while (i < lines.length && !closer.test(lines[i])) {
             buf.push(lines[i]);
