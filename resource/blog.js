@@ -101,6 +101,7 @@
         subtitleEl.innerHTML = window.Markdown.renderInline(post.excerpt);
         subtitleEl.hidden = false;
       } else {
+        subtitleEl.innerHTML = '';
         subtitleEl.hidden = true;
       }
     }
