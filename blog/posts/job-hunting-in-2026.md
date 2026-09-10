@@ -56,8 +56,8 @@ code editor half of Silicon Valley switched to this year, and a streaming app mo
 already pay for. Hearing how much bigger the scale was at some of these places than at my own job is what
 actually got me thinking about a move.
 
-> A hiring manager from that same lab, after hearing me talk about my work: "you're exactly the engineer
-> we're looking for."
+> A hiring manager from a frontier AI lab, after hearing me talk about my work: "you're exactly the
+> engineer we're looking for."
 
 That was the real moment I decided to start looking. Right after the conference, that same hiring
 manager — who ran the team responsible for that same workflow engine internally — reached out and asked
