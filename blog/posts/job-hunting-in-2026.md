@@ -61,10 +61,11 @@ move.
 > engineer we're looking for."
 
 That was the real moment I decided to start looking. Right after the conference, that same hiring
-manager — who ran the team responsible for that same workflow engine internally — reached out and asked
-if I wanted to interview. I hadn't applied anywhere yet; the opportunity found me. If there's
-one practical tip in this whole post: go to the conference for whatever you use every day, talk to people,
-and [get on stage if you can](https://temporal.io/resources/on-demand/how-duolingo-built-workflow-as-a-service-with-temporal-nexus).
+manager — who championed Temporal adoption internally at their own company, the same way I did at
+Duolingo — reached out and asked if I wanted to interview. I hadn't applied anywhere yet; the opportunity
+found me. If there's one practical tip in this whole post: go to the conference for whatever you use every
+day, talk to people, and
+[get on stage if you can](https://temporal.io/resources/on-demand/how-duolingo-built-workflow-as-a-service-with-temporal-nexus).
 It beats another cold application.
 
 ```
@@ -278,10 +279,10 @@ no exceptions, so the title on the offer letter and the number underneath it alw
 **2026 broke that coupling.** A few AI companies would hand out a Senior title but pay Staff-level comp,
 which meant the title on the letter stopped being a reliable stand-in for the number — you had to actually
 compare the comp, not the label. And overall it was messier, ending with a call 2022-me wouldn't have
-made. Two finalist offers landed the same day — the workflow-engine company from the conference story,
-and a fast-growing legal-AI startup. Same pitch, same competing number, two different responses: one held
-firm on a rigid pay band, the other moved up within days. I still took the smaller offer, from the
-workflow-engine company. The legal-AI startup was **~$200K ahead** on total comp — officially a Senior
+made. Two finalist offers landed the same day — Temporal, from the conference story, and a fast-growing
+legal-AI startup. Same pitch, same competing number, two different responses: one held firm on a rigid
+pay band, the other moved up within days. I still took the smaller offer, from Temporal. The legal-AI
+startup was **~$200K ahead** on total comp — officially a Senior
 title, but they'd promised Staff-level comp to get me, and they delivered on it — though not really
 apples-to-apples, since theirs was RSUs and mine was stock options with a fixed strike price. RSU value
 scales 1:1 with the stock price; option value doesn't, because the strike price stays fixed while the
@@ -334,9 +335,9 @@ There was a public version of the same argument going around right around then, 
 </div>
 </details>
 
-**I'd rather bet on the domain that's further from being commoditized than on the bigger number.** I think
-the company I picked has real upside over the long run, and I was optimizing for where that bet puts me
-years from now, not for this year's total comp.
+**I'd rather work on deep, large-scale infra than on infra that just chases whatever product wants done
+today.** I'm confident Temporal is going to do well over the long run, and I was optimizing for where
+that bet puts me years from now, not for this year's total comp.
 
 That trade-off didn't exist in 2022 — the money still mattered day-to-day, so the biggest number and the
 better path were usually the same decision. By 2026, comp wasn't the variable that mattered. Career growth
