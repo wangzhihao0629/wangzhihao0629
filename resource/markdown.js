@@ -95,7 +95,7 @@
             html +=
               '<a href="' +
               escapeAttr(safeUrl(s.slice(labelClose + 2, urlEnd))) +
-              '">' +
+              '" target="_blank" rel="noopener noreferrer">' +
               renderInline(s.slice(i + 1, labelClose)) +
               '</a>';
             i = urlEnd + 1;
