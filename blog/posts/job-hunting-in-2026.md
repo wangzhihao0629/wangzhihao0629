@@ -45,16 +45,17 @@ work        █████████████░░░░░░░  9am–
 interviews  ░░░░░░░░░░░░░███████  5pm–9pm
 ```
 
-5pm where I live is 2pm in Silicon Valley — still the middle of their business day, which is the
+5pm in Pittsburgh is 2pm in Silicon Valley — still the middle of their business day, which is the
 whole reason this worked.
 
-Part of that warm pipeline came from something unglamorous: showing up in person. I went to the yearly
-conference for an open-source workflow engine I already used daily at work — not to job hunt, just to
-learn — and ended up talking to engineers from half a dozen companies running the same tool at far bigger
-scale: people from the AI frontier lab behind one of the most-used chatbots on the planet, an AI-native
-code editor half of Silicon Valley switched to this year, and a streaming app most people reading this
-already pay for. Hearing how much bigger the scale was at some of these places than at my own job is what
-actually got me thinking about a move.
+Part of that warm pipeline came from something unglamorous: showing up in person. I went to
+[Temporal Replay](https://temporal.io/replay/2026), the yearly conference for the open-source workflow
+engine I already used daily at work — not to job hunt, just to learn — and ended up talking to engineers
+from half a dozen companies running the same tool at far bigger scale: people from the AI frontier lab
+behind one of the most-used chatbots on the planet, an AI-native code editor half of Silicon Valley
+switched to this year, and a streaming app most people reading this already pay for. Hearing how much
+bigger the scale was at some of these places than at my own job is what actually got me thinking about a
+move.
 
 > A hiring manager from a frontier AI lab, after hearing me talk about my work: "you're exactly the
 > engineer we're looking for."
@@ -63,7 +64,8 @@ That was the real moment I decided to start looking. Right after the conference,
 manager — who ran the team responsible for that same workflow engine internally — reached out and asked
 if I wanted to interview. I hadn't applied anywhere yet; the opportunity found me. If there's
 one practical tip in this whole post: go to the conference for whatever you use every day, talk to people,
-and get on stage if you can. It beats another cold application.
+and [get on stage if you can](https://temporal.io/resources/on-demand/how-duolingo-built-workflow-as-a-service-with-temporal-nexus).
+It beats another cold application.
 
 ```
 2022 funnel
@@ -89,10 +91,9 @@ offer       ██░░░░░░░░░░░░░░░░░░  2
 | Offers | 8 | 2 (+1 reached reference checks, withdrawn after accepting elsewhere) |
 | Offer rate (of companies touched) | ~4% | ~9% |
 | Offer rate, once *any* interview happened | ~40% | ~11% |
-| Offer rate, once a full onsite / final loop happened | ~70% | ~29% |
+| Offer rate, once a full onsite / final loop happened | 80% | ~29% |
 | AI-native companies (of those contacted) | ~4% | ~65% |
 | AI-native companies (of those in the interview loop) | ~5% | ~72% |
-| Metro areas spanned | ~30 | 3 |
 | Strategy | breadth — apply to everything, see who bites | depth — few targets, go deep on each |
 
 ```
@@ -115,10 +116,9 @@ companies I reached out to (20 of 200) turned into a real conversation. In 2026,
 get there. The bottleneck moved: in 2022 the hard part was **getting in the room**; in 2026 it was **what
 happened once I was in it.**
 
-The other two numbers say more about the market than about me. AI companies went from a rounding error in
-2022 (~4% of the list) to **about two-thirds** of a much shorter list in 2026. The search also got
-geographically narrower for reasons that have nothing to do with remote work: ~30 metro areas in 2022,
-**just three** — Bay Area, NYC, remote — in 2026. Going deep meant fewer companies *and* fewer places.
+One more number says more about the market than about me. AI companies went from a rounding error in
+2022 (~4% of the list) to **about two-thirds** of a much shorter list in 2026. Going deep meant fewer
+companies, not just a different mix.
 
 One thing I noticed after the fact: a few weeks after my search ended, Lenny's Jobs published
 [the Lenny 100](https://www.lennysjobs.com/lenny100) — their list of the 100 highest-talent-density,
@@ -145,7 +145,7 @@ zhihao@portfolio:~/job-hunt$ diff 2022.log 2026.log
 ## Why each one was hard
 
 Zoom in on what happened after a company agreed to talk, and it gets sharper. In 2022, half of the 20 companies
-I talked to made it to a full onsite loop, and most of those converted — **7 of 10 (70%).** In 2026, way
+I talked to made it to a full onsite loop, and most of those converted — **8 of 10 (80%).** In 2026, way
 under half of the 18 made it to a full final loop — **only 7 of 18 (39%)** — and even that barely helped:
 **only 2 of 7 converted (29%).** __Two filters stacked instead of one__: 2026 was harder to close *and*
 harder to even reach the end stage.
