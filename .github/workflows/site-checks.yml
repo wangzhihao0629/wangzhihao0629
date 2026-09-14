@@ -1,0 +1,23 @@
+name: Site checks
+
+on:
+  pull_request:
+  push:
+    branches: [master]
+
+jobs:
+  site-checks:
+    name: Site checks
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Meta sync check
+        run: python3 scripts/sync_post_meta.py --check
+
+      - name: Posts catalog check
+        run: python3 scripts/check_site.py --catalog
+
+      - name: Sitemap and robots check
+        run: python3 scripts/check_site.py --sitemap
