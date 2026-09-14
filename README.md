@@ -1,6 +1,8 @@
-Staff Software Engineer at [Duolingo](https://careers.duolingo.com), building infrastructure automation and platform engineering at scale. I championed Temporal adoption from 0->1 and currently lead the Temporal infrastructure project team.
+Staff Software Engineer, Infrastructure Foundations at [Temporal](https://temporal.io), working on the scalability and reliability of Temporal Cloud core infrastructure.
 
-Previously Senior Backend Engineer & Scrum Master at [data.ai](https://www.data.ai) (formerly App Annie), and Software Engineer at [VIPKID](https://www.vipkid.com).
+Previously Staff Software Engineer on [Duolingo](https://careers.duolingo.com/#careers)'s Cloud Operations team, where I championed Temporal adoption from 0→1 and led the Temporal infrastructure project team.
+
+Earlier: Senior Backend Engineer & Scrum Master at [data.ai](https://www.data.ai) (formerly App Annie), and Software Engineer at [VIPKID](https://www.vipkid.com).
 
 M.S. Software Engineering, Carnegie Mellon University.
 
