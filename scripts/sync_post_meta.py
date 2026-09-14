@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Sync each blog/<slug>/index.html <head> metadata from blog/posts/<slug>.md front matter.
+"""Sync post <head> metadata and regenerate sitemap.xml from blog/posts.json.
 
 Non-JS crawlers (Slack, Twitter, iMessage, etc.) read the static HTML's <meta> tags and
 never run resource/blog.js, so the title/description baked into each post's index.html
-has to be kept in sync by hand. Run this after adding a post or editing its front matter
+has to be kept in sync by hand. This also rewrites sitemap.xml from the published slug
+list so Google can discover new posts. Run after adding a post or editing front matter
 (title/date/excerpt/subtitle), before committing:
 
     python3 scripts/sync_post_meta.py
@@ -86,12 +87,60 @@ def sync_post(slug):
     print(f"synced {slug}")
 
 
-def main():
+def load_slugs():
     posts_json = json.loads((ROOT / "blog" / "posts.json").read_text())
+    slugs = []
     for entry in posts_json.get("posts", []):
         slug = entry if isinstance(entry, str) else entry.get("slug")
         if slug:
-            sync_post(slug)
+            slugs.append(slug)
+    return slugs
+
+
+def post_lastmod(slug):
+    md_path = ROOT / "blog" / "posts" / f"{slug}.md"
+    if not md_path.exists():
+        return None
+    date = parse_front_matter(md_path.read_text()).get("date", "").strip()
+    if not date:
+        return None
+    return date[:10]
+
+
+def sitemap_url_xml(loc, lastmod=None):
+    lines = ["  <url>", f"    <loc>{loc}</loc>"]
+    if lastmod:
+        lines.append(f"    <lastmod>{lastmod}</lastmod>")
+    lines.append("  </url>")
+    return "\n".join(lines)
+
+
+def write_sitemap(slugs):
+    lastmods = [post_lastmod(slug) for slug in slugs]
+    newest = max((d for d in lastmods if d), default=None)
+    blocks = [
+        sitemap_url_xml(f"{SITE_URL}/", newest),
+        sitemap_url_xml(f"{SITE_URL}/blog/", newest),
+    ]
+    for slug, lastmod in zip(slugs, lastmods):
+        blocks.append(sitemap_url_xml(f"{SITE_URL}/blog/{slug}", lastmod))
+
+    xml = (
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        + "\n".join(blocks)
+        + "\n</urlset>\n"
+    )
+    path = ROOT / "sitemap.xml"
+    path.write_text(xml)
+    print(f"wrote {path.relative_to(ROOT)} ({2 + len(slugs)} urls)")
+
+
+def main():
+    slugs = load_slugs()
+    for slug in slugs:
+        sync_post(slug)
+    write_sitemap(slugs)
 
 
 if __name__ == "__main__":
