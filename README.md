@@ -1,4 +1,4 @@
-Staff Software Engineer, Infrastructure Foundations at [Temporal](https://temporal.io), working on the scalability and reliability of Temporal Cloud core infrastructure.
+Staff Software Engineer, Infrastructure Foundations at [Temporal](https://temporal.io).
 
 Previously Staff Software Engineer on [Duolingo](https://careers.duolingo.com/#careers)'s Cloud Operations team, where I championed Temporal adoption from 0→1 and led the Temporal infrastructure project team.
 
