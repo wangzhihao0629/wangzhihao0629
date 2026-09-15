@@ -8,7 +8,7 @@ subtitle: Four years apart, same person — but the market changed what "hard" a
 
 ```
 zhihao@portfolio:~/job-hunt$ diff 2022.log 2026.log
-- 2022: 200 companies asked -> 20 responded -> 74 rounds -> 8 offers
+- 2022: 200 companies asked -> 20 responded -> 74 rounds -> 8 offers -> accepted Duolingo
 + 2026: 23 companies asked  -> 18 responded -> 55 rounds -> 2 offers (+1 ref check)
 ```
 
@@ -139,7 +139,7 @@ Reached final loop (7)
 
 ```
 zhihao@portfolio:~/job-hunt$ diff 2022.log 2026.log
-- 2022: 200 companies asked -> 20 responded -> 74 rounds -> 8 offers
+- 2022: 200 companies asked -> 20 responded -> 74 rounds -> 8 offers -> accepted Duolingo
 + 2026: 23 companies asked  -> 18 responded -> 55 rounds -> 2 offers (+1 ref check)
 ```
 
