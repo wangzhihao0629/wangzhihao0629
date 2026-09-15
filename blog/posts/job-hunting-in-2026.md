@@ -249,8 +249,7 @@ what "passing the coding round" means. Breaking both years down by question type
 I rated my own performance after almost every round, in both searches. In 2022, that rating held up. In
 2026 it didn't — but only for the newer, more open-ended parts of the loop.
 
-**2022:** I logged every interview in a Notion database — company, round, date, self-assessment out of
-100. My gut was a genuinely good predictor, if anything leaning conservative: rounds that advanced averaged
+**2022:** I logged every interview in a Notion database — company, round, date, self-assessment out of 100. My gut was a genuinely good predictor, if anything leaning conservative: rounds that advanced averaged
 **84/100** self-rated; rounds that didn't averaged **62** — a wide, honest gap.
 
 **2026:** I ditched Notion for this one — Claude Cowork, connected to my Gmail and Google Calendar, did
