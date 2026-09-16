@@ -351,7 +351,7 @@ more expensive to have walked away from:
 ```
 zhihao@portfolio:~/job-hunt$ diff offer_then.log offer_now.log
 - legal-AI startup valuation: $11B
-+ legal-AI startup valuation: $15.5B (+41%, new funding round)
++ legal-AI startup valuation: ~$15B (~40%, new funding round)
 - comp gap vs. offer I took: ~$200K/yr
 + comp gap vs. offer I took: ~$300–350K/yr
 ```
