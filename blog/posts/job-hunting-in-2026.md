@@ -187,28 +187,39 @@ past it either.
 
 ## The technical deep dive: a round that didn't really exist in 2022
 
+I'm not the interviewer, so I don't really know the official rubric — this is just what I actually
+covered when deep-diving my own project in those rounds.
+
 In 2022, "tell me about a project" was one question inside a behavioral round — a few minutes, informal,
-no real structure. In 2026, multiple companies gave it a dedicated round of its own, 30-45 minutes, with
-real structure: prepare slides, 10-12 pages max, walk through business context first, then technical
-complexity and architecture, then results and what you'd do differently. It's graded like any other
-round — and on more than whether the project sounds impressive: __cross-functional collaboration__,
-technical depth, system complexity, and actual impact, all at once.
+no real structure. In 2026, multiple companies gave it a dedicated round of its own, 30-45 minutes.
+How it tended to run, at least in the ones I sat: prepare slides, 10-12 pages max, then walk through
+business context first, then technical complexity and architecture, then results and what you'd do
+differently. Graded like any other round, and on more than whether the project sounds impressive —
+__cross-functional collaboration__, technical depth, system complexity, and actual impact, all at once.
 
-**That last axis cost me an offer outright**, at a company most frontend engineers would recognize as where a
-huge chunk of the internet's Next.js apps get deployed. I got great feedback on almost every round; the
-one gap was no clear signal of cross-functional collaboration in the project I walked through. The project
-was real and good — an internal platform built so other teams *wouldn't* need to coordinate with mine to
-ship. Self-service by design, the opposite of cross-team blocking and tight deadlines. I made that case in
-the room. Didn't matter — what they seemed to hear was a story about being blocked by other teams under
-deadline pressure, or negotiating scope with a team that didn't report up through mine, or reconciling
-priorities that two orgs disagreed on. My actual story, about engineering that need away entirely, was the
-wrong shape for any of that, no matter how I told it. No offer. One flagged axis.
+Don't wait for the interviewer to ask. Walking through my own project, these are the things that
+actually seemed to matter:
 
-Uncomfortable lesson, but true: being a strong match is a **precondition**, not a **guarantee**. Enough
-qualified people apply that a loop can reward whoever hits the rubric, not whoever fits best. At
-senior/staff level you have to actively show every axis they grade — not just be good at the job. That
-means picking the right project to present, and being deliberate about which signals you surface, even
-when you'd rather let the work speak for itself. I hate that. Did it anyway for every deep dive after.
+| What to cover (unprompted) | Why it showed up |
+| --- | --- |
+| What **you** personally did | Staff loops are grading *your* ownership; "the team shipped X" without your fingerprint reads thin. |
+| Tradeoffs / alternatives you didn't pick, and why | Shows decision-making, not just that you implemented the final design. |
+| Technical depth | They want to see you can go under the neat architecture diagram into real constraints and internals. |
+| Impact | Without outcomes, complexity can sound like busywork — what actually changed. |
+| Who you collaborated with | Cross-functional signal needs real collaborators and roles, not a vague "I worked with other teams." |
+| Timeline / deadlines | Weeks vs. months vs. a year (and whether there was a hard deadline) changes how ambitious the work sounds. |
+| Reflection — what you'd do differently if … | Proactive reflection beats waiting for "what would you change?" — it signals seniority. |
+
+__Cross-functional collaboration__ isn't a soft extra. **It cost me an offer outright**, at a company
+most frontend engineers would recognize as where a huge chunk of the internet's Next.js apps get
+deployed. Great feedback on almost every round; the one gap was no clear signal of it in the project I
+walked through. The project was real and good — an internal platform built so other teams *wouldn't*
+need to coordinate with mine to ship, self-service by design. I made that case in the room. Didn't
+matter — what they seemed to hear was being blocked by other teams under deadline pressure, or
+negotiating scope with a team that didn't report up through mine, or reconciling priorities two orgs
+disagreed on. Engineering that need away entirely was the wrong shape for the axis. No offer. That's
+how the round works, as far as I can tell from having sat it: several scores at once, and missing one
+can be enough.
 
 ## How I prepped, and how that changed
 
@@ -335,8 +346,10 @@ There was a public version of the same argument going around right around then, 
 </details>
 
 **I'd rather work on deep, large-scale infra than on infra that just chases whatever product wants done
-today.** I'm confident Temporal is going to do well over the long run, and I was optimizing for where
-that bet puts me years from now, not for this year's total comp.
+today.** The group I'm joining sits at the foundational layer of Temporal's infra — a rare chance to see
+how a system of this scale is actually built from the ground up. I'm confident Temporal is going to do
+well over the long run, and I was optimizing for where that bet puts me years from now, not for this
+year's total comp.
 
 That trade-off didn't exist in 2022 — the money still mattered day-to-day, so the biggest number and the
 better path were usually the same decision. By 2026, comp wasn't the variable that mattered. Career growth
@@ -349,16 +362,17 @@ more expensive to have walked away from:
 ```
 zhihao@portfolio:~/job-hunt$ diff offer_then.log offer_now.log
 - legal-AI startup valuation: $11B
-+ legal-AI startup valuation: $15.5B (+41%, new funding round)
++ legal-AI startup valuation: ~$15B (~40%, new funding round)
 - comp gap vs. offer I took: ~$200K/yr
 + comp gap vs. offer I took: ~$300–350K/yr
 ```
 
 Doesn't change the math I actually used to decide — but it's a funny footnote. I'm not too concerned about
 it, though: I believe the offer I took has real 5x or more room of its own from here, which was a big
-part of why I took it in the first place. **This is a one-round snapshot, not the final scoreboard** — and if
-this whole post has a theme, it's that the landscape right now is changing too fast for any snapshot to
-hold still for long.
+part of why I took it in the first place. Even something short of a 3x move on the option package I took
+— which I think is highly possible — would wipe out the gap, including that extra ~40% that opened after
+their round. **This is a one-round snapshot, not the final scoreboard** — and if this whole post has a
+theme, it's that the landscape right now is changing too fast for any snapshot to hold still for long.
 
 ## What I'd tell 2022-me and 2026-me
 
