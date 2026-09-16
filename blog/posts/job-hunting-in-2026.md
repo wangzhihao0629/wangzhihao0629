@@ -197,9 +197,17 @@ business context first, then technical complexity and architecture, then results
 differently. Graded like any other round, and on more than whether the project sounds impressive —
 __cross-functional collaboration__, technical depth, system complexity, and actual impact, all at once.
 
-That last axis isn't a soft extra. **It cost me an offer outright**, at a company most frontend engineers
-would recognize as where a huge chunk of the internet's Next.js apps get deployed. Great feedback on
-almost every round; the one gap was no clear signal of cross-functional collaboration in the project I
+What actually seemed to matter, walking through my own project: don't wait for the interviewer to
+ask — cover it yourself. __What I did__ — ownership and personal contribution, not just "the team
+shipped X." __Tradeoffs__ — alternative solutions, and why they weren't chosen. __Technical depth
+and impact__ together, ideally both showing up. __Reflection__ — what I'd do differently, the "what
+would you do differently if …" beat. __Collaboration__ — who I actually worked with, not only that I
+collaborated in the abstract. And __timeline__ — how long the project actually took, weeks vs. months
+vs. a year, and whether there was a deadline or time pressure, so the scope was concrete.
+
+__Cross-functional collaboration__ isn't a soft extra. **It cost me an offer outright**, at a company
+most frontend engineers would recognize as where a huge chunk of the internet's Next.js apps get
+deployed. Great feedback on almost every round; the one gap was no clear signal of it in the project I
 walked through. The project was real and good — an internal platform built so other teams *wouldn't*
 need to coordinate with mine to ship, self-service by design. I made that case in the room. Didn't
 matter — what they seemed to hear was being blocked by other teams under deadline pressure, or
