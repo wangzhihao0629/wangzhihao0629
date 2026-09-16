@@ -355,8 +355,8 @@ zhihao@portfolio:~/job-hunt$ diff offer_then.log offer_now.log
 ```
 
 Doesn't change the math I actually used to decide — but it's a funny footnote. I'm not too concerned about
-it, though: I still think the offer I took has real 2-3x room of its own from here, which was a big part
-of why I took it in the first place. **This is a one-round snapshot, not the final scoreboard** — and if
+it, though: I believe the offer I took has real 5x or more room of its own from here, which was a big
+part of why I took it in the first place. **This is a one-round snapshot, not the final scoreboard** — and if
 this whole post has a theme, it's that the landscape right now is changing too fast for any snapshot to
 hold still for long.
 
