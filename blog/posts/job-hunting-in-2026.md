@@ -202,13 +202,13 @@ actually seemed to matter:
 
 | What to cover (unprompted) | Why it showed up |
 | --- | --- |
-| What **you** personally did | Ownership — not only "the team shipped X" |
-| Tradeoffs / alternatives you didn't pick, and why | Judgment, not just the path taken |
-| Technical depth | Can you go below the neat diagram |
-| Impact | What changed because of the work |
-| Who you collaborated with | Cross-functional signal with real collaborators |
-| Timeline / deadlines | Weeks vs. months vs. a year; was there time pressure |
-| Reflection — what you'd do differently if … | Don't wait to be asked |
+| What **you** personally did | Staff loops are grading *your* ownership; "the team shipped X" without your fingerprint reads thin. |
+| Tradeoffs / alternatives you didn't pick, and why | Shows decision-making, not just that you implemented the final design. |
+| Technical depth | They want to see you can go under the neat architecture diagram into real constraints and internals. |
+| Impact | Without outcomes, complexity can sound like busywork — what actually changed. |
+| Who you collaborated with | Cross-functional signal needs real collaborators and roles, not a vague "I worked with other teams." |
+| Timeline / deadlines | Weeks vs. months vs. a year (and whether there was a hard deadline) changes how ambitious the work sounds. |
+| Reflection — what you'd do differently if … | Proactive reflection beats waiting for "what would you change?" — it signals seniority. |
 
 __Cross-functional collaboration__ isn't a soft extra. **It cost me an offer outright**, at a company
 most frontend engineers would recognize as where a huge chunk of the internet's Next.js apps get
