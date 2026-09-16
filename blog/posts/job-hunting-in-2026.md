@@ -374,6 +374,16 @@ part of why I took it in the first place. __Even something short of a 3x move on
 their round.__ **This is a one-round snapshot, not the final scoreboard** — and if this whole post has a
 theme, it's that the landscape right now is changing too fast for any snapshot to hold still for long.
 
+Same shape as the option leverage chart above — just zoomed in on what it takes to erase the widened gap:
+
+```
+Option package multiple vs wiping out the widened gap (illustrative)
+
+Opt 1×   ████░░░░░░░░░░░░░░░░  today
+Opt 3×   ███████████████░░░░░  enough to wipe out the gap (incl. their ~40%)
+Opt 5×   ████████████████████  the room I believe is there
+```
+
 ## What I'd tell 2022-me and 2026-me
 
 **2022:** you did this right. Silence isn't a verdict — the market is frozen, not judging you. Keep the
