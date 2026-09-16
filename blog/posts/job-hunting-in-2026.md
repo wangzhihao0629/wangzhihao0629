@@ -369,9 +369,9 @@ zhihao@portfolio:~/job-hunt$ diff offer_then.log offer_now.log
 
 Doesn't change the math I actually used to decide — but it's a funny footnote. I'm not too concerned about
 it, though: I believe the offer I took has real 5x or more room of its own from here, which was a big
-part of why I took it in the first place. Even something short of a 3x move on the option package I took
+part of why I took it in the first place. __Even something short of a 3x move on the option package I took
 — which I think is highly possible — would wipe out the gap, including that extra ~40% that opened after
-their round. **This is a one-round snapshot, not the final scoreboard** — and if this whole post has a
+their round.__ **This is a one-round snapshot, not the final scoreboard** — and if this whole post has a
 theme, it's that the landscape right now is changing too fast for any snapshot to hold still for long.
 
 ## What I'd tell 2022-me and 2026-me
