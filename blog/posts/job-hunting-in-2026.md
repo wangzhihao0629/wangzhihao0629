@@ -72,7 +72,7 @@ move.
 > engineer we're looking for."
 
 That was the real moment I decided to start looking. Right after the conference, that same hiring
-manager — who championed Temporal adoption internally at their own company, the same way I did at
+manager — who ran the Temporal infra team at that lab, doing the same kind of work I was doing at
 Duolingo — reached out and asked if I wanted to interview. I hadn't applied anywhere yet; the opportunity
 found me. If there's one practical tip in this whole post: go to the conference for whatever you use every
 day, talk to people, and
