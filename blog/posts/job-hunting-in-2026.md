@@ -48,9 +48,9 @@ interviews  ░░░░░░░░░░░░░███████  5pm–
 5pm in Pittsburgh is 2pm in Silicon Valley — still the middle of their business day, which is the
 whole reason this worked.
 
-The weekday evenings only covered the interviews themselves. Weekends were the actual studying: at
-least 10+ hours a day, usually starting around 10 or 11am and wrapping up around 11pm — excluding
-lunch and dinner, almost 10+ hours of focused prep.
+The weekday evenings only covered the interviews themselves. Weekends were the actual studying:
+__**at least 10+ hours a day**__, usually starting around 10 or 11am and wrapping up around 11pm —
+excluding lunch and dinner, almost 10+ hours of focused prep.
 
 ```
 A typical weekend day, 2026 search (my time zone)
