@@ -28,15 +28,15 @@ at home with nothing else to do, I applied to tens of jobs a day for weeks. Volu
 bet on a pivot instead of a track record. The only way to find the ones willing to take that bet was to
 apply to everyone and see who answered. I signed an offer on 11/2/2022.
 
-In 2026 I did the opposite, because I was a different candidate. The pivot had actually worked — four
-years deep on one infrastructure specialty gave me the track record I didn't have in 2022. So I went in
-with a short, deliberate list of mostly warm targets (referrals, inbound recruiter interest, a couple of
-direct applications), and put real prep behind each one instead of spreading thin. I was also doing this
-on top of a full-time job — most interviews got scheduled after 4 or 5pm, once my actual workday was
-over, which is a different kind of tired than searching full-time was in 2022. Most of these companies
-ran on West Coast time too, so their normal business-hours slots landed squarely in my evening — which is
-exactly why "after work" was even an option at all. Being 3 hours behind Silicon Valley: not a
-strategy anyone would pick on purpose, but I'll take the one accidental perk.
+In 2026 I did the opposite, because I was a different candidate. The pivot had actually worked — 3.5+
+years deep on cloud infrastructure and platform engineering gave me the track record I didn't have in
+2022. So I went in with a short, deliberate list of mostly warm targets (referrals, inbound recruiter
+interest, a couple of direct applications), and put real prep behind each one instead of spreading thin.
+I was also doing this on top of a full-time job — most interviews got scheduled after 4 or 5pm, once my
+actual workday was over, which is a different kind of tired than searching full-time was in 2022. Most of
+these companies ran on West Coast time too, so their normal business-hours slots landed squarely in my
+evening — which is exactly why "after work" was even an option at all. Being 3 hours behind Silicon
+Valley: not a strategy anyone would pick on purpose, but I'll take the one accidental perk.
 
 ```
 A typical weekday, 2026 search (my time zone)
@@ -48,7 +48,18 @@ interviews  ░░░░░░░░░░░░░███████  5pm–
 5pm in Pittsburgh is 2pm in Silicon Valley — still the middle of their business day, which is the
 whole reason this worked.
 
-Part of that warm pipeline came from something unglamorous: showing up in person. I went to
+The weekday evenings only covered the interviews themselves. Weekends were the actual studying: at
+least 10+ hours a day, usually starting around 10 or 11am and wrapping up around 10pm — excluding
+lunch and dinner, almost 10+ hours of focused prep.
+
+```
+A typical weekend day, 2026 search (my time zone)
+
+prep        ██████████████████░░  ~10–11am → ~10pm
+            (10+ hrs of prep, meals excluded)
+```
+
+Part of that warm pipeline came from something simple: showing up in person. I went to
 [Temporal Replay](https://temporal.io/replay/2026), the yearly conference for the open-source workflow
 engine I already used daily at work — not to job hunt, just to learn — and ended up talking to engineers
 from half a dozen companies running the same tool at far bigger scale: people from the AI frontier lab
