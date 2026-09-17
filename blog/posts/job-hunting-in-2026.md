@@ -223,7 +223,8 @@ actually seemed to matter:
 
 __Cross-functional collaboration__ isn't a soft extra. **It cost me an offer outright**, at a company
 most frontend engineers would recognize as where a huge chunk of the internet's Next.js apps get
-deployed. Great feedback on almost every round; the one gap was no clear signal of it in the project I
+deployed — and which is also building a durable workflow product in a similar space to Temporal.
+Great feedback on almost every round; the one gap was no clear signal of it in the project I
 walked through. The project was real and good — an internal platform built so other teams *wouldn't*
 need to coordinate with mine to ship, self-service by design. I made that case in the room. Didn't
 matter — what they seemed to hear was being blocked by other teams under deadline pressure, or
