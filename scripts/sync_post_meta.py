@@ -48,6 +48,19 @@ def escape_text(s):
     return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
 
+# Blog post / listing previews should not inherit the homepage headshot.
+# Strip leftover photo tags so a later sync cannot re-bake them.
+PHOTO_META_RE = re.compile(
+    r'[ \t]*<meta\s+(?:property|name)="(?:og:image(?::\w+)?|twitter:image(?::\w+)?)"'
+    r'\s+content=".*?"\s*/>[ \t]*\n?',
+    re.I,
+)
+
+
+def strip_photo_meta(html):
+    return PHOTO_META_RE.sub("", html)
+
+
 def render_post(slug):
     """Return (relpath, new_html) or (relpath, None) if the post files are missing."""
     md_path = ROOT / "blog" / "posts" / f"{slug}.md"
@@ -64,7 +77,7 @@ def render_post(slug):
     desc = excerpt or page_title
     url = f"{SITE_URL}/blog/{slug}"
 
-    html = html_path.read_text()
+    html = strip_photo_meta(html_path.read_text())
     replacements = [
         (r'<meta name="description" content=".*?" />',
          f'<meta name="description" content="{escape_attr(desc)}" />'),
