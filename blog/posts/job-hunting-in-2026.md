@@ -28,15 +28,15 @@ at home with nothing else to do, I applied to tens of jobs a day for weeks. Volu
 bet on a pivot instead of a track record. The only way to find the ones willing to take that bet was to
 apply to everyone and see who answered. I signed an offer on 11/2/2022.
 
-In 2026 I did the opposite, because I was a different candidate. The pivot had actually worked — four
-years deep on one infrastructure specialty gave me the track record I didn't have in 2022. So I went in
-with a short, deliberate list of mostly warm targets (referrals, inbound recruiter interest, a couple of
-direct applications), and put real prep behind each one instead of spreading thin. I was also doing this
-on top of a full-time job — most interviews got scheduled after 4 or 5pm, once my actual workday was
-over, which is a different kind of tired than searching full-time was in 2022. Most of these companies
-ran on West Coast time too, so their normal business-hours slots landed squarely in my evening — which is
-exactly why "after work" was even an option at all. Being 3 hours behind Silicon Valley: not a
-strategy anyone would pick on purpose, but I'll take the one accidental perk.
+In 2026 I did the opposite, because I was a different candidate. The pivot had actually worked — 3.5+
+years deep on cloud infrastructure and platform engineering gave me the track record I didn't have in
+2022. So I went in with a short, deliberate list of mostly warm targets (referrals, inbound recruiter
+interest, a couple of direct applications), and put real prep behind each one instead of spreading thin.
+I was also doing this on top of a full-time job — most interviews got scheduled after 4 or 5pm, once my
+actual workday was over, which is a different kind of tired than searching full-time was in 2022. Most of
+these companies ran on West Coast time too, so their normal business-hours slots landed squarely in my
+evening — which is exactly why "after work" was even an option at all. Being 3 hours behind Silicon
+Valley: not a strategy anyone would pick on purpose, but I'll take the one accidental perk.
 
 ```
 A typical weekday, 2026 search (my time zone)
@@ -48,7 +48,18 @@ interviews  ░░░░░░░░░░░░░███████  5pm–
 5pm in Pittsburgh is 2pm in Silicon Valley — still the middle of their business day, which is the
 whole reason this worked.
 
-Part of that warm pipeline came from something unglamorous: showing up in person. I went to
+The weekday evenings only covered the interviews themselves. Weekends were the actual studying:
+__**at least 10+ hours a day**__, usually starting around 10 or 11am and wrapping up around 11pm —
+excluding lunch and dinner, almost 10+ hours of focused prep.
+
+```
+A typical weekend day, 2026 search (my time zone)
+
+prep        ░░░░░░░░░░██░█████░████░  ~10am → ~11pm
+            (10+ hrs of prep; two gaps = lunch & dinner)
+```
+
+Part of that warm pipeline came from something simple: showing up in person. I went to
 [Temporal Replay](https://temporal.io/replay/2026), the yearly conference for the open-source workflow
 engine I already used daily at work — not to job hunt, just to learn — and ended up talking to engineers
 from half a dozen companies running the same tool at far bigger scale: people from the AI frontier lab
@@ -61,7 +72,7 @@ move.
 > engineer we're looking for."
 
 That was the real moment I decided to start looking. Right after the conference, that same hiring
-manager — who championed Temporal adoption internally at their own company, the same way I did at
+manager — who ran the Temporal infra team at that lab, doing the same kind of work I was doing at
 Duolingo — reached out and asked if I wanted to interview. I hadn't applied anywhere yet; the opportunity
 found me. If there's one practical tip in this whole post: go to the conference for whatever you use every
 day, talk to people, and
@@ -212,7 +223,8 @@ actually seemed to matter:
 
 __Cross-functional collaboration__ isn't a soft extra. **It cost me an offer outright**, at a company
 most frontend engineers would recognize as where a huge chunk of the internet's Next.js apps get
-deployed. Great feedback on almost every round; the one gap was no clear signal of it in the project I
+deployed — and which is also building a durable workflow product in a similar space to Temporal.
+Great feedback on almost every round; the one gap was no clear signal of it in the project I
 walked through. The project was real and good — an internal platform built so other teams *wouldn't*
 need to coordinate with mine to ship, self-service by design. I made that case in the room. Didn't
 matter — what they seemed to hear was being blocked by other teams under deadline pressure, or
@@ -224,9 +236,10 @@ can be enough.
 ## How I prepped, and how that changed
 
 The prep barely looks like the same activity across these two searches. In 2022 it was almost entirely
-LeetCode — a habit that started back in CMU coursework and never stopped. My tracker has **600+ problems**
+LeetCode — a habit that started back in CMU coursework and never stopped. My Notion tracker has **600+ problems**
 logged, timed and graded, repeated until the patterns clicked. That matched the interviews: closed-ended,
-one correct-ish answer, a rubric you could reverse-engineer through enough reps.
+one correct-ish answer, a rubric you could reverse-engineer through enough reps — and I failed almost
+no coding interviews in 2022.
 
 In 2026 I barely touched LeetCode, because almost none of it was LeetCode-shaped. Companies asked
 practical questions instead — often one problem stretched across several rounds of follow-ups — and graded
@@ -255,7 +268,7 @@ what "passing the coding round" means. Breaking both years down by question type
 | Technical deep-dive | A newly dedicated, multi-axis round of its own — see above |
 | Behavioral | Least changed of the four — still standard BQ/culture-fit, no notable shift |
 
-## Self-assessment: accurate in 2022, overconfident in 2026
+## Self-assessment: accurate in 2022, overconfident in 2026 🫠
 
 I rated my own performance after almost every round, in both searches. In 2022, that rating held up. In
 2026 it didn't — but only for the newer, more open-ended parts of the loop.
