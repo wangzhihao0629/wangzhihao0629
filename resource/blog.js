@@ -205,6 +205,122 @@
     }
   }
 
+  /* Native scroll restoration runs before async markdown fills #post-body. */
+  var SCROLL_KEY_PREFIX = 'post-scroll:';
+  var scrollSaveOk = false;
+  var userTouchedScroll = false;
+
+  function postScrollKey() {
+    return SCROLL_KEY_PREFIX + (location.pathname || '').replace(/\/+$/, '');
+  }
+
+  function savePostScroll() {
+    if (!scrollSaveOk) return;
+    try {
+      sessionStorage.setItem(postScrollKey(), String(window.scrollY || 0));
+    } catch (e) { /* private mode / quota */ }
+  }
+
+  function readSavedPostScroll() {
+    try {
+      var raw = sessionStorage.getItem(postScrollKey());
+      if (raw == null || raw === '') return null;
+      var y = parseInt(raw, 10);
+      return isNaN(y) ? null : y;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function scrollToY(y) {
+    try {
+      window.scrollTo({ top: y, left: 0, behavior: 'instant' });
+    } catch (e) {
+      window.scrollTo(0, y);
+    }
+  }
+
+  function applyPostScroll() {
+    if (location.hash && location.hash.length > 1) {
+      var id = location.hash.slice(1);
+      try { id = decodeURIComponent(id); } catch (e) {}
+      var el = id ? document.getElementById(id) : null;
+      if (el) {
+        try {
+          el.scrollIntoView({ block: 'start', behavior: 'instant' });
+        } catch (e) {
+          if (el.scrollIntoView) el.scrollIntoView(true);
+        }
+        return;
+      }
+    }
+    var y = readSavedPostScroll();
+    if (y == null) return;
+    scrollToY(y);
+  }
+
+  function afterImages(root, done) {
+    var imgs = root ? root.querySelectorAll('img') : [];
+    var pending = 0;
+    var finished = false;
+    function finish() {
+      if (finished) return;
+      finished = true;
+      done();
+    }
+    function one() {
+      pending--;
+      if (pending <= 0) finish();
+    }
+    for (var i = 0; i < imgs.length; i++) {
+      if (imgs[i].complete) continue;
+      pending++;
+      imgs[i].addEventListener('load', one);
+      imgs[i].addEventListener('error', one);
+    }
+    if (pending === 0) {
+      finish();
+      return;
+    }
+    setTimeout(finish, 2500);
+  }
+
+  function restorePostScroll(bodyEl) {
+    if (!userTouchedScroll) applyPostScroll();
+    scrollSaveOk = true;
+    afterImages(bodyEl, function () {
+      if (!userTouchedScroll) applyPostScroll();
+    });
+  }
+
+  function initPostScroll() {
+    try {
+      if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    } catch (e) {}
+
+    function touched() { userTouchedScroll = true; }
+    window.addEventListener('wheel', touched, { passive: true });
+    window.addEventListener('touchstart', touched, { passive: true });
+    window.addEventListener('keydown', function (e) {
+      if (e.key === ' ' || e.key === 'PageDown' || e.key === 'PageUp' ||
+          e.key === 'Home' || e.key === 'End' ||
+          e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        touched();
+      }
+    });
+
+    window.addEventListener('pagehide', savePostScroll);
+    window.addEventListener('beforeunload', savePostScroll);
+    var saveTimer = null;
+    window.addEventListener('scroll', function () {
+      if (saveTimer) return;
+      saveTimer = setTimeout(function () {
+        saveTimer = null;
+        savePostScroll();
+      }, 100);
+    }, { passive: true });
+  }
+
   function loadCurrentPost() {
     var slug = slugFromPath();
     var postMain = document.getElementById('post-main') || document.querySelector('main.post');
@@ -216,6 +332,7 @@
     return loadMarkdown(slug).then(function (post) {
       fillPost(post);
       showPostChrome(true);
+      restorePostScroll(document.getElementById('post-body') || document.querySelector('.post-body'));
       return post;
     }).catch(function () {
       var bodyEl = document.getElementById('post-body') || document.querySelector('.post-body');
@@ -235,7 +352,10 @@
     var wantsPost = !!slugFromPath() &&
       (document.querySelector('main.post') || document.getElementById('post-main'));
 
-    if (wantsPost) loadCurrentPost();
+    if (wantsPost) {
+      initPostScroll();
+      loadCurrentPost();
+    }
 
     loadCatalog().then(function (posts) {
       mergePostsIntoCmd(posts);
