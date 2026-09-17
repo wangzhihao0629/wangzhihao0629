@@ -29,8 +29,8 @@ bet on a pivot instead of a track record. The only way to find the ones willing 
 apply to everyone and see who answered. I signed an offer on 11/2/2022.
 
 In 2026 I did the opposite, because I was a different candidate. The pivot had actually worked — 3.5+
-years deep on cloud infrastructure and platform engineering gave me the track record I didn't have in
-2022. So I went in with a short, deliberate list of mostly warm targets (referrals, inbound recruiter
+years deep on cloud infrastructure and platform engineering gave me the track record I didn't have
+in 2022. So I went in with a short, deliberate list of mostly warm targets (referrals, inbound recruiter
 interest, a couple of direct applications), and put real prep behind each one instead of spreading thin.
 I was also doing this on top of a full-time job — most interviews got scheduled after 4 or 5pm, once my
 actual workday was over, which is a different kind of tired than searching full-time was in 2022. Most of
