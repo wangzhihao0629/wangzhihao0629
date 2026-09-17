@@ -49,14 +49,14 @@ interviews  ░░░░░░░░░░░░░███████  5pm–
 whole reason this worked.
 
 The weekday evenings only covered the interviews themselves. Weekends were the actual studying: at
-least 10+ hours a day, usually starting around 10 or 11am and wrapping up around 10pm — excluding
+least 10+ hours a day, usually starting around 10 or 11am and wrapping up around 11pm — excluding
 lunch and dinner, almost 10+ hours of focused prep.
 
 ```
 A typical weekend day, 2026 search (my time zone)
 
-prep        ██████████████████░░  ~10–11am → ~10pm
-            (10+ hrs of prep, meals excluded)
+prep        ░░░░░░░░░░██░█████░████░  ~10am → ~11pm
+            (10+ hrs of prep; two gaps = lunch & dinner)
 ```
 
 Part of that warm pipeline came from something simple: showing up in person. I went to
