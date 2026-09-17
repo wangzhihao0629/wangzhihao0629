@@ -428,5 +428,5 @@ process is unfamiliar, and AI has taken over most of your hands-on coding, it ca
 reps: practice, and real interviews, until none of it feels unfamiliar.
 
 System design also covers more ground than it did four years ago, because AI itself created a bunch of
-new systems to design — RAG is the obvious example, barely mentioned in 2022 and now everywhere. The
-core skills haven't changed, but the list of things you're expected to know keeps growing.
+new systems to design. The core skills haven't changed, but the list of things you're expected to know
+keeps growing.
