@@ -235,7 +235,7 @@ can be enough.
 ## How I prepped, and how that changed
 
 The prep barely looks like the same activity across these two searches. In 2022 it was almost entirely
-LeetCode — a habit that started back in CMU coursework and never stopped. My tracker has **800+ problems**
+LeetCode — a habit that started back in CMU coursework and never stopped. My tracker has **600+ problems**
 logged, timed and graded, repeated until the patterns clicked. That matched the interviews: closed-ended,
 one correct-ish answer, a rubric you could reverse-engineer through enough reps — and I failed almost
 no coding interviews in 2022.
