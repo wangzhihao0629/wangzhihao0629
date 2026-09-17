@@ -268,7 +268,7 @@ what "passing the coding round" means. Breaking both years down by question type
 | Technical deep-dive | A newly dedicated, multi-axis round of its own — see above |
 | Behavioral | Least changed of the four — still standard BQ/culture-fit, no notable shift |
 
-## Self-assessment: accurate in 2022, overconfident in 2026 🥲
+## Self-assessment: accurate in 2022, overconfident in 2026 🫠
 
 I rated my own performance after almost every round, in both searches. In 2022, that rating held up. In
 2026 it didn't — but only for the newer, more open-ended parts of the loop.
