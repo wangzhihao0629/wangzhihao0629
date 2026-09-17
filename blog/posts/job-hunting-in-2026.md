@@ -9,7 +9,7 @@ subtitle: Four years apart, same person — but the market changed what "hard" a
 ```
 zhihao@portfolio:~/job-hunt$ diff 2022.log 2026.log
 - 2022: 200 companies asked -> 20 responded -> 74 rounds -> 8 offers -> accepted Duolingo
-+ 2026: 23 companies asked  -> 18 responded -> 55 rounds -> 2 offers (+1 ref check)
++ 2026: 23 companies asked  -> 18 responded -> 60 rounds -> 2 offers (+1 ref check)
 ```
 
 I've run two real job searches, four years apart. One in 2022, finishing my master's at CMU, looking for
@@ -87,7 +87,7 @@ offer       ██░░░░░░░░░░░░░░░░░░  2
 | Companies contacted | ~200 | 23 |
 | Reached any interview | 20 | 18 |
 | Reached a full onsite / final loop | 10 | 7 |
-| Total interview rounds | 74 | ~55–60 |
+| Total interview rounds | 74 | 60 |
 | Active window | ~11–12 weeks (+~3 months prep) | ~8 weeks (+3 weeks prep) |
 | Offers | 8 | 2 (+1 reached reference checks, withdrawn after accepting elsewhere) |
 | Offer rate (of companies touched) | ~4% | ~9% |
@@ -113,7 +113,7 @@ Offer rate (of companies touched)
 
 The number that surprised me most isn't company count — it's conversion rate. In 2022, only **1 in 10**
 companies I reached out to (20 of 200) turned into a real conversation. In 2026, it was **nearly 4 in 5**
-(18 of 23) — with a similar total round count either way (74 vs. ~55–60), just ~9x fewer applications to
+(18 of 23) — with a similar total round count either way (74 vs. 60), just ~9x fewer applications to
 get there. The bottleneck moved: in 2022 the hard part was **getting in the room**; in 2026 it was **what
 happened once I was in it.**
 
@@ -140,7 +140,7 @@ Reached final loop (7)
 ```
 zhihao@portfolio:~/job-hunt$ diff 2022.log 2026.log
 - 2022: 200 companies asked -> 20 responded -> 74 rounds -> 8 offers -> accepted Duolingo
-+ 2026: 23 companies asked  -> 18 responded -> 55 rounds -> 2 offers (+1 ref check)
++ 2026: 23 companies asked  -> 18 responded -> 60 rounds -> 2 offers (+1 ref check)
 ```
 
 ## Why each one was hard
