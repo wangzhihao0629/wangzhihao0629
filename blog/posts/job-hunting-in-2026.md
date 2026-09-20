@@ -359,7 +359,7 @@ There was a public version of the same argument going around right around then, 
 </details>
 
 **I'd rather work on deep, large-scale infra than on infra that just chases whatever product wants done
-today.** The group I'm joining sits at the foundational layer of Temporal's infra — a rare chance to see
+today.** The team I'm joining sits at the foundational layer of Temporal's infra — a rare chance to see
 how a system of this scale is actually built from the ground up. I'm confident Temporal is going to do
 well over the long run, and I was optimizing for where that bet puts me years from now, not for this
 year's total comp.
