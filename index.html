@@ -509,6 +509,31 @@
       font-style: italic;
     }
 
+    /* Column talks stack a header with embeds. The row gap on .talk
+       is for the title/year pair and would open a large hole between
+       the video and the post. */
+    .talk.talk-stack {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+    }
+    .talk-embed { display: none; }
+    .talk.talk-stack .talk-embed { margin-top: 0.75rem; }
+    .talk.talk-stack .talk-embed + .talk-embed { margin-top: 0.35rem; }
+    .talk-embed iframe {
+      display: block;
+      width: 100%;
+      max-width: 560px;
+      border: 0;
+      border-radius: 4px;
+    }
+    .talk-embed--yt { width: min(560px, 100%); }
+    .talk-embed--yt iframe {
+      height: auto;
+      aspect-ratio: 16 / 9;
+    }
+    .talk-embed--li iframe { height: 680px; }
+
     /* ── EDUCATION ─────────────────────────────────────── */
     .edu-item {
       padding-bottom: 0.7rem;
@@ -755,7 +780,7 @@
     <section id="talks">
       <div class="sec-heading"><span class="hash">#</span><span class="label">talks &amp; publications</span></div>
 
-      <div class="talk" style="flex-direction:column; align-items:stretch;">
+      <div class="talk talk-stack">
         <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:1.5rem;">
           <div style="flex:1; min-width:0;">
             <div class="talk-meta">
@@ -778,15 +803,15 @@
           </div>
           <div class="talk-year">Apr 2026</div>
         </div>
-        <div id="replay-yt-embed" style="display:none; margin-top:0.75rem;">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/fVWG-Q01a5M?si=gWQAzyd4nPndv-m6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="max-width:100%; border-radius:4px;"></iframe>
+        <div id="replay-yt-embed" class="talk-embed talk-embed--yt">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/fVWG-Q01a5M?si=gWQAzyd4nPndv-m6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
-        <div id="replay-li-embed" style="display:none; margin-top:0.75rem;">
-          <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7461118578805612544" height="680" width="560" frameborder="0" allowfullscreen title="Embedded post" style="max-width:100%; border-radius:4px;"></iframe>
+        <div id="replay-li-embed" class="talk-embed talk-embed--li">
+          <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7461118578805612544" height="680" width="560" frameborder="0" allowfullscreen title="Embedded post"></iframe>
         </div>
       </div>
 
-      <div class="talk" style="flex-direction:column; align-items:stretch;">
+      <div class="talk talk-stack">
         <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:1.5rem;">
           <div style="flex:1; min-width:0;">
             <div class="talk-meta">
@@ -806,15 +831,15 @@
           </div>
           <div class="talk-year">Feb 2025</div>
         </div>
-        <div id="yt-embed" style="display:none; margin-top:0.75rem;">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/tJ1OwSFokOg?si=R_EaMaGz_wRYt-TC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="max-width:100%; border-radius:4px;"></iframe>
+        <div id="yt-embed" class="talk-embed talk-embed--yt">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/tJ1OwSFokOg?si=R_EaMaGz_wRYt-TC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
-        <div id="webinar-li-embed" style="display:none; margin-top:0.75rem;">
-          <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7430813613768052736" height="680" width="560" frameborder="0" allowfullscreen title="Embedded post" style="max-width:100%; border-radius:4px;"></iframe>
+        <div id="webinar-li-embed" class="talk-embed talk-embed--li">
+          <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7430813613768052736" height="680" width="560" frameborder="0" allowfullscreen title="Embedded post"></iframe>
         </div>
       </div>
 
-      <div class="talk" style="flex-direction:column; align-items:stretch;">
+      <div class="talk talk-stack">
         <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:1.5rem;">
           <div style="flex:1; min-width:0;">
             <div class="talk-meta">
@@ -833,8 +858,8 @@
           </div>
           <div class="talk-year">Oct 2025</div>
         </div>
-        <div id="li-embed" style="display:none; margin-top:0.75rem;">
-          <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7380951854135857152" height="680" width="560" frameborder="0" allowfullscreen title="Embedded post" style="max-width:100%; border-radius:4px;"></iframe>
+        <div id="li-embed" class="talk-embed talk-embed--li">
+          <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7380951854135857152" height="680" width="560" frameborder="0" allowfullscreen title="Embedded post"></iframe>
         </div>
       </div>
     </section>
