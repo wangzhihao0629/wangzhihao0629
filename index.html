@@ -456,12 +456,33 @@
     .talk:last-child { border-bottom: none; }
 
 
+    .talk-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+    .talk-main {
+      flex: 1;
+      min-width: 0;
+    }
+
     .talk-meta {
       display: flex;
       align-items: center;
-      gap: 0.55rem;
+      flex-wrap: wrap;
+      gap: 0.3rem 0.55rem;
       margin-bottom: 0.3rem;
     }
+    a.talk-venue { color: inherit; }
+    .talk-meta .badge,
+    .talk-meta .talk-venue {
+      flex-shrink: 0;
+      white-space: nowrap;
+    }
+    /* On wide screens the wrapper disappears and its children stay
+       separate flex items, with the same gaps as before. */
+    .talk-meta-pair { display: contents; }
 
     .badge {
       font-size: 0.68rem;
@@ -560,6 +581,35 @@
       aspect-ratio: 16 / 9;
     }
     .talk-embed--li iframe { height: 680px; }
+
+    @media (max-width: 640px) {
+      /* Keep a separator with the phrase after it once the row wraps. */
+      .talk-meta-pair,
+      .talk-meta-pair .talk-venue {
+        flex-shrink: 0;
+        white-space: nowrap;
+      }
+      .talk-meta-pair {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+      }
+
+      /* Drop the year/date side column so it cannot squeeze the row. */
+      .talk:not(.talk-stack),
+      .talk-head,
+      .blog-item {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.2rem;
+      }
+      .talk:not(.talk-stack) > .talk-year,
+      .talk-head > .talk-year,
+      .blog-item > .blog-date {
+        order: -1;
+        text-align: right;
+      }
+    }
 
     /* ── EDUCATION ─────────────────────────────────────── */
     .edu-item {
@@ -815,13 +865,15 @@
       <div class="sec-heading"><span class="hash">#</span><span class="label">talks &amp; publications</span></div>
 
       <div class="talk talk-stack">
-        <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:1.5rem;">
-          <div style="flex:1; min-width:0;">
+        <div class="talk-head">
+          <div class="talk-main">
             <div class="talk-meta">
               <span class="badge badge-fireside">fireside chat</span>
-              <a href="https://www.cmu.edu" target="_blank" rel="noopener" class="talk-venue" style="color:inherit;">Carnegie Mellon University</a>
-              <span class="talk-venue">·</span>
-              <a href="https://mse.s3d.cmu.edu/" target="_blank" rel="noopener" class="talk-venue" style="color:inherit;">Master of Software Engineering</a>
+              <a href="https://www.cmu.edu" target="_blank" rel="noopener" class="talk-venue">Carnegie Mellon University</a>
+              <span class="talk-meta-pair">
+                <span class="talk-venue">·</span>
+                <a href="https://mse.s3d.cmu.edu/" target="_blank" rel="noopener" class="talk-venue">Master of Software Engineering</a>
+              </span>
               <span class="talk-venue">· Pittsburgh, PA</span>
             </div>
             <div class="talk-title">
@@ -843,11 +895,11 @@
       </div>
 
       <div class="talk talk-stack">
-        <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:1.5rem;">
-          <div style="flex:1; min-width:0;">
+        <div class="talk-head">
+          <div class="talk-main">
             <div class="talk-meta">
               <span class="badge badge-talk">talk</span>
-              <a href="https://replay.temporal.io/" target="_blank" rel="noopener" class="talk-venue" style="color:inherit;">Temporal Replay</a>
+              <a href="https://replay.temporal.io/" target="_blank" rel="noopener" class="talk-venue">Temporal Replay</a>
               <span class="talk-venue">· San Francisco, CA</span>
             </div>
             <div class="talk-title">
@@ -874,8 +926,8 @@
       </div>
 
       <div class="talk talk-stack">
-        <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:1.5rem;">
-          <div style="flex:1; min-width:0;">
+        <div class="talk-head">
+          <div class="talk-main">
             <div class="talk-meta">
               <span class="badge badge-webinar">webinar</span>
             </div>
@@ -902,11 +954,11 @@
       </div>
 
       <div class="talk talk-stack">
-        <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:1.5rem;">
-          <div style="flex:1; min-width:0;">
+        <div class="talk-head">
+          <div class="talk-main">
             <div class="talk-meta">
               <span class="badge badge-case">case study</span>
-              <a href="https://temporal.io/resources/case-studies" target="_blank" rel="noopener" class="talk-venue" style="color:inherit;">Temporal</a>
+              <a href="https://temporal.io/resources/case-studies" target="_blank" rel="noopener" class="talk-venue">Temporal</a>
             </div>
             <div class="talk-title">
               <a href="https://temporal.io/resources/case-studies/duolingo-temporal-nexus" target="_blank" rel="noopener">
