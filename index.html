@@ -475,6 +475,7 @@
     .badge-webinar { background: color-mix(in srgb, var(--cyan) 12%, transparent); color: var(--cyan); }
     .badge-case    { background: color-mix(in srgb, var(--purple) 12%, transparent); color: var(--purple); }
     .badge-blog    { background: color-mix(in srgb, var(--yellow) 12%, transparent); color: var(--yellow); }
+    .badge-fireside { background: color-mix(in srgb, var(--link) 12%, transparent); color: var(--link); }
 
     .blog-item {
       display: flex;
@@ -812,6 +813,34 @@
     <!-- TALKS -->
     <section id="talks">
       <div class="sec-heading"><span class="hash">#</span><span class="label">talks &amp; publications</span></div>
+
+      <div class="talk talk-stack">
+        <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:1.5rem;">
+          <div style="flex:1; min-width:0;">
+            <div class="talk-meta">
+              <span class="badge badge-fireside">fireside chat</span>
+              <a href="https://www.cmu.edu" target="_blank" rel="noopener" class="talk-venue" style="color:inherit;">Carnegie Mellon University</a>
+              <span class="talk-venue">·</span>
+              <a href="https://mse.s3d.cmu.edu/" target="_blank" rel="noopener" class="talk-venue" style="color:inherit;">Master of Software Engineering</a>
+              <span class="talk-venue">· Pittsburgh, PA</span>
+            </div>
+            <div class="talk-title">
+              <a href="resource/slides/Choosing-a-Career-Path-in-the-Age-of-AI-Journey-from-Product-to-Platform-Engineering.pdf" target="_blank" rel="noopener">
+                Choosing a Career Path in the Age of AI: Journey from Product to Platform Engineering
+              </a>
+            </div>
+            <div style="margin-top:0.35rem; display:flex; gap:0.75rem; align-items:center; flex-wrap:wrap;">
+              <a href="resource/slides/Choosing-a-Career-Path-in-the-Age-of-AI-Journey-from-Product-to-Platform-Engineering.pdf" target="_blank" rel="noopener" style="font-size:0.75rem; color:var(--dim);">slides ↗</a>
+              <button onclick="var p=document.getElementById('cmu-li-embed');var open=p.style.display==='block';p.style.display=open?'none':'block';this.textContent=open?'[+ linkedin post]':'[- linkedin post]';"
+                style="background:none;border:none;font-family:inherit;font-size:0.75rem;color:var(--dim);cursor:pointer;padding:0;">[+ linkedin post]</button>
+            </div>
+          </div>
+          <div class="talk-year">Nov 2026</div>
+        </div>
+        <div id="cmu-li-embed" class="talk-embed talk-embed--li">
+          <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:7523497152988463104" height="838" width="504" frameborder="0" allowfullscreen title="Embedded post"></iframe>
+        </div>
+      </div>
 
       <div class="talk talk-stack">
         <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:1.5rem;">
