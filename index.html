@@ -483,6 +483,14 @@
     /* On wide screens the wrapper disappears and its children stay
        separate flex items, with the same gaps as before. */
     .talk-meta-pair { display: contents; }
+    /* Phone widths reveal .talk-venue-short instead. display:none keeps
+       the hidden phrase out of copy, paste, and the accessibility tree. */
+    .talk-venue-short { display: none; }
+    .talk-venue-short abbr[title] {
+      text-decoration: none;
+      cursor: inherit;
+      border-bottom: none;
+    }
 
     .badge {
       font-size: 0.68rem;
@@ -594,6 +602,16 @@
         align-items: center;
         gap: 0.55rem;
       }
+      .talk-venue-full { display: none; }
+      .talk-venue-short { display: inline; }
+      /* Keep the external-link arrow with the last word. The anchor's own
+         arrow stays on wide screens so that spacing is unchanged. */
+      .talk-title a::after { content: none; }
+      .talk-end {
+        display: inline;
+        white-space: nowrap;
+      }
+      .talk-end::after { content: '\00a0↗'; color: var(--faint); font-size: 0.7rem; }
 
       /* Drop the year/date side column so it cannot squeeze the row. */
       .talk:not(.talk-stack),
@@ -869,16 +887,16 @@
           <div class="talk-main">
             <div class="talk-meta">
               <span class="badge badge-fireside">fireside chat</span>
-              <a href="https://www.cmu.edu" target="_blank" rel="noopener" class="talk-venue">Carnegie Mellon University</a>
+              <a href="https://www.cmu.edu" target="_blank" rel="noopener" class="talk-venue"><span class="talk-venue-full">Carnegie Mellon University</span><span class="talk-venue-short"><abbr title="Carnegie Mellon University">CMU</abbr></span></a>
               <span class="talk-meta-pair">
                 <span class="talk-venue">·</span>
-                <a href="https://mse.s3d.cmu.edu/" target="_blank" rel="noopener" class="talk-venue">Master of Software Engineering</a>
+                <a href="https://mse.s3d.cmu.edu/" target="_blank" rel="noopener" class="talk-venue"><span class="talk-venue-full">Master of Software Engineering</span><span class="talk-venue-short"><abbr title="Master of Software Engineering">MSE</abbr></span></a>
               </span>
               <span class="talk-venue">· Pittsburgh, PA</span>
             </div>
             <div class="talk-title">
               <a href="resource/slides/Choosing-a-Career-Path-in-the-Age-of-AI-Journey-from-Product-to-Platform-Engineering.pdf" target="_blank" rel="noopener">
-                Choosing a Career Path in the Age of AI: Journey from Product to Platform Engineering
+                Choosing a Career Path in the Age of AI: Journey from Product to Platform <span class="talk-end">Engineering</span>
               </a>
             </div>
             <div style="margin-top:0.35rem; display:flex; gap:0.75rem; align-items:center; flex-wrap:wrap;">
@@ -904,7 +922,7 @@
             </div>
             <div class="talk-title">
               <a href="https://temporal.io/resources/on-demand/how-duolingo-built-workflow-as-a-service-with-temporal-nexus" target="_blank" rel="noopener">
-                From Bottlenecks to Self-Service: How Duolingo Built Workflow-as-a-Service with Temporal Nexus
+                From Bottlenecks to Self-Service: How Duolingo Built Workflow-as-a-Service with Temporal <span class="talk-end">Nexus</span>
               </a>
             </div>
             <div style="margin-top:0.35rem; display:flex; gap:0.75rem; align-items:center; flex-wrap:wrap;">
@@ -933,7 +951,7 @@
             </div>
             <div class="talk-title">
               <a href="https://www.youtube.com/watch?v=tJ1OwSFokOg" target="_blank" rel="noopener">
-                Scaling Developer Productivity with Temporal Nexus &amp; Duolingo
+                Scaling Developer Productivity with Temporal Nexus &amp; <span class="talk-end">Duolingo</span>
               </a>
             </div>
             <div style="margin-top:0.35rem; display:flex; gap:1rem;">
@@ -962,7 +980,7 @@
             </div>
             <div class="talk-title">
               <a href="https://temporal.io/resources/case-studies/duolingo-temporal-nexus" target="_blank" rel="noopener">
-                Duolingo simplifies self-service infrastructure with Temporal Nexus
+                Duolingo simplifies self-service infrastructure with Temporal <span class="talk-end">Nexus</span>
               </a>
             </div>
             <div style="margin-top:0.35rem;">
