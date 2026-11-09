@@ -1,0 +1,187 @@
+{
+  "version": "1.0",
+  "name": "Zhihao Wang",
+  "url": "https://zhihaowang.me",
+  "description": "Personal portfolio of Zhihao Wang — Staff Software Engineer at Temporal (Infrastructure Foundations). Distributed systems, cloud infrastructure, developer productivity, and Temporal.",
+  "identity": {
+    "name": "Zhihao Wang",
+    "pronunciation": "jr-how (preferred over \"jee-how\")",
+    "pronouns": "he/him",
+    "role": "Staff Software Engineer, Infrastructure Foundations",
+    "organization": "Temporal",
+    "location": "Pittsburgh, PA",
+    "email": "zhihaowa@alumni.cmu.edu",
+    "focus": [
+      "distributed systems",
+      "cloud infrastructure",
+      "developer productivity",
+      "Temporal"
+    ]
+  },
+  "links": {
+    "home": "https://zhihaowang.me/",
+    "blog": "https://zhihaowang.me/blog",
+    "resume": "https://zhihaowang.me/resource/zhihao-wang-resume.pdf",
+    "linkedin": "https://linkedin.com/in/zhihao-wang",
+    "github": "https://github.com/wangzhihao0629",
+    "llms_txt": "https://zhihaowang.me/llms.txt",
+    "llms_full_txt": "https://zhihaowang.me/llms-full.txt",
+    "agent_json": "https://zhihaowang.me/agent.json",
+    "posts_json": "https://zhihaowang.me/blog/posts.json",
+    "sitemap": "https://zhihaowang.me/sitemap.xml",
+    "robots": "https://zhihaowang.me/robots.txt",
+    "calendar": "https://zhihaowang.me/calendar.html"
+  },
+  "pages": [
+    {
+      "id": "home",
+      "title": "Home",
+      "url": "https://zhihaowang.me/",
+      "summary": "Bio, talks, experience, education, and links"
+    },
+    {
+      "id": "blog",
+      "title": "Blog",
+      "url": "https://zhihaowang.me/blog",
+      "summary": "Writing index; prefer Markdown under /blog/posts/<slug>.md"
+    },
+    {
+      "id": "resume",
+      "title": "Resume",
+      "url": "https://zhihaowang.me/resource/zhihao-wang-resume.pdf",
+      "summary": "PDF resume"
+    },
+    {
+      "id": "calendar",
+      "title": "Calendar",
+      "url": "https://zhihaowang.me/calendar.html",
+      "summary": "Embedded Google Calendar (may prompt for sign-in)"
+    }
+  ],
+  "posts": [
+    {
+      "slug": "job-hunting-in-2026",
+      "title": "Job hunting in 2026 was a different kind of hard than 2022",
+      "date": "2026-09-10",
+      "excerpt": "Four years apart, same person — but the market changed what \"hard\" actually meant.",
+      "url": "https://zhihaowang.me/blog/job-hunting-in-2026",
+      "markdown": "https://zhihaowang.me/blog/posts/job-hunting-in-2026.md"
+    }
+  ],
+  "talks": [
+    {
+      "type": "fireside chat",
+      "title": "Choosing a Career Path in the Age of AI: Journey from Product to Platform Engineering",
+      "venue": "Carnegie Mellon University — Master of Software Engineering",
+      "location": "Pittsburgh, PA",
+      "date": "2026-11",
+      "slides": "https://zhihaowang.me/resource/slides/Choosing-a-Career-Path-in-the-Age-of-AI-Journey-from-Product-to-Platform-Engineering.pdf"
+    },
+    {
+      "type": "talk",
+      "title": "From Bottlenecks to Self-Service: How Duolingo Built Workflow-as-a-Service with Temporal Nexus",
+      "venue": "Temporal Replay",
+      "location": "San Francisco, CA",
+      "date": "2026-04",
+      "url": "https://temporal.io/resources/on-demand/how-duolingo-built-workflow-as-a-service-with-temporal-nexus",
+      "slides": "https://zhihaowang.me/resource/slides/From-Bottlenecks-to-Self-Service-How-Duolingo-Built-Workflow-as-a-Service-with-Temporal-Nexus.pdf"
+    },
+    {
+      "type": "case study",
+      "title": "Duolingo simplifies self-service infrastructure with Temporal Nexus",
+      "venue": "Temporal",
+      "date": "2025-10",
+      "url": "https://temporal.io/resources/case-studies/duolingo-temporal-nexus"
+    },
+    {
+      "type": "webinar",
+      "title": "Scaling Developer Productivity with Temporal Nexus & Duolingo",
+      "venue": "Temporal",
+      "date": "2025-02",
+      "url": "https://www.youtube.com/watch?v=tJ1OwSFokOg"
+    }
+  ],
+  "experience": [
+    {
+      "organization": "Temporal Technologies",
+      "location": "Pittsburgh, PA",
+      "roles": [
+        {
+          "title": "Staff Software Engineer, Infrastructure Foundations",
+          "start": "2026-09",
+          "end": null
+        }
+      ]
+    },
+    {
+      "organization": "Duolingo",
+      "location": "Pittsburgh, PA",
+      "roles": [
+        {
+          "title": "Staff Software Engineer, Cloud Operations",
+          "start": "2026-04",
+          "end": "2026-09"
+        },
+        {
+          "title": "Senior Software Engineer, Cloud Operations",
+          "start": "2023-02",
+          "end": "2026-03"
+        }
+      ]
+    },
+    {
+      "organization": "data.ai",
+      "aka": "App Annie",
+      "location": "Beijing, China",
+      "roles": [
+        {
+          "title": "Senior Backend Software Engineer & Scrum Master",
+          "start": "2018-02",
+          "end": "2021-07"
+        }
+      ]
+    },
+    {
+      "organization": "VIPKID",
+      "location": "Beijing, China",
+      "roles": [
+        {
+          "title": "Software Engineer & Software Engineer Intern",
+          "start": "2016-08",
+          "end": "2018-02"
+        }
+      ]
+    }
+  ],
+  "education": [
+    {
+      "school": "Carnegie Mellon University",
+      "unit": "School of Computer Science",
+      "degree": "Master of Software Engineering",
+      "location": "Pittsburgh, PA",
+      "start": "2021-08",
+      "end": "2022-12"
+    },
+    {
+      "school": "Peking University",
+      "unit": "National School of Development",
+      "degree": "B.S. in Economics (double major)",
+      "location": "Beijing, China",
+      "start": "2014-09",
+      "end": "2017-07"
+    },
+    {
+      "school": "China University of Mining and Technology, Beijing",
+      "unit": "School of Science",
+      "degree": "B.S. in Information and Computing Science",
+      "location": "Beijing, China",
+      "start": "2013-09",
+      "end": "2017-06"
+    }
+  ],
+  "agent_notes": [
+    "Prefer Markdown post bodies at /blog/posts/<slug>.md over HTML shells.",
+    "llms.txt is the compact routing index; llms-full.txt has the longer biography.",
+    "This is a static site; there is no MCP endpoint or agent payment surface yet."
+  ]
+}

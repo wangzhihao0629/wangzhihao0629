@@ -1,0 +1,35 @@
+# Zhihao Wang
+
+> Personal portfolio of Zhihao Wang (pronounced "jr-how", preferred over "jee-how"; he/him) — Staff Software Engineer at Temporal (Infrastructure Foundations). Focus: distributed systems, cloud infrastructure, developer productivity, and Temporal. Previously Senior/Staff Software Engineer at Duolingo (Cloud Operations).
+
+This site is a static GitHub Pages portfolio. Prefer the machine-readable index and Markdown sources below over scraping HTML chrome (nav, theme toggle, embeds).
+
+## Start here
+
+- [Agent site index (JSON)](https://zhihaowang.me/agent.json): Structured identity, pages, posts, talks, experience, education, and contact links for agents
+- [Full profile (llms-full.txt)](https://zhihaowang.me/llms-full.txt): Longer plain-text biography and career summary
+- [Home](https://zhihaowang.me/): Human homepage (HTML)
+- [Blog listing](https://zhihaowang.me/blog): Published posts
+- [Resume (PDF)](https://zhihaowang.me/resource/zhihao-wang-resume.pdf): Downloadable resume
+
+## Blog
+
+<!-- agent:posts -->
+- [Job hunting in 2026 was a different kind of hard than 2022](https://zhihaowang.me/blog/posts/job-hunting-in-2026.md): Four years apart, same person — but the market changed what "hard" actually meant. (HTML: https://zhihaowang.me/blog/job-hunting-in-2026)
+<!-- /agent:posts -->
+
+Posts are authored as Markdown under `/blog/posts/<slug>.md`. Prefer those `.md` URLs for content; HTML shells at `/blog/<slug>` exist for browsers.
+
+## Contact & profiles
+
+- Email: zhihaowa@alumni.cmu.edu
+- [LinkedIn](https://linkedin.com/in/zhihao-wang)
+- [GitHub](https://github.com/wangzhihao0629)
+- Domains: https://zhihaowang.me and https://wangzhihao.me
+
+## Optional
+
+- [Sitemap](https://zhihaowang.me/sitemap.xml): Crawlable URL list
+- [robots.txt](https://zhihaowang.me/robots.txt): Crawl policy (site allows `/`)
+- [Calendar](https://zhihaowang.me/calendar.html): Embedded Google Calendar (may prompt for Google sign-in)
+- [Blog post catalog (JSON)](https://zhihaowang.me/blog/posts.json): Published slug list (newest first)

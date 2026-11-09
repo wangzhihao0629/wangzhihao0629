@@ -1,0 +1,77 @@
+# Zhihao Wang — full profile
+
+> Staff Software Engineer at Temporal (Infrastructure Foundations). Previously Senior/Staff Software Engineer on Duolingo's Cloud Operations team. Distributed systems, cloud infrastructure, developer productivity, Temporal.
+
+For a compact routing index, see https://zhihaowang.me/llms.txt
+For structured JSON, see https://zhihaowang.me/agent.json
+
+## Identity
+
+- Name: Zhihao Wang
+- Pronunciation: "jr-how" (preferred over "jee-how")
+- Pronouns: he/him
+- Email: zhihaowa@alumni.cmu.edu
+- Location: Pittsburgh, PA
+- Site: https://zhihaowang.me (also https://wangzhihao.me)
+- LinkedIn: https://linkedin.com/in/zhihao-wang
+- GitHub: https://github.com/wangzhihao0629
+- Resume: https://zhihaowang.me/resource/zhihao-wang-resume.pdf
+
+## About
+
+Zhihao recently joined Temporal as a Staff Software Engineer on Infrastructure Foundations. Before that he spent 3.5+ years at Duolingo as a Senior/Staff Software Engineer on the Cloud Operations team, building infrastructure and platforms that made engineers more effective.
+
+At Duolingo he championed Temporal adoption from 0→1, scaling it into an org-wide durable workflow platform powering 230+ production workflows across 20+ teams and 17M+ Temporal Cloud actions/month. He received the Duolingo Innovation Award for building the Temporal platform, presented by CEO and co-founder Luis von Ahn.
+
+Earlier: Senior Backend Engineer and Scrum Master at data.ai (formerly App Annie), and Software Engineer at VIPKID.
+
+## Work experience (summary)
+
+### Temporal Technologies — Pittsburgh, PA
+- Staff Software Engineer, Infrastructure Foundations (Sep 2026 – present)
+
+### Duolingo — Pittsburgh, PA
+- Staff Software Engineer, Cloud Operations (Apr 2026 – Sep 2026)
+  - Technical lead for a Temporal infrastructure project team; ECS→EKS Temporal worker migration with KEDA autoscaling; multi-account AWS datastore/service migrations
+  - Duolingo Innovation Award for the Temporal platform
+- Senior Software Engineer, Cloud Operations (Feb 2023 – Mar 2026)
+  - 0→1 Temporal adoption; Temporal Self-Service Platform; developer experience in the Temporal monorepo; datastore DR via Temporal workflows; de facto DBRE ownership for Aurora PostgreSQL
+
+### data.ai (formerly App Annie) — Beijing, China
+- Senior Backend Software Engineer & Scrum Master (Feb 2018 – Jul 2021)
+  - Unified connection workflows / MFA migrations; Django→Flask/Go microservices; scraping framework; Scrum Master for 6+
+
+### VIPKID — Beijing, China
+- Software Engineer & Intern (Aug 2016 – Feb 2018)
+  - Flask/gRPC/Java/Spring Boot microservices; Celery async tasks
+
+## Education
+
+- Carnegie Mellon University, School of Computer Science — Master of Software Engineering (Aug 2021 – Dec 2022), Pittsburgh, PA
+- Peking University, National School of Development — B.S. in Economics, double major (Sep 2014 – Jul 2017), Beijing, China
+- China University of Mining and Technology, Beijing — B.S. in Information and Computing Science (Sep 2013 – Jun 2017), Beijing, China
+
+## Talks & publications
+
+- Nov 2026 — Fireside chat, CMU MSE, Pittsburgh: "Choosing a Career Path in the Age of AI: Journey from Product to Platform Engineering" (slides on site)
+- Apr 2026 — Talk, Temporal Replay, San Francisco: "From Bottlenecks to Self-Service: How Duolingo Built Workflow-as-a-Service with Temporal Nexus" (https://temporal.io/resources/on-demand/how-duolingo-built-workflow-as-a-service-with-temporal-nexus)
+- Oct 2025 — Case study, Temporal: "Duolingo simplifies self-service infrastructure with Temporal Nexus" (https://temporal.io/resources/case-studies/duolingo-temporal-nexus)
+- Feb 2025 — Webinar, Temporal: "Scaling Developer Productivity with Temporal Nexus & Duolingo" (https://www.youtube.com/watch?v=tJ1OwSFokOg)
+
+## Blog
+
+Prefer Markdown sources under https://zhihaowang.me/blog/posts/<slug>.md
+
+Current posts are listed in https://zhihaowang.me/llms.txt and https://zhihaowang.me/agent.json (kept in sync with https://zhihaowang.me/blog/posts.json).
+
+## Site map for agents
+
+- https://zhihaowang.me/llms.txt — compact agent index (this site's entry point for LLMs)
+- https://zhihaowang.me/llms-full.txt — this file
+- https://zhihaowang.me/agent.json — machine-readable catalog
+- https://zhihaowang.me/ — homepage
+- https://zhihaowang.me/blog — blog listing
+- https://zhihaowang.me/blog/posts.json — published slug list
+- https://zhihaowang.me/sitemap.xml — URL sitemap
+- https://zhihaowang.me/robots.txt — crawl policy
+- https://zhihaowang.me/calendar.html — calendar embed

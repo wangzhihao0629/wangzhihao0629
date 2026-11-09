@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Catalog and sitemap/robots checks for the static site.
+"""Catalog, sitemap/robots, and agent-file checks for the static site.
 
     python3 scripts/check_site.py --catalog
     python3 scripts/check_site.py --sitemap
-    python3 scripts/check_site.py          # both
+    python3 scripts/check_site.py --agent
+    python3 scripts/check_site.py          # all
 """
 import argparse
 import re
@@ -90,17 +91,59 @@ def check_sitemap():
     return 0
 
 
+def check_agent_files():
+    errors = []
+    required = {
+        "llms.txt": "compact LLM / agent routing index",
+        "llms-full.txt": "longer plain-text profile for agents",
+        "agent.json": "machine-readable site index for agents",
+    }
+    for rel, label in required.items():
+        path = ROOT / rel
+        if not path.is_file():
+            errors.append(f"missing {rel} ({label})")
+            continue
+        if path.stat().st_size == 0:
+            errors.append(f"empty {rel}")
+
+    llms = ROOT / "llms.txt"
+    if llms.is_file():
+        text = llms.read_text()
+        if meta.LLMS_POSTS_BEGIN not in text or meta.LLMS_POSTS_END not in text:
+            errors.append(
+                "llms.txt missing auto Blog markers "
+                f"{meta.LLMS_POSTS_BEGIN} ... {meta.LLMS_POSTS_END}"
+            )
+        if "/agent.json" not in text:
+            errors.append("llms.txt should link to /agent.json")
+
+    if errors:
+        print("agent files check failed:")
+        for err in errors:
+            print(f"  {err}")
+        return 1
+    print(f"ok: agent files ({', '.join(required)})")
+    return 0
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     parser.add_argument("--catalog", action="store_true", help="check posts.json vs markdown/html")
     parser.add_argument("--sitemap", action="store_true", help="check robots.txt and sitemap coverage")
+    parser.add_argument(
+        "--agent",
+        action="store_true",
+        help="check llms.txt, llms-full.txt, and agent.json are present",
+    )
     args = parser.parse_args()
-    run_all = not args.catalog and not args.sitemap
+    run_all = not args.catalog and not args.sitemap and not args.agent
     status = 0
     if args.catalog or run_all:
         status |= check_catalog()
     if args.sitemap or run_all:
         status |= check_sitemap()
+    if args.agent or run_all:
+        status |= check_agent_files()
     sys.exit(status)
 
 
