@@ -1,4 +1,9 @@
 User-agent: *
 Allow: /
 
+# Agent-friendly entry points (also linked from the homepage <head>):
+#   https://zhihaowang.me/llms.txt
+#   https://zhihaowang.me/llms-full.txt
+#   https://zhihaowang.me/agent.json
+
 Sitemap: https://zhihaowang.me/sitemap.xml
