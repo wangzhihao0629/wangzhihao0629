@@ -190,7 +190,8 @@
       items.splice(insertAt + n, 0, {
         label: p.title,
         key: '·',
-        href: '/blog/' + p.slug
+        href: '/blog/' + p.slug,
+        group: 'blog'
       });
     });
     if (typeof window.refreshCmdItems === 'function') window.refreshCmdItems();
