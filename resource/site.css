@@ -111,6 +111,20 @@ nav {
 .nav-links a:hover { color: var(--text); text-decoration: none; }
 .nav-links a.nav-active { color: var(--text); }
 
+.nav-end {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-left: auto;
+}
+
+.nav-tools {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-shrink: 0;
+}
+
 .theme-btn {
   background: none;
   border: 1px solid var(--border);
@@ -132,6 +146,8 @@ nav {
   font-family: inherit;
   font-size: 0.85rem;
   cursor: pointer;
+  padding: 0.25rem 0.1rem;
+  min-height: 2rem;
 }
 
 @media (max-width: 640px) {
@@ -143,6 +159,12 @@ nav {
   body { overflow-x: hidden; }
 
   .mobile-btn { display: block; }
+  .nav-end { gap: 0.45rem; }
+  .theme-btn {
+    padding: 0.35rem 0.55rem;
+    font-size: 0.78rem;
+    min-height: 2.25rem;
+  }
   .nav-links {
     display: none;
     position: absolute;
@@ -159,6 +181,7 @@ nav {
     gap: 0.85rem;
     background: var(--bg);
     border-bottom: 1px solid var(--border);
+    z-index: 50;
   }
   .nav-links.open { display: flex; }
 
@@ -264,6 +287,7 @@ footer a:hover { color: var(--text); }
   align-items: flex-start;
   justify-content: center;
   padding-top: 20vh;
+  box-sizing: border-box;
 }
 #cmd-overlay.open { display: flex; }
 
@@ -274,6 +298,9 @@ footer a:hover { color: var(--text); }
   width: 420px;
   max-width: calc(100vw - 2rem);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  max-height: min(70vh, 36rem);
 }
 
 #cmd-input-wrap {
@@ -282,10 +309,12 @@ footer a:hover { color: var(--text); }
   gap: 0.5rem;
   padding: 0.65rem 0.85rem;
   border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
 }
 #cmd-input-wrap .ps1 { color: var(--green); font-size: 0.8rem; white-space: nowrap; }
 #cmd-input {
   flex: 1;
+  min-width: 0;
   background: none;
   border: none;
   outline: none;
@@ -299,6 +328,7 @@ footer a:hover { color: var(--text); }
   max-height: min(50vh, 22rem);
   overflow-y: auto;
   overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
 }
 .cmd-item {
   display: flex;
@@ -309,6 +339,7 @@ footer a:hover { color: var(--text); }
   cursor: pointer;
   color: var(--dim);
   transition: background 0.1s, color 0.1s;
+  -webkit-tap-highlight-color: transparent;
 }
 .cmd-item:hover, .cmd-item.active {
   background: var(--faint);
@@ -336,6 +367,45 @@ footer a:hover { color: var(--text); }
   font-size: 0.7rem;
   color: var(--faint);
   border-top: 1px solid var(--border);
+  flex-shrink: 0;
+}
+.cmd-hint--touch { display: none; }
+
+@media (max-width: 640px) {
+  #cmd-overlay {
+    padding: max(0.65rem, env(safe-area-inset-top, 0px))
+             max(0.65rem, env(safe-area-inset-right, 0px))
+             max(0.65rem, env(safe-area-inset-bottom, 0px))
+             max(0.65rem, env(safe-area-inset-left, 0px));
+  }
+  #cmd-box {
+    width: 100%;
+    max-width: none;
+    max-height: 100%;
+    border-radius: 8px;
+  }
+  #cmd-input {
+    font-size: 16px; /* avoid iOS focus zoom */
+    line-height: 1.35;
+  }
+  #cmd-input-wrap { padding: 0.75rem 0.9rem; }
+  #cmd-results {
+    max-height: none;
+    flex: 1 1 auto;
+  }
+  .cmd-item {
+    padding: 0.72rem 0.9rem;
+    min-height: 2.75rem;
+    font-size: 0.9rem;
+    gap: 0.55rem;
+  }
+  .cmd-item .cmd-meta {
+    max-width: 36%;
+    font-size: 0.65rem;
+  }
+  .cmd-hint--desk { display: none; }
+  .cmd-hint--touch { display: inline; }
+  #cmd-hint { padding: 0.55rem 0.9rem; }
 }
 
 #progress-bar {

@@ -220,9 +220,29 @@
       }
     }
 
+    function syncCmdViewport() {
+      if (!overlay.classList.contains('open')) return;
+      var vv = window.visualViewport;
+      if (!vv) return;
+      overlay.style.top = vv.offsetTop + 'px';
+      overlay.style.height = vv.height + 'px';
+      overlay.style.left = vv.offsetLeft + 'px';
+      overlay.style.width = vv.width + 'px';
+    }
+
+    function clearCmdViewport() {
+      overlay.style.top = '';
+      overlay.style.height = '';
+      overlay.style.left = '';
+      overlay.style.width = '';
+    }
+
     function openCmd() {
+      var navLinks = document.getElementById('nav-links');
+      if (navLinks) navLinks.classList.remove('open');
       overlay.classList.add('open');
       lockScroll(true);
+      syncCmdViewport();
       cmdInput.value = '';
       renderCmdItems('');
       cmdInput.focus();
@@ -232,7 +252,13 @@
       if (!overlay.classList.contains('open')) return;
       overlay.classList.remove('open');
       lockScroll(false);
+      clearCmdViewport();
       cmdInput.blur();
+    }
+
+    if (window.visualViewport) {
+      window.visualViewport.addEventListener('resize', syncCmdViewport);
+      window.visualViewport.addEventListener('scroll', syncCmdViewport);
     }
 
     function typingTarget(el) {

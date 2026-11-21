@@ -145,6 +145,20 @@
     }
     .nav-links a:hover { color: var(--text); text-decoration: none; }
 
+    .nav-end {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      margin-left: auto;
+    }
+
+    .nav-tools {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      flex-shrink: 0;
+    }
+
     .theme-btn {
       background: none;
       border: 1px solid var(--border);
@@ -166,6 +180,8 @@
       font-family: inherit;
       font-size: 0.85rem;
       cursor: pointer;
+      padding: 0.25rem 0.1rem;
+      min-height: 2rem;
     }
 
     @media (max-width: 640px) {
@@ -177,6 +193,12 @@
       body { overflow-x: hidden; }
 
       .mobile-btn { display: block; }
+      .nav-end { gap: 0.45rem; }
+      .theme-btn {
+        padding: 0.35rem 0.55rem;
+        font-size: 0.78rem;
+        min-height: 2.25rem;
+      }
       .nav-links {
         display: none;
         position: absolute;
@@ -193,6 +215,7 @@
         gap: 0.85rem;
         background: var(--bg);
         border-bottom: 1px solid var(--border);
+        z-index: 50;
       }
       .nav-links.open { display: flex; }
       nav { position: sticky; }
@@ -702,6 +725,7 @@
       align-items: flex-start;
       justify-content: center;
       padding-top: 20vh;
+      box-sizing: border-box;
     }
     #cmd-overlay.open { display: flex; }
 
@@ -712,6 +736,9 @@
       width: 420px;
       max-width: calc(100vw - 2rem);
       overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      max-height: min(70vh, 36rem);
     }
 
     #cmd-input-wrap {
@@ -720,10 +747,12 @@
       gap: 0.5rem;
       padding: 0.65rem 0.85rem;
       border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
     }
     #cmd-input-wrap .ps1 { color: var(--green); font-size: 0.8rem; white-space: nowrap; }
     #cmd-input {
       flex: 1;
+      min-width: 0;
       background: none;
       border: none;
       outline: none;
@@ -737,6 +766,7 @@
       max-height: min(50vh, 22rem);
       overflow-y: auto;
       overscroll-behavior: contain;
+      -webkit-overflow-scrolling: touch;
     }
     .cmd-item {
       display: flex;
@@ -747,6 +777,7 @@
       cursor: pointer;
       color: var(--dim);
       transition: background 0.1s, color 0.1s;
+      -webkit-tap-highlight-color: transparent;
     }
     .cmd-item:hover, .cmd-item.active {
       background: var(--faint);
@@ -774,6 +805,45 @@
       font-size: 0.7rem;
       color: var(--faint);
       border-top: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+    .cmd-hint--touch { display: none; }
+
+    @media (max-width: 640px) {
+      #cmd-overlay {
+        padding: max(0.65rem, env(safe-area-inset-top, 0px))
+                 max(0.65rem, env(safe-area-inset-right, 0px))
+                 max(0.65rem, env(safe-area-inset-bottom, 0px))
+                 max(0.65rem, env(safe-area-inset-left, 0px));
+      }
+      #cmd-box {
+        width: 100%;
+        max-width: none;
+        max-height: 100%;
+        border-radius: 8px;
+      }
+      #cmd-input {
+        font-size: 16px;
+        line-height: 1.35;
+      }
+      #cmd-input-wrap { padding: 0.75rem 0.9rem; }
+      #cmd-results {
+        max-height: none;
+        flex: 1 1 auto;
+      }
+      .cmd-item {
+        padding: 0.72rem 0.9rem;
+        min-height: 2.75rem;
+        font-size: 0.9rem;
+        gap: 0.55rem;
+      }
+      .cmd-item .cmd-meta {
+        max-width: 36%;
+        font-size: 0.65rem;
+      }
+      .cmd-hint--desk { display: none; }
+      .cmd-hint--touch { display: inline; }
+      #cmd-hint { padding: 0.55rem 0.9rem; }
     }
 
     /* ── PROGRESS BAR ───────────────────────────────────── */
@@ -802,17 +872,19 @@
     <div class="wrap">
       <div class="nav-inner">
         <a href="#home" class="nav-brand"><span class="dim">~/</span>zhihao</a>
-
-        <button class="mobile-btn" id="mobile-btn">[menu]</button>
-
-        <div class="nav-links" id="nav-links">
-          <a href="#about">about</a>
-          <a href="#talks">talks</a>
-          <a href="#experience">work</a>
-          <a href="#education">edu</a>
-          <a href="/blog">blog</a>
-          <button class="theme-btn" onclick="openCmd()" style="margin-right:0.25rem;">[/]</button>
-          <button class="theme-btn" id="theme-btn">[theme]</button>
+        <div class="nav-end">
+          <div class="nav-links" id="nav-links">
+            <a href="#about">about</a>
+            <a href="#talks">talks</a>
+            <a href="#experience">work</a>
+            <a href="#education">edu</a>
+            <a href="/blog">blog</a>
+          </div>
+          <div class="nav-tools">
+            <button class="theme-btn" type="button" onclick="openCmd()" aria-label="Jump to">[/]</button>
+            <button class="theme-btn" type="button" id="theme-btn" aria-label="Toggle theme">[theme]</button>
+          </div>
+          <button class="mobile-btn" type="button" id="mobile-btn" aria-label="Menu">[menu]</button>
         </div>
       </div>
     </div>
@@ -1224,10 +1296,13 @@
     <div id="cmd-box">
       <div id="cmd-input-wrap">
         <span class="ps1">:~$</span>
-        <input id="cmd-input" type="text" placeholder="jump to..." autocomplete="off" spellcheck="false" />
+        <input id="cmd-input" type="text" placeholder="jump to..." autocomplete="off" spellcheck="false" enterkeyhint="go" autocapitalize="off" autocorrect="off" />
       </div>
       <div id="cmd-results" role="listbox"></div>
-      <div id="cmd-hint">↑↓ navigate &nbsp;·&nbsp; enter select &nbsp;·&nbsp; esc close &nbsp;·&nbsp; / or ⌘K to open</div>
+      <div id="cmd-hint">
+        <span class="cmd-hint--desk">↑↓ navigate &nbsp;·&nbsp; enter select &nbsp;·&nbsp; esc close &nbsp;·&nbsp; / or ⌘K to open</span>
+        <span class="cmd-hint--touch">tap a result &nbsp;·&nbsp; tap outside to close</span>
+      </div>
     </div>
   </div>
 
@@ -1424,9 +1499,29 @@
       }
     }
 
+    function syncCmdViewport() {
+      if (!overlay.classList.contains('open')) return;
+      var vv = window.visualViewport;
+      if (!vv) return;
+      overlay.style.top = vv.offsetTop + 'px';
+      overlay.style.height = vv.height + 'px';
+      overlay.style.left = vv.offsetLeft + 'px';
+      overlay.style.width = vv.width + 'px';
+    }
+
+    function clearCmdViewport() {
+      overlay.style.top = '';
+      overlay.style.height = '';
+      overlay.style.left = '';
+      overlay.style.width = '';
+    }
+
     function openCmd() {
+      var links = document.getElementById('nav-links');
+      if (links) links.classList.remove('open');
       overlay.classList.add('open');
       lockScroll(true);
+      syncCmdViewport();
       cmdInput.value = '';
       renderCmdItems('');
       cmdInput.focus();
@@ -1436,7 +1531,13 @@
       if (!overlay.classList.contains('open')) return;
       overlay.classList.remove('open');
       lockScroll(false);
+      clearCmdViewport();
       cmdInput.blur();
+    }
+
+    if (window.visualViewport) {
+      window.visualViewport.addEventListener('resize', syncCmdViewport);
+      window.visualViewport.addEventListener('scroll', syncCmdViewport);
     }
 
     function typingTarget(el) {

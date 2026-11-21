@@ -38,12 +38,16 @@
     <div class="wrap">
       <div class="nav-inner">
         <a href="/" class="nav-brand"><span class="dim">~/</span>zhihao</a>
-        <button class="mobile-btn" id="mobile-btn">[menu]</button>
-        <div class="nav-links" id="nav-links">
-          <a href="/">home</a>
-          <a href="/blog">blog</a>
-          <button class="theme-btn" onclick="openCmd()" style="margin-right:0.25rem;">[/]</button>
-          <button class="theme-btn" id="theme-btn">[theme]</button>
+        <div class="nav-end">
+          <div class="nav-links" id="nav-links">
+            <a href="/">home</a>
+            <a href="/blog">blog</a>
+          </div>
+          <div class="nav-tools">
+            <button class="theme-btn" type="button" onclick="openCmd()" aria-label="Jump to">[/]</button>
+            <button class="theme-btn" type="button" id="theme-btn" aria-label="Toggle theme">[theme]</button>
+          </div>
+          <button class="mobile-btn" type="button" id="mobile-btn" aria-label="Menu">[menu]</button>
         </div>
       </div>
     </div>
@@ -82,10 +86,13 @@
     <div id="cmd-box">
       <div id="cmd-input-wrap">
         <span class="ps1">:~$</span>
-        <input id="cmd-input" type="text" placeholder="jump to..." autocomplete="off" spellcheck="false" />
+        <input id="cmd-input" type="text" placeholder="jump to..." autocomplete="off" spellcheck="false" enterkeyhint="go" autocapitalize="off" autocorrect="off" />
       </div>
       <div id="cmd-results" role="listbox"></div>
-      <div id="cmd-hint">↑↓ navigate &nbsp;·&nbsp; enter select &nbsp;·&nbsp; esc close &nbsp;·&nbsp; / or ⌘K to open</div>
+      <div id="cmd-hint">
+        <span class="cmd-hint--desk">↑↓ navigate &nbsp;·&nbsp; enter select &nbsp;·&nbsp; esc close &nbsp;·&nbsp; / or ⌘K to open</span>
+        <span class="cmd-hint--touch">tap a result &nbsp;·&nbsp; tap outside to close</span>
+      </div>
     </div>
   </div>
 
